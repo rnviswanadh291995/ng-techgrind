@@ -34,6 +34,7 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.directives.lazy-loading-img'
 	'TechGrindApp.directives.ui.tinymce'
 	'TechGrindApp.controllers'
+	#'TechGrindApp.controllers.home' # this needs to be added, and translated from coffee to native-js
 	'TechGrindApp.controllers.regions'
 	'TechGrindApp.controllers.events'
 	'TechGrindApp.controllers.res-jobs'
@@ -41,6 +42,8 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.controllers.res-guides'
 	'TechGrindApp.controllers.res-media'
 	'TechGrindApp.controllers.res-teamspeak'
+	'TechGrindApp.controllers.profileuser'
+	'TechGrindApp.controllers.profilestartup'
 	'TechGrindApp.controllers.partners'
 	'TechGrindApp.controllers.content.articles'
 	'TechGrindApp.controllers.content.articles.fullpage'
@@ -48,8 +51,6 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.controllers.content.mediabrowser'
 	'TechGrindApp.controllers.list.tableview'
 	'TechGrindApp.controllers.list.entities'
-	'TechGrindApp.controllers.info.userprofile'
-	'TechGrindApp.controllers.info.startupprofile'
 	'TechGrindApp.controllers.info.event'
 	'TechGrindApp.plugins.menu.accordion'
 	'TechGrindApp.plugins.widget.filterbox'
@@ -87,10 +88,6 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 		templateUrl: 'partials/home.html'
 		controller: 'HomeCtrl'
 
-	$routeProvider.when '/regions',
-		templateUrl: 'partials/regions.html'
-		controller: 'RegionsCtrl'
-
 	$routeProvider.when '/events',
 		templateUrl: 'partials/events.html'
 		controller: 'EventsCtrl'
@@ -123,11 +120,6 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 		templateUrl: 'partials/partners.html'
 		controller: 'PartnersCtrl'
 
-## REGIONS
-	$routeProvider.when '/regions/:region',
-		templateUrl: 'partials/regions.html'
-		controller: 'RegionsCtrl'
-
 ## EVENTS
 	$routeProvider.when '/events/new',
 		templateUrl: 'partials/plugins/info_event.html'
@@ -144,60 +136,52 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 
 ## PROFILE PAGES
 	$routeProvider.when '/profile/people',
-    templateUrl: 'partials/plugins/info_userprofile.html'
-    controller: 'InfoUserProfileCtrl'
+    templateUrl: 'partials/controller/info_userprofile.html'
+    controller: 'ProfileUserCtrl'
 
 	$routeProvider.when '/profile/people/:userid',
-    templateUrl: 'partials/plugins/info_userprofile.html'
-    controller: 'InfoUserProfileCtrl'
+    templateUrl: 'partials/controller/info_userprofile.html'
+    controller: 'ProfileUserCtrl'
 
 	$routeProvider.when '/profile/startups',
-    templateUrl: 'partials/plugins/info_startupprofile.html'
-    controller: 'InfoStartUpProfileCtrl'
+    templateUrl: 'partials/controller/info_startupprofile.html'
+    controller: 'ProfileStartupCtrl'
 
 	$routeProvider.when '/profile/startups/:startupid',
-    templateUrl: 'partials/plugins/info_startupprofile.html'
-    controller: 'InfoStartUpProfileCtrl'
+    templateUrl: 'partials/controller/info_startupprofile.html'
+    controller: 'ProfileStartupCtrl'
 
 	$routeProvider.when '/profile/investors',
-    templateUrl: 'partials/plugins/info_investorprofile.html'
-    controller: 'InfoInvestorProfileCtrl'
+    templateUrl: 'partials/controller/info_investorprofile.html'
+    controller: 'ProfileInvestorCtrl'
 
 	$routeProvider.when '/profile/investors/:investorid',
-    templateUrl: 'partials/plugins/info_investorprofile.html'
-    controller: 'InfoInvestorProfileCtrl'
-
-	$routeProvider.when '/profile/xspaces',
-    templateUrl: 'partials/plugins/info_xspaceprofile.html'
-    controller: 'InfoXspaceProfileCtrl'
-
-	$routeProvider.when '/profile/xspaces/:xspaceid',
-    templateUrl: 'partials/plugins/info_xspaceprofile.html'
-    controller: 'InfoXspaceProfileCtrl'
-
-	$routeProvider.when '/profile/coworking',
-    templateUrl: 'partials/plugins/info_coworkingprofile.html'
-    controller: 'InfoCoworkingProfileCtrl'
-
-	$routeProvider.when '/profile/coworking/:coworkingid',
-    templateUrl: 'partials/plugins/info_coworkingprofile.html'
-    controller: 'InfoCoworkingProfileCtrl'
-
-	$routeProvider.when '/profile/community',
-    templateUrl: 'partials/plugins/info_communityprofile.html'
-    controller: 'InfoCommunityProfileCtrl'
-
-	$routeProvider.when '/profile/community/:communityid',
-    templateUrl: 'partials/plugins/info_communityprofile.html'
-    controller: 'InfoCommunityProfileCtrl'
+    templateUrl: 'partials/controller/info_investorprofile.html'
+    controller: 'ProfileInvestorCtrl'
 
 	$routeProvider.when '/profile/services',
-    templateUrl: 'partials/plugins/info_serviceprofile.html'
-    controller: 'InfoServiceProfileCtrl'
+    templateUrl: 'partials/controller/info_serviceprofile.html'
+    controller: 'ProfileServicesCtrl'
 
 	$routeProvider.when '/profile/services/:serviceid',
-	  templateUrl: 'partials/plugins/info_serviceprofile.html'
-	  controller: 'InfoServiceProfileCtrl'
+	  templateUrl: 'partials/controller/info_serviceprofile.html'
+	  controller: 'ProfileServicesCtrl'
+
+	$routeProvider.when '/profile/spaces',
+    templateUrl: 'partials/controller/info_spaceprofile.html'
+    controller: 'ProfileSpacesCtrl'
+
+	$routeProvider.when '/profile/spaces/:spaceid',
+    templateUrl: 'partials/controller/info_spaceprofile.html'
+    controller: 'ProfileSpacesCtrl'
+
+	$routeProvider.when '/profile/community',
+    templateUrl: 'partials/controller/info_communityprofile.html'
+    controller: 'ProfileCommunityCtrl'
+
+	$routeProvider.when '/profile/community/:communityid',
+    templateUrl: 'partials/controller/info_communityprofile.html'
+    controller: 'ProfileCommunityCtrl'
 
 ############### WIPs: incomplete/tests
 ## CLEANUP

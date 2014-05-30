@@ -1,5 +1,5 @@
 /*
-	info_userprofile:
+	profile_user:
 		display-style___________
 		the top element should be a "user info card" spanning the width of the screen.
 			it should contain the following elements:
@@ -27,9 +27,9 @@ tab.type
 tab.template
 */
 
-var appModule = angular.module('TechGrindApp.controllers.info.userprofile', []);
+var appModule = angular.module('TechGrindApp.controllers.profileuser', []);
 
-appModule.controller('InfoUserProfileCtrl', ['$scope', 'steam', '$http', '$rootScope',
+appModule.controller('ProfileUserCtrl', ['$scope', 'steam', '$http', '$rootScope',
 function($scope, steam, http, $rootScope) {
 
 	var user = steam.loginp();

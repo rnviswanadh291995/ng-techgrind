@@ -1,6 +1,30 @@
-var appModule = angular.module('TechGrindApp.controllers.info.startupprofile', []);
+/*
+	profile_startup:
+		display-style___________
+		the top element should be a "startup info card" spanning the width of the screen.
+			it should contain the following elements:
+		* 
+		*
+		*
+		*
 
-appModule.controller('InfoStartUpProfileCtrl', ['$scope', 'steam', '$http', '$rootScope', '$location',
+		the bottom element should be a 2-column tab-display customized by the user,
+			with elements
+		
+		example:
+		
+		functional goal___________
+		this plugin should display content cards in a "news-card" fashion, and allow simple
+			interaction via clicking on the card itself, which will send the user to
+			the full content page to view the entire article/content/guide/tutorial/etc
+			
+		example-content -> displayed information ==> action-on-interaction:
+			news/article/tutorial/guide -> detailed info ==> full-content-page
+*/
+
+var appModule = angular.module('TechGrindApp.controllers.profilestartup', []);
+
+appModule.controller('ProfileStartupCtrl', ['$scope', 'steam', '$http', '$rootScope', '$location',
 function($scope, steam, http, $rootScope, loc) {
 
 	$scope.startupprofile = startupprofile;
