@@ -95,32 +95,6 @@ app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
 		name: 'TeamSpeak Server'
 		url: 'resources/teamspeak'
 		icon: 'icon-group'
-	,
-		name: 'Partners & Deals'
-		url: 'partners'
-		icon: 'icon-star'
-	];
-	# test menu for list creation
-	S.lists = [
-		name: 'Root'
-		url: 'plugins/list'
-		icon: ''
-	,
-		name: 'Startups'
-		url: 'plugins/list_startups'
-		icon: ''
-	,
-		name: 'Investor'
-		url: 'plugins/list_investors'
-		icon: ''
-	,
-		name: 'Coworking'
-		url: 'plugins/list_coworking'
-		icon: ''
-	,
-		name: 'Thailand'
-		url: 'plugins/list_thailand'
-		icon: ''
 	];
 ]
 

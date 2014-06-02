@@ -1,17 +1,15 @@
 {
   "name": "TechGrind",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "express": "",
-    "jade": "",
     "coffee-script": "",
-    "stylus": ""
   },
   "production_dirs": {
     "coffee_src": "src/",
     "src": "app/",
-    "dest": "app_production/"
+    "dest": "app_production/",
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -23,6 +21,5 @@
     "grunt-svgmin": "~0.2.0",
     "grunt-css": "~0.5.4",
     "grunt-contrib-coffee": "~0.7.0",
-    "jade": "~0.35.0"
   }
 }

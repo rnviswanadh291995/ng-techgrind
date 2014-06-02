@@ -8,10 +8,8 @@ root_dir = __dirname + '/..'
 public_dir = root_dir + '/app'
 src_dir = root_dir + '/src/'
 
-stylus = require 'stylus'
-
 app.configure ->
-	app.set 'view engine', 'jade'
+	app.set 'view engine'
 	app.set 'views', src_dir
 	app.locals.pretty = true
 	app.use express.favicon()
@@ -41,6 +39,18 @@ app.get '/js/controllers/:script.js', (req, res) ->
 	res.header 'Content-Type', 'application/javascript'
 	res.send coffee.compile fs.readFileSync(
 		"#{src_dir}/js/controllers/#{req.params.script}.coffee", "utf-8")
+app.get '/js/plugins/:script.js', (req, res) ->
+	res.header 'Content-Type', 'application/javascript'
+	res.send coffee.compile fs.readFileSync(
+		"#{src_dir}/js/plugins/#{req.params.script}.coffee", "utf-8")
+app.get '/js/directives/:script.js', (req, res) ->
+	res.header 'Content-Type', 'application/javascript'
+	res.send coffee.compile fs.readFileSync(
+		"#{src_dir}/js/directives/#{req.params.script}.coffee", "utf-8")
+app.get '/js/services/:script.js', (req, res) ->
+	res.header 'Content-Type', 'application/javascript'
+	res.send coffee.compile fs.readFileSync(
+		"#{src_dir}/js/services/#{req.params.script}.coffee", "utf-8")
 app.get /(\/test\/(.+\/)?[^\/]+).js/, (req, res) ->
 	res.header 'Content-Type', 'application/javascript'
 	res.send coffee.compile fs.readFileSync(
@@ -49,8 +59,3 @@ app.get /(\/test\/(.+\/)?[^\/]+).js/, (req, res) ->
 app.get '/', (req, res) -> res.render 'index'
 app.get '/:dir?/:file.html', (req, res) ->
 	res.render (req.params.dir || '.') + '/' + req.params.file
-
-app.get '/js/controllers/:script.js', (req, res) ->
-    res.header 'Content-Type', 'application/javascript'
-    res.send coffee.compile fs.readFileSync(
-        "#{src_dir}/js/controllers/#{req.params.script}.coffee", "utf-8")

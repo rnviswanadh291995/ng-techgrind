@@ -35,7 +35,6 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.directives.ui.tinymce'
 	'TechGrindApp.controllers'
 	#'TechGrindApp.controllers.home' # this needs to be added, and translated from coffee to native-js
-	'TechGrindApp.controllers.regions'
 	'TechGrindApp.controllers.events'
 	'TechGrindApp.controllers.res-jobs'
 	'TechGrindApp.controllers.res-docs'
@@ -44,7 +43,6 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.controllers.res-teamspeak'
 	'TechGrindApp.controllers.profileuser'
 	'TechGrindApp.controllers.profilestartup'
-	'TechGrindApp.controllers.partners'
 	'TechGrindApp.controllers.content.articles'
 	'TechGrindApp.controllers.content.articles.fullpage'
 	'TechGrindApp.controllers.content.docbrowser'
@@ -56,7 +54,6 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.plugins.widget.filterbox'
 	'ui.bootstrap'
 	'ngRoute'
-	'ngGrid'
 	'LocalStorageModule'
 	'ToolsRichEditor'
 ]
@@ -64,7 +61,6 @@ app = angular.module 'TechGrindApp', [
 # give usage example for setting up a route, explain where each of these components goes and what it does
 # eg: how do i make a route for a dynamic link? what does :name do in a link or path?
 app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
-
 
 # GENERAL FUNCTION PAGES
 	$routeProvider.when '/register',
@@ -108,17 +104,13 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 		templateUrl: 'partials/res-media.html'
 		controller: 'ResourcesMediaCtrl'
 
-  $routeProvider.when '/resources/media/:cat',
-    templateUrl: 'partials/res-media.html'
-    controller: 'ResourcesMediaCtrl'
+	$routeProvider.when '/resources/media/:cat',
+		templateUrl: 'partials/res-media.html'
+		controller: 'ResourcesMediaCtrl'
 
 	$routeProvider.when '/resources/teamspeak',
 		templateUrl: 'partials/res-teamspeak.html'
 		controller: 'ResourcesTeamSpeakCtrl'
-
-	$routeProvider.when '/partners',
-		templateUrl: 'partials/partners.html'
-		controller: 'PartnersCtrl'
 
 ## EVENTS
 	$routeProvider.when '/events/new',
@@ -136,59 +128,54 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 
 ## PROFILE PAGES
 	$routeProvider.when '/profile/people',
-    templateUrl: 'partials/controller/info_userprofile.html'
-    controller: 'ProfileUserCtrl'
+		templateUrl: 'partials/info_userprofile.html'
+		controller: 'ProfileUserCtrl'
 
 	$routeProvider.when '/profile/people/:userid',
-    templateUrl: 'partials/controller/info_userprofile.html'
-    controller: 'ProfileUserCtrl'
+		templateUrl: 'partials/info_userprofile.html'
+		controller: 'ProfileUserCtrl'
 
 	$routeProvider.when '/profile/startups',
-    templateUrl: 'partials/controller/info_startupprofile.html'
-    controller: 'ProfileStartupCtrl'
+		templateUrl: 'partials/controller/info_startupprofile.html'
+		controller: 'ProfileStartupCtrl'
 
 	$routeProvider.when '/profile/startups/:startupid',
-    templateUrl: 'partials/controller/info_startupprofile.html'
-    controller: 'ProfileStartupCtrl'
+		templateUrl: 'partials/controller/info_startupprofile.html'
+		controller: 'ProfileStartupCtrl'
 
 	$routeProvider.when '/profile/investors',
-    templateUrl: 'partials/controller/info_investorprofile.html'
-    controller: 'ProfileInvestorCtrl'
+		templateUrl: 'partials/controller/info_investorprofile.html'
+		controller: 'ProfileInvestorCtrl'
 
 	$routeProvider.when '/profile/investors/:investorid',
-    templateUrl: 'partials/controller/info_investorprofile.html'
-    controller: 'ProfileInvestorCtrl'
+		templateUrl: 'partials/controller/info_investorprofile.html'
+		controller: 'ProfileInvestorCtrl'
 
 	$routeProvider.when '/profile/services',
-    templateUrl: 'partials/controller/info_serviceprofile.html'
-    controller: 'ProfileServicesCtrl'
+		templateUrl: 'partials/controller/info_serviceprofile.html'
+		controller: 'ProfileServicesCtrl'
 
 	$routeProvider.when '/profile/services/:serviceid',
-	  templateUrl: 'partials/controller/info_serviceprofile.html'
-	  controller: 'ProfileServicesCtrl'
+		templateUrl: 'partials/controller/info_serviceprofile.html'
+		controller: 'ProfileServicesCtrl'
 
 	$routeProvider.when '/profile/spaces',
-    templateUrl: 'partials/controller/info_spaceprofile.html'
-    controller: 'ProfileSpacesCtrl'
+		templateUrl: 'partials/controller/info_spaceprofile.html'
+		controller: 'ProfileSpacesCtrl'
 
 	$routeProvider.when '/profile/spaces/:spaceid',
-    templateUrl: 'partials/controller/info_spaceprofile.html'
-    controller: 'ProfileSpacesCtrl'
+		templateUrl: 'partials/controller/info_spaceprofile.html'
+		controller: 'ProfileSpacesCtrl'
 
 	$routeProvider.when '/profile/community',
-    templateUrl: 'partials/controller/info_communityprofile.html'
-    controller: 'ProfileCommunityCtrl'
+		templateUrl: 'partials/controller/info_communityprofile.html'
+		controller: 'ProfileCommunityCtrl'
 
 	$routeProvider.when '/profile/community/:communityid',
-    templateUrl: 'partials/controller/info_communityprofile.html'
-    controller: 'ProfileCommunityCtrl'
+		templateUrl: 'partials/controller/info_communityprofile.html'
+		controller: 'ProfileCommunityCtrl'
 
 ############### WIPs: incomplete/tests
-## CLEANUP
-	$routeProvider.when '/test-cleanup',
-		templateUrl: 'partials/home.html'
-		controller: 'TestCtrl'
-
 ## SGENOME TEST
 	$routeProvider.when '/sgenome',
 		templateUrl: 'partials/sgenome.html'

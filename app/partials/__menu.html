@@ -28,16 +28,15 @@
 			</ul></li-->
 		</ul>
 		<ul class="main-menu unselectable">
-			<li ng-class="active('/regions')" class="dropdown"><a><i class="icon-globe icon-white"></i><i class="icon-remove"></i><span>Regions</span><b class="caret"></b></a>
+			<!--li ng-class="active('/regions')" class="dropdown"><a><i class="icon-globe icon-white"></i><i class="icon-remove"></i><span>Regions</span><b class="caret"></b></a>
 			<ul ng-controller="MenuCtrl" class="dropdown-menu">
 				<li ng-repeat="country in countries track by $index" class="sub-menu"><a href="#/regions/{{country.url}}">{{country.name}}</a></li>
-			</ul></li>
+			</ul></li-->
 			<li class="dropdown"><a><i class="icon-remove"></i><span>Profiles</span><b class="caret"></b></a>
 			<ul class="dropdown-menu">
 				<li ng-class="" class="sub-menu"><a href="#/profile/startups/{{startupid}}">startup-profile</a></li>
 				<li ng-class="" class="sub-menu"><a href="#/profile/people/{{userid}}">user-profile</a></li>
 			</ul></li>
-
 		</ul>
 		<!-- User Menu -->
 		<ul class="user-setting pull-right unselectable">
