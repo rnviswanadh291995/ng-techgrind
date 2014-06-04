@@ -1,0 +1,361 @@
+/*
+
+This file should have all template elements that are specific to content slides and pages.
+Home:
+http://ngtg.techgrind.asia:8000/#/home
+Article:
+http://ngtg.techgrind.asia:8000/#/article/XYZ
+
+*/
+
+/* CSS1 -- TITLE OF CONTENT PAGE SECTION */
+
+.content-page-title{ 
+	font-family: 'LatoLight';
+	color: #2ea4d4;
+	margin-left: 30px;
+	font-size: 1em;
+}
+.content-page-title h1{ 
+	font: 4em 'LatoBlack';
+	color: #333;
+}
+.content-page-category{
+	font: 1.4em 'LatoBold';
+    color: #2ea4d4;
+    text-transform: uppercase;
+}
+.content-page-meta{
+	margin-bottom: 7px;
+    margin-top: 15px;
+}
+.content-page-meta p{
+	float: left;
+	font-size: 1.4em;
+	color: #333;
+}
+.content-page-meta a{
+	font-size: 1em;
+}
+.content-page-author-image{  /* need background image to completely display */ 
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 22px 22px;
+	float: left;
+	position: relative;
+	bottom: 2px;
+	margin: 0px 7px;
+}
+.content-page-stats{
+	border-top: 1px solid #c0c1c3;
+    border-bottom: 1px solid #c0c1c3;
+    padding: 14px 0px 7px 0px;
+    margin-bottom: 20px;
+}
+.content-page-stats-meta, .content-page-stats-meta-emphasize{
+    float: left;
+    margin-right: 42px;
+}
+.content-page-stats-meta span{
+	font: 3em 'LatoLight';
+    color: #2ea4d4;
+}
+.content-page-stats-meta p{
+    font: 1.2em 'LatoRegular';
+    text-transform: uppercase;
+    color: #333;
+}
+.content-page-stats-meta-emphasize span{
+    font: 3em 'LatoBlack';
+}
+.content-page-stats-meta-emphasize p{
+	font: 1.2em 'LatoRegular';
+	text-transform: uppercase;
+	color: #333;
+}
+
+/* END OF CSS1 */
+/* ------------------------------------------------------ */
+
+/* CSS2 -- CONTENT PAGE CONTENT SECTION */
+
+.content-page-content{
+	margin: 30px 0px 35px 0px;
+	color: #333;
+}
+.content-page-content p{
+	margin-left: 30px;
+    margin-right: 10px;
+    font: 1.6em 'LatoLight';
+    line-height: 24px;
+}
+.content-page-content a{
+	font-size: 1em;
+}
+.content-page-content h2{
+	font: 2.4em 'LatoBold';
+    margin: 0px 10px 30px 30px;
+    line-height: 24px;
+}
+.content-page-content img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.content-page-content-caption{
+    font: 1.4em 'LatoLightItalic';
+    margin: 0px 10px 25px 30px;
+    line-height: 24px;
+}
+
+/* END OF CSS2 */
+/* ------------------------------------------------------ */
+
+/* CSS3 -- CONTENT PAGE'S DISCUSSION SECTION */
+
+.content-page-discussion{
+	margin-left: 30px;
+	margin-bottom: 35px;
+}
+.content-page-content-discussion-toggle-button i{
+	font-size: 2.1em;
+}
+.content-page-content-discussion-toggle-button i span{
+	margin-left: 8px;
+	font-size: 0.667em;
+}
+.content-page-discussion-content{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #999;
+}
+.content-page-discussion-content-owner-post{
+	margin-top: 30px;
+}
+.content-page-discussion-content-user-image{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60px 60px;
+	float: left;
+	position: relative;
+}
+.content-page-discussion-content-post{
+	margin-bottom: 20px;
+	background: #fff;
+	margin-left: 80px;
+	padding: 10px 15px 10px 20px;
+	position: relative;
+	-webkit-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-moz-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-ms-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-o-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+}
+.content-page-discussion-content-post:before, .content-page-discussion-content-post-answer:before { /* this class draw the triangle at the left of the post */
+	content: "";
+	width: 0;
+	height: 0;
+	border-bottom: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #fff;
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: 21px;
+	left: -10px;
+}
+.content-page-discussion-content-post-answer{
+	margin-bottom: 20px;
+	background: #fff;
+	margin-left: 80px;
+	padding: 10px 15px 15px 20px; /* this line is different from .content-page-discussion-content-post */
+	position: relative;
+	-webkit-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-moz-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-ms-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-o-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+}
+.content-page-discussion-content-header h1{
+	font: 1.8em 'LatoBlack';
+	float: left;
+	margin-right: 10px;
+}
+.content-page-discussion-content-meta{
+	float: left;
+	margin-top: 10px;
+	left: 20px;
+	bottom: 5px;
+}
+.content-page-discussion-content-meta i{
+	float: left;
+	margin-right: 5px;
+	color: #cfcfcf;
+	font-size: 2em;
+}
+.content-page-discussion-content-meta p{
+	float: left;
+	color: #cfcfcf;
+	font: 1.3em 'LatoRegular';
+	line-height: 20px;
+	margin-left: 0px;
+}
+.content-page-discussion-content-postbox p{
+	margin-right: 10px;
+	font: 1.6em 'LatoLight';
+	line-height: 24px;
+	margin-left: 0px;
+}
+.content-page-discussion-content-postbox a{
+	font-size: 1em;
+}
+.content-page-discussion-content-postbox-social a{
+	font: 1.2em 'LatoBold';
+	/*color: #2ea4d4;*/
+	text-transform: uppercase;
+	float: left;
+	margin-right: 12px;
+}
+.content-page-discussion-content-postbox textarea{
+	font: 1.6em 'LatoLight';
+	color: #333;
+	border: none;
+	margin-bottom: 0px;
+	line-height: 24px;
+	resize: none;
+	overflow: hidden;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	padding-left: 0px;
+}
+.content-page-discussion-content-postbox-post-button{
+	padding: 11px 24px;
+	margin-right: 5px;
+	color: #fff;
+	background: #333;
+	font: 1.4em 'LatoBold';
+	cursor: pointer;
+	float: right;
+}
+.content-page-discussion-content-reply-post{
+	margin-left: 80px;
+}
+
+/* END OF CSS3 */
+/* ------------------------------------------------------ */
+
+/* CSS4 -- CONTENT PAGE SIDEBAR SECTION */
+
+.content-page-news-box{
+	background: #fff;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.content-page-news-box img{
+	width: 270px;
+	height: 100px;
+}
+.content-page-news-box-content{
+	height: auto;
+	margin: 20px;
+}
+.content-page-news-box-content h1{
+	font: 1.8em 'LatoBlack';
+}
+.content-page-news-box-category{
+	font: 1.4em 'LatoBold';
+	color: #2ea4d4;
+	text-transform: uppercase;
+}
+.content-page-news-box-meta{
+	color: #cfcfcf;
+	line-height: 20px;
+	bottom: 0px;
+	padding-bottom: 5px;
+	margin-left: 20px;
+}
+.content-page-news-box-meta i{
+	font-size: 2em;
+	float: left;
+	margin-right: 5px;
+}
+.content-page-news-box-meta p{
+	font: 1.4em 'LatoRegular';
+	float: left;
+	margin-right: 12px;
+}
+.content-page-news-meta-point{
+	margin-left: 3px;
+	float: left;
+	color: #ffffff;
+	background: #cfcfcf;
+	padding: 0 12px;
+	border-radius: 12px;
+	font-size: 1.1em;
+}
+.content-page-news-box-advertise{
+	width: 270px;
+	height: 249px;
+	background: #fff;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* END OF CSS4 */
+/* ------------------------------------------------------ */
+
+/* CSS5 -- CONTENT FOOTER SECTION */
+
+.content-page-content-footer{
+	margin-left: 30px;
+}
+.content-page-content-tags{
+	font-family: 'LatoRegular';
+	border-bottom: 1px solid #c0c1c3;
+	padding-bottom: 14px;
+	margin-bottom: 20px;
+}
+.content-page-content-tags p{
+	font-size: 1.6em;
+} 
+.content-page-content-tags a{
+	font-size: 1em;
+	margin: 0 3px;
+} 
+.content-page-content-rating{
+	font-family: 'LatoRegular';
+	margin-bottom: 20px;
+}
+.content-page-content-rating p{
+	font-size: 1.6em;
+}
+.content-page-content-rating a{
+	border-radius: 16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border: 1px solid #2ea4d4;
+	display: inline-block;
+	font: 1em 'LatoBold';
+	line-height: 24px;
+	margin-left: 10px;
+	text-align: center;
+	width: 25px;
+	text-decoration: none;
+}

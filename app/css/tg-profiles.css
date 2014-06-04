@@ -1,0 +1,316 @@
+/*
+
+This file should have all template elements that are specific to profile pages.
+Examples...
+User profiles:
+http://ngtg.techgrind.asia:8000/#/profile/people
+Startup profiles:
+http://ngtg.techgrind.asia:8000/#/profile/startups
+
+*/
+
+/* Profile Header */
+
+.profile-page-header {
+	background: #f8f8fa;
+	width: 100%;
+	min-height: 280px;
+	position: relative;
+	text-align: center;
+}
+
+.profile-page-header-container {
+	margin: 0 auto;
+	text-align: left;
+}
+
+.profile-page-header-user-image {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 120px 120px;
+	float: left;
+	position: relative;
+	margin-top: 20px;
+}
+
+.profile-page-header-profile {
+	margin: 40px 0 0 25px;
+	float: left;
+	position: relative;
+}
+
+.profile-page-header-profile-join-date {
+	font: 1.4em 'LatoRegular';
+	color: #999;
+}
+
+.profile-page-header-profile-name {
+	font: 2.4em 'LatoBlack';
+	color: #333;
+	margin-top: 0;
+	margin-bottom: 7px;
+}
+
+.profile-page-header-profile-role {
+	font: 1.8em 'LatoRegular';
+	color: #333;
+	margin-bottom: 7px;
+}
+
+.profile-page-header-profile-location {
+	font: 1.4em 'LatoRegular';
+	color: #999;
+}
+
+.profile-page-header-profile-location i.fa {
+	font-size: 1.4em;
+	color: #999;
+	margin-right: 5px;
+}
+
+.profile-page-header-stat {
+	float: right;
+	position: relative;
+	margin-top: 70px;
+}
+
+.profile-page-header-stat li {
+	display: inline-block;
+	text-align: center;
+	font: 1.4em 'LatoRegular';
+	color: #333;
+	margin-left: 65px;
+}
+
+.profile-page-header-stat-number {
+	font: 1.71em 'LatoBlack';
+	color: #2ea4d4;
+}
+
+.profile-page-header-button-group {
+	float: right;
+	margin-left: 100px;
+	margin-top: 110px;
+}
+
+.profile-page-header-button {
+	padding: 11px 24px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	color: #fff;
+	background: #333;
+	font: 1.4em 'LatoBold';
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.profile-page-header-button:hover {
+	background: #2ea4d4;
+}
+
+/* Profile: Overview; */
+
+.profile-page-overview-box {
+	background: #fff;
+	position: relative;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	padding: 25px 30px;
+	margin: 0 30px 30px 0;
+}
+
+.profile-page-overview-box-title {
+	font: 1.8em 'LatoBold';
+	color: #333;
+	text-transform: uppercase;
+	width: 100%;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #e5e5e5;
+	margin-top: 0;
+}
+
+.profile-page-overview-box-content {
+	font: 1.6em 'LatoLight';
+	color: #333;
+	margin-top: 15px;
+}
+
+.profile-page-overview-box-company-box {
+	width: 100%;
+	min-height: 100px;
+	margin-bottom: 10px;
+}
+
+.profile-page-overview-box-company-box-image {
+	display: inline-block;
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin-right: 20px;
+}
+
+.profile-page-overview-box-company-box-name {
+	font: 1.6em 'LatoBlack';
+	color: #000;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.profile-page-overview-box-company-box-role {
+	font: 1.6em 'LatoLight';
+	color: #000;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.profile-page-overview-box-company-box-website {
+	display: block;
+}
+
+.profile-page-overview-box-company-box-website a {
+	font: 1.6em 'LatoLight';
+}
+
+.profile-page-overview-box-web {
+	margin: 0;
+	padding: 0;
+}
+
+.profile-page-overview-box-web li {
+	display: inline-block;
+	background: #333;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 15px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.profile-page-overview-box-web i.fa {
+	color: #fff;
+	font-size: 2.5em;
+	margin-top: 12px;
+}
+
+/* Profile: Bio; */
+
+.profile-page-bio {
+
+}
+
+.profile-page-bio-duration {
+	width: 100px;
+	float: left;
+	margin-top: 20px;
+}
+
+.profile-page-bio-duration-time {
+	width: 100%;
+	display: block;
+	text-align: right;
+	font: 1.8em 'LatoRegular';
+	color: #333;
+	text-transform: uppercase;
+}
+
+.profile-page-bio-duration-arrow {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+.profile-page-bio-duration-arrow i.fa {
+	color: #333;
+	font-size: 1.8em;
+}
+
+.profile-page-bio-box{
+	margin-bottom: 30px;
+	background: #fff;
+	margin-left: 140px;
+	padding: 25px 30px;
+	position: relative;
+	-webkit-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-moz-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-ms-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-o-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+}
+
+.profile-page-bio-box:before { /* this class draw the triangle at the left of the post */
+	content: "";
+	width: 0;
+	height: 0;
+	border-bottom: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #fff;
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: 21px;
+	left: -10px;
+}
+
+.profile-page-bio-box-title {
+	font: 1.8em 'LatoBold';
+	color: #333;
+	text-transform: uppercase;
+	width: 100%;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #e5e5e5;
+	margin-top: 0;
+}
+
+.profile-page-bio-box-detail {
+	width: auto;
+	min-height: 100px;
+	margin-top: 20px;
+}
+
+.profile-page-bio-box-image {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin-right: 20px;
+	float: left;
+}
+
+.profile-page-bio-box-name {
+	font: 2.4em 'LatoBlack';
+	color: #000;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.profile-page-bio-box-website {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.profile-page-bio-box-website a {
+	font: 1.6em 'LatoLight';
+}
+
+.profile-page-bio-box-role {
+	font: 1.6em 'LatoLight';
+	color: #000;
+	display: block;
+	margin-left: 120px;
+}
+
+.profile-page-bio-box-edit {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.profile-page-bio-box-edit i.fa {
+	font-size: 3em;
+	color: #999;
+}
