@@ -13,31 +13,31 @@ This file should have all template elements that are specific
 */
 
 /* FONT ADDED
------------------------------------------------ */
+----------------------------------------- */
 @font-face {
-        font-family: 'LatoLight';
-        src: url('../font/lato/Lato-Light.ttf') format('truetype');
-      }
-      @font-face {
-        font-family: 'LatoLightItalic';
-        src: url('../font/lato/Lato-LightItalic.ttf') format('truetype');
-      }
-      @font-face {
-        font-family: 'LatoBold';
-        src: url('../font/lato/Lato-Bold.ttf') format('truetype');
-      }
-      @font-face {
-        font-family: 'LatoBlack';
-        src: url('../font/lato/Lato-Black.ttf') format('truetype');
-      }
-      @font-face {
-        font-family: 'LatoRegular';
-        src: url('../font/lato/Lato-Regular.ttf') format('truetype');
-      }
+	font-family: 'LatoLight';
+	src: url('../font/lato/Lato-Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'LatoLightItalic';
+	src: url('../font/lato/Lato-LightItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'LatoBold';
+	src: url('../font/lato/Lato-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'LatoBlack';
+	src: url('../font/lato/Lato-Black.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'LatoRegular';
+	src: url('../font/lato/Lato-Regular.ttf') format('truetype');
+}
 
 
 /* GENERAL
------------------------------------------------ */
+----------------------------------------- */
 /* Prevent any object from being highlighted upon touch event */
 * { -webkit-tap-highlight-color: rgba(0,0,0,0); }
 /* Set global font size */
@@ -50,14 +50,11 @@ html, body {
 	width: 100%;
 	padding:0px;
 	margin:0px;
-	font-size: 62.5%; /* this change the base font-size to 10px in order to easily manage font size with em */
+	/* font-size: 62.5%; /* this change the base font-size to 10px in order to easily manage font size with em */
+	font-size: 10px; /* no ^^, <--- this changes the font-size to 10px....percentages base off DPI resolution //efraim */
+	font-family: 'LatoLight';
+	color: #333;
 }
-body{
-    font-family: 'LatoLight';
-    color: #333;
-    font-size: 62.5%;
-}
-
 [class*="span"] {
 	padding:0px;
 	margin:0px;
@@ -97,43 +94,46 @@ textarea:-ms-input-placeholder{
 	user-select: none;
 }
 
-/* TOP HEADER NAV
------------------------------------------------ */
-
-.techgrind-header-area{
-	margin-top: 20px;
+/* NAVBAR-TOP
+----------------------------------------- */
+.tg-navbar-top {
+	height: 60px;
+	background-color: #eee;
+	top: 0px;
+	margin: 0px;
+	padding: 0px;
 }
-.techgrind-header-area i{
+.tg-navbar-top i {
 	float: right;
 	font-size: 1.7em;
 	line-height: 25px;
 }
-.techgrind-logo{
-	width: 106px;
-	height: 25px;
+.tg-navbar-top-logo {
+	width: 200px;
+	height: 40px;
 	background: url('../img/logo.png') top left no-repeat;
 	display: block;
-	text-indent: -9999px;
 	float: left;
+	background-color: #000;
 }
-.techgrind-header-account-area{
+.tg-navbar-top-settings {
 	color: #999;
 	float: right;
 	font-family: 'LatoBold';
 	line-height: 2em;
 }
-.techgrind-header-account-area i{
+.tg-navbar-top-settings i {
 	float: left;
 	margin-right: 6px;
 	font-size: 1.7em
 }
-.techgrind-header-account-area p{
+.tg-navbar-top-settings p {
 	color: #2ea4d4;
 	float: left;
 	margin-right: 15px;
 	font-size: 1.4em;
 }
-.techgrind-header-account-area-user-image{
+.tg-navbar-top-settings-img {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
@@ -145,46 +145,47 @@ textarea:-ms-input-placeholder{
 	bottom: 10px;
 }
 
-/* END OF TOP HEADER NAV */
-/* ------------------------------------------------------ */
+/* END > NAVBAR-TOP
+----------------------------------------- */
 
-/* LEFT NAV
------------------------------------------------ */
+/* NAVBAR-LEFT
+----------------------------------------- */
 
-.techgrind-left-nav-area{
+.tg-navbar-left {
 	/* position: fixed; */   /* turn on this one in real page */
 	text-align: center;
 	top: 120px;
 	width: 50px;
 }
-.techgrind-left-nav-area i{
+.tg-navbar-left i {
 	font-size: 2.3em;
 	width: 50px;
 	height: 50px;
 	color: #999999;
 	line-height: 50px;
 }
-.techgrind-left-nav-area .current-page i{
+.tg-navbar-left .active i {
 	background: #333;
 	color: #e7e9ed;
 }
-.techgrind-left-nav-area i:hover{
+.tg-navbar-left i:hover {
 	background: #333;
 	color: #e7e9ed;
 }
 
-/* END OF LEFT NAV */
-/* ------------------------------------------------------ */
+/* END > NAVBAR-LEFT
+----------------------------------------- */
 
-/* TAB PAGE NAV
------------------------------------------------ */
-.pagetabs {
+/* MAINTABS
+----------------------------------------- */
+/* this class is the main-page tabs that load plugin pages in them */
+.tg-maintabs {
 	float: left;
 	position: relative;
 	margin: 66px 0 0 0;
 }
 
-.pagetabs li {
+.tg-maintabs li {
 	display: inline-block;
 	font: 1.8em 'LatoRegular';
 	color: #000;
@@ -193,33 +194,31 @@ textarea:-ms-input-placeholder{
 	cursor: pointer;
 }
 
-.pagetabs-active {
+.tg-maintabs-active {
 	font-family: 'LatoBlack' !important;
 	background: #e7e9ed;
 }
-
-/* END OF TAB PAGE NAV
------------------------------------------------ */
+/* END > MAINTABS
+----------------------------------------- */
 
 /* FOOTER
------------------------------------------------ */
-
-.techgrind-footer{
+----------------------------------------- */
+.tg-footer {
 	margin-top: 20px;
 }
-.techgrind-footer-link-area a{
+.tg-footer a {
 	margin-right: 15px;
 	text-decoration: none;
 	float: left;
 	color: #333;
 	font-size: 1.4em;
 }
-.techgrind-footer-social-area{
+.tg-footer-social {
 	float: right;
 	position: relative;
 	bottom: 10px;
 }
-.techgrind-footer-social-area i{
+.tg-footer-social i {
 	width: 26px;
 	height: 26px;
 	border-radius: 50%;
@@ -233,104 +232,38 @@ textarea:-ms-input-placeholder{
 	line-height: 28px;
 }
 
-/* END OF FOOTER */
-/* ------------------------------------------------------ */
+/* END > FOOTER
+----------------------------------------- */
 
-/* INDEX PAGE
------------------------------------------------ */
-/* index page header */
-
-.index-page-title h1 {
+/* MAINPAGE
+----------------------------------------- */
+/* these are the overall styles used in outlining each mainpage (container pages, eg: home, events, resources, products, profiles) */
+.tg-mainpage h1 {
 	float: left;
 	font: 2.4em 'LatoBlack';
 }
-.index-page-title-button {
+.tg-mainpage-button {
 	float: right;
 	position: relative;
 	top: 5px;
 }
-.index-page-title-button i {
+.tg-mainpage-button i {
 	font-size: 1.6em;
 	float: left;
 	margin-right: 25px;
 	line-height: 42px;
 }
-.index-page-title-button i span {
+.tg-mainpage-button i span {
 	font: 1.125em 'LatoBlack';
 	margin-left: 8px;
 }
+/* END > MAINPAGE
+----------------------------------------- */
 
-/* news box */
-.index-page-news-box {
-	background: #fff;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	position: relative;
-}
-.index-page-news-box img {
-	width: 320px;
-	height: 180px;
-}
-.index-page-news-box-content {
-	margin: 20px;
-	height: 240px;
-}
-.index-page-news-box-category {
-	font: 1.4em 'LatoBold';
-	color: #2ea4d4;
-	text-transform: uppercase;
-}
-.index-page-news-box-content h1 {
-	margin-top: 5px;
-	font: 2.4em 'LatoBlack';
-}
-.index-page-news-box-content p {
-	font-size: 1.4em;
-}
-.index-page-news-box-meta {
-	color: #cfcfcf;
-	font-family: 'LatoRegular';
-	line-height: 20px;
-	position: absolute;
-	left: 20px;
-	bottom: 20px;
-}
-.index-page-news-box-meta i {
-	font-size: 2em;
-	float: left;
-	margin-right: 12px;
-}
-.index-page-news-box-meta i span {
-	margin-left: 5px;
-	font: 0.7em 'LatoRegular';
-	position: relative;
-	bottom: 2px;
-}
-.index-page-news-box-meta-point{
-	margin-left: 3px;
-	float: left;
-	color: #ffffff;
-	background: #cfcfcf;
-	padding: 0 12px;
-	border-radius: 12px;
-	font-size: 1.1em;
-}
-.index-page-news-box-advertise{
-	background: #fff;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	position: relative;
-}
 
-/* Styling for responsive layout
------------------------------------------------ */
-
+/* -----------------------------------------
+	RESPONSIVE DESIGN
+----------------------------------------- */
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	body {

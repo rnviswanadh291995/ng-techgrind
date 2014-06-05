@@ -8,36 +8,174 @@ http://ngtg.techgrind.asia:8000/#/article/XYZ
 
 */
 
-/* CSS1 -- TITLE OF CONTENT PAGE SECTION */
 
-.content-page-title{ 
+/* CONTENT-BOX 
+----------------------------------------- */
+.content-box {
+	background: #fff;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	position: relative;
+}
+.content-box img {
+	width: 320px;
+	height: 180px;
+}
+.content-box-content {
+	margin: 20px;
+	height: 240px;
+}
+.content-box-category {
+	font: 1.4em 'LatoBold';
+	color: #2ea4d4;
+	text-transform: uppercase;
+}
+.content-box-content h1 {
+	margin-top: 5px;
+	font: 2.4em 'LatoBlack';
+}
+.content-box-content p {
+	font-size: 1.4em;
+}
+.content-box-meta {
+	color: #cfcfcf;
+	font-family: 'LatoRegular';
+	line-height: 20px;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+}
+.content-box-meta i {
+	font-size: 2em;
+	float: left;
+	margin-right: 12px;
+}
+.content-box-meta i span {
+	margin-left: 5px;
+	font: 0.7em 'LatoRegular';
+	position: relative;
+	bottom: 2px;
+}
+.content-box-meta-point {
+	margin-left: 3px;
+	float: left;
+	color: #ffffff;
+	background: #cfcfcf;
+	padding: 0 12px;
+	border-radius: 12px;
+	font-size: 1.1em;
+}
+.content-box-advertise {
+	background: #fff;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	position: relative;
+}
+
+/* END > CONTENT-BOX
+----------------------------------------- */
+
+/* CONTENT-BOX-SMALL
+----------------------------------------- */
+.content-box-small {
+	background: #fff;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.content-box-small img {
+	width: 270px;
+	height: 100px;
+}
+.content-box-small-content {
+	height: auto;
+	margin: 20px;
+}
+.content-box-small-content h1 {
+	font: 1.8em 'LatoBlack';
+}
+.content-box-small-category {
+	font: 1.4em 'LatoBold';
+	color: #2ea4d4;
+	text-transform: uppercase;
+}
+.content-box-small-meta {
+	color: #cfcfcf;
+	line-height: 20px;
+	bottom: 0px;
+	padding-bottom: 5px;
+	margin-left: 20px;
+}
+.content-box-small-meta i {
+	font-size: 2em;
+	float: left;
+	margin-right: 5px;
+}
+.content-box-small-meta p {
+	font: 1.4em 'LatoRegular';
+	float: left;
+	margin-right: 12px;
+}
+.content-box-small-points {
+	margin-left: 3px;
+	float: left;
+	color: #ffffff;
+	background: #cfcfcf;
+	padding: 0 12px;
+	border-radius: 12px;
+	font-size: 1.1em;
+}
+.content-box-small-advertise {
+	width: 270px;
+	height: 249px;
+	background: #fff;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+}
+/* END > CONTENT-BOX-SMALL
+----------------------------------------- */
+
+/* CONTENT-FULLPAGE
+----------------------------------------- */
+.content-fullpage-category {
+	font: 1.4em 'LatoBold';
+	color: #2ea4d4;
+	text-transform: uppercase;
+}
+.content-fullpage-title { 
 	font-family: 'LatoLight';
 	color: #2ea4d4;
 	margin-left: 30px;
 	font-size: 1em;
 }
-.content-page-title h1{ 
+.content-fullpage-title h1 { 
 	font: 4em 'LatoBlack';
 	color: #333;
 }
-.content-page-category{
-	font: 1.4em 'LatoBold';
-    color: #2ea4d4;
-    text-transform: uppercase;
-}
-.content-page-meta{
+.content-fullpage-meta {
 	margin-bottom: 7px;
-    margin-top: 15px;
+	margin-top: 15px;
 }
-.content-page-meta p{
+.content-fullpage-meta p {
 	float: left;
 	font-size: 1.4em;
 	color: #333;
 }
-.content-page-meta a{
+.content-fullpage-meta a {
 	font-size: 1em;
 }
-.content-page-author-image{  /* need background image to completely display */ 
+.content-fullpage-meta-author img {  /* need background image to completely display >>>>> no you dont, just make it an img tag and send "img src" from angular -efraim */ 
 	width: 22px;
 	height: 22px;
 	border-radius: 50%;
@@ -49,71 +187,74 @@ http://ngtg.techgrind.asia:8000/#/article/XYZ
 	bottom: 2px;
 	margin: 0px 7px;
 }
-.content-page-stats{
+.content-fullpage-stats { /* this is the "stats box" */
 	border-top: 1px solid #c0c1c3;
-    border-bottom: 1px solid #c0c1c3;
-    padding: 14px 0px 7px 0px;
-    margin-bottom: 20px;
+	border-bottom: 1px solid #c0c1c3;
+	padding: 14px 0px 7px 0px;
+	margin-bottom: 20px;
 }
-.content-page-stats-meta, .content-page-stats-meta-emphasize{
-    float: left;
-    margin-right: 42px;
+.content-fullpage-stats-points { /* points count */
+	float: left;
+	margin-right: 42px;
 }
-.content-page-stats-meta span{
-	font: 3em 'LatoLight';
-    color: #2ea4d4;
+.content-fullpage-stats-points span { /* number */
+	font: 3em 'LatoBlack';
+  color: #2ea4d4;
 }
-.content-page-stats-meta p{
-    font: 1.2em 'LatoRegular';
-    text-transform: uppercase;
-    color: #333;
-}
-.content-page-stats-meta-emphasize span{
-    font: 3em 'LatoBlack';
-}
-.content-page-stats-meta-emphasize p{
+.content-fullpage-stats-points p { /* text label */
 	font: 1.2em 'LatoRegular';
 	text-transform: uppercase;
 	color: #333;
 }
-
-/* END OF CSS1 */
-/* ------------------------------------------------------ */
-
-/* CSS2 -- CONTENT PAGE CONTENT SECTION */
-
-.content-page-content{
+.content-fullpage-stats-comments { /* comments count */
+	float: left;
+	margin-right: 42px;
+}
+.content-fullpage-stats-comments span { /* number */
+	font: 3em 'LatoBlack';
+	color: #2ea4d4;
+}
+.content-fullpage-stats-comments p { /* text label */
+	font: 1.2em 'LatoRegular';
+	text-transform: uppercase;
+	color: #333;
+}
+/* make sure you review these classes and make sure they work, i changed names. should have all elements here now */
+.content-fullpage-content {
 	margin: 30px 0px 35px 0px;
 	color: #333;
 }
-.content-page-content p{
+.content-fullpage-content p {
 	margin-left: 30px;
-    margin-right: 10px;
-    font: 1.6em 'LatoLight';
-    line-height: 24px;
+	margin-right: 10px;
+	font: 1.6em 'LatoLight';
+	line-height: 24px;
 }
-.content-page-content a{
+.content-fullpage-content a {
 	font-size: 1em;
 }
-.content-page-content h2{
+.content-fullpage-content h2 {
 	font: 2.4em 'LatoBold';
-    margin: 0px 10px 30px 30px;
-    line-height: 24px;
+	margin: 0px 10px 30px 30px;
+	line-height: 24px;
 }
-.content-page-content img{
-    margin-top: 20px;
-    margin-bottom: 20px;
+.content-fullpage-content img {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
-.content-page-content-caption{
-    font: 1.4em 'LatoLightItalic';
-    margin: 0px 10px 25px 30px;
-    line-height: 24px;
+.content-fullpage-content-caption {
+	font: 1.4em 'LatoLightItalic';
+	margin: 0px 10px 25px 30px;
+	line-height: 24px;
 }
 
-/* END OF CSS2 */
-/* ------------------------------------------------------ */
+/* END > CONTENT-FULLPAGE
+----------------------------------------- */
 
 /* CSS3 -- CONTENT PAGE'S DISCUSSION SECTION */
+/* we will leave this for now - although this will probably be implemented in a social_* plugin.
+	yes, that means that this content_* plugin, will also inject a social_* plugin inside of itself.
+	i dont want to do that right now, as it will make it too complicated. */
 
 .content-page-discussion{
 	margin-left: 30px;
@@ -255,98 +396,32 @@ http://ngtg.techgrind.asia:8000/#/article/XYZ
 /* END OF CSS3 */
 /* ------------------------------------------------------ */
 
-/* CSS4 -- CONTENT PAGE SIDEBAR SECTION */
-
-.content-page-news-box{
-	background: #fff;
-	margin-bottom: 30px;
-	margin-top: 30px;
-	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-}
-.content-page-news-box img{
-	width: 270px;
-	height: 100px;
-}
-.content-page-news-box-content{
-	height: auto;
-	margin: 20px;
-}
-.content-page-news-box-content h1{
-	font: 1.8em 'LatoBlack';
-}
-.content-page-news-box-category{
-	font: 1.4em 'LatoBold';
-	color: #2ea4d4;
-	text-transform: uppercase;
-}
-.content-page-news-box-meta{
-	color: #cfcfcf;
-	line-height: 20px;
-	bottom: 0px;
-	padding-bottom: 5px;
-	margin-left: 20px;
-}
-.content-page-news-box-meta i{
-	font-size: 2em;
-	float: left;
-	margin-right: 5px;
-}
-.content-page-news-box-meta p{
-	font: 1.4em 'LatoRegular';
-	float: left;
-	margin-right: 12px;
-}
-.content-page-news-meta-point{
-	margin-left: 3px;
-	float: left;
-	color: #ffffff;
-	background: #cfcfcf;
-	padding: 0 12px;
-	border-radius: 12px;
-	font-size: 1.1em;
-}
-.content-page-news-box-advertise{
-	width: 270px;
-	height: 249px;
-	background: #fff;
-	margin-bottom: 30px;
-	margin-top: 30px;
-	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-/* END OF CSS4 */
-/* ------------------------------------------------------ */
-
-/* CSS5 -- CONTENT FOOTER SECTION */
-
-.content-page-content-footer{
+/* CONTENT-FULLPAGE-FOOTER
+----------------------------------------- */
+.content-fullpage-footer {
 	margin-left: 30px;
 }
-.content-page-content-tags{
+.content-fullpage-footer-tags {
 	font-family: 'LatoRegular';
 	border-bottom: 1px solid #c0c1c3;
 	padding-bottom: 14px;
 	margin-bottom: 20px;
 }
-.content-page-content-tags p{
+.content-fullpage-footer-tags p {
 	font-size: 1.6em;
 } 
-.content-page-content-tags a{
+.content-fullpage-footer-tags a {
 	font-size: 1em;
 	margin: 0 3px;
 } 
-.content-page-content-rating{
+.content-fullpage-footer-rating {
 	font-family: 'LatoRegular';
 	margin-bottom: 20px;
 }
-.content-page-content-rating p{
+.content-fullpage-footer-rating p {
 	font-size: 1.6em;
 }
-.content-page-content-rating a{
+.content-fullpage-footer-rating a {
 	border-radius: 16px;
 	-moz-border-radius: 16px;
 	-webkit-border-radius: 16px;
@@ -359,3 +434,5 @@ http://ngtg.techgrind.asia:8000/#/article/XYZ
 	width: 25px;
 	text-decoration: none;
 }
+/* END > CONTENT-FULLPAGE-FOOTER
+----------------------------------------- */
