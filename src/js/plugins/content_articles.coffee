@@ -30,13 +30,17 @@
 # example-content -> displayed information ==> action-on-interaction:
 # news/article/tutorial/guide -> detailed info ==> full-content-page
 # 
+# Example Output: {"authors":[],
+#               "path":"/home/techgrind/articles/all/devices-and-services-battle-of-screens",
+#               "description":"While I walk across the aisles of a leading electronic store, I am shocked, confused and yet Happy. In the midst of my prolonged thinking of the..",
+#               "title":"Devices and Services: Battle of Screens",
+#               "publication_date":1401420650,
+#               "oid":7212,
+#               "class":"Container",
+#               "name":"devices-and-services-battle-of-screens"}
+#
 appModule = angular.module("TechGrindApp.controllers.content.articles", [])
-appModule.controller "ContentNewsCtrl", [
-  "$scope"
-  "steam"
-  "$routeParams"
-  "$location"
-  ($scope, steam, rp, loc) ->
+appModule.controller "ContentNewsCtrl", [ "$scope", "steam", "$routeParams", "$location", ($scope, steam, rp, loc) ->
     $scope.goToArticle = (articleID) ->
       loc.path "content/" + articleID
       return
