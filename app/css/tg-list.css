@@ -1,0 +1,431 @@
+/*
+
+This file should have all template elements that are specific to the event-management pages.
+Examples...
+Events list page:
+http://ngtg.techgrind.asia:8000/#/events
+Event page:
+http://ngtg.techgrind.asia:8000/#/events/SLAP
+
+*/
+
+/* CSS2 - EVENT AREA
+-----------------------------------------------------*/
+
+.event-page-event{
+	margin-bottom: 30px;
+	cursor: pointer;
+}
+.event-page-event:hover .event-page-event-date-area{
+	color: #2ea4d4;
+}
+.event-page-event:hover .event-page-event-content{
+	background: rgba(255,255,255,0.9);
+}
+.event-page-event:hover .event-page-event-content:before{
+	border-right: 10px solid rgba(255,255,255,0.9);
+}
+.event-page-event-date-area{
+	text-align: center;
+	width: 80px;
+	float: left;
+	position: relative;
+	bottom: 5px;
+}
+.event-page-event-date-area-day{
+	font: 6em 'LatoLight';
+}
+.event-page-event-date-area-month{
+	font: 2em 'LatoRegular';
+}
+.event-page-event-content{
+	margin-bottom: 20px;
+	background: #fff;
+	margin-left: 100px;
+	padding: 25px 30px;
+	position: relative;
+	-webkit-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-moz-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-ms-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	-o-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+	filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
+}
+.event-page-event-content:before{ /* this class draw the triangle at the left of the post */
+	content: "";
+	width: 0;
+	height: 0;
+	border-bottom: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #fff;
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: 21px;
+	left: -10px;
+}
+.event-page-event-content-category{
+	font: 1.4em 'LatoBold';
+	color: #2ea4d4;
+	text-transform: uppercase;	
+}
+.event-page-event-content h1{
+	margin-top: 5px;
+	font: 2.4em 'LatoBlack';
+}
+.event-page-event-content p{
+	margin-bottom: 20px;
+	font: 1.8em 'LatoRegular';
+	color: #999;
+}
+.event-page-event-content i{
+	display: block;
+	color: #333;
+	font-size:2em ;
+}
+.event-page-event-content i span{
+	margin-left: 8px;
+	font: 0.7em 'LatoRegular';
+	color: #333;
+}
+.event-page-event-content-date{
+	margin-bottom: 5px;
+}
+.event-page-event-content-location{
+	margin-left: 4px;
+}
+.event-page-event-content-location span{
+	margin-left: 12px !important;
+}
+
+/*CSS3 - EVENT DETAIL
+------------------------------------------------------*/
+
+.event-page-detail-header{
+	margin-left: 30px;
+	margin-bottom: 40px;
+}
+.event-page-detail-header h1{
+	margin-top: 5px;
+	font: 4em 'LatoBlack';
+}
+.event-page-detail-header p{
+	margin-bottom: 20px;
+	font: 1.8em 'LatoRegular';
+	color: #999;
+}
+.event-page-detail-header i{
+	display: block;
+	color: #333;
+	font-size:2em ;
+}
+.event-page-detail-header i span{
+	margin-left: 8px;
+	font: 0.7em 'LatoRegular';
+	color: #333;
+}
+.event-page-detail-date{
+	margin-bottom: 5px;
+}
+.event-page-detail-location{
+	margin-left: 4px;
+}
+.event-page-detail-location span{
+	margin-left: 12px !important;
+}
+
+.event-page-detail-section-header{
+	font: 1.8em 'LatoBold';
+	color: #333;
+	margin-bottom: 15px;
+	margin-left: 30px;
+	text-transform: uppercase;
+}
+.event-page-detail-content{
+	background: #fff;
+	padding: 30px 0px 20px 0px;
+	margin-bottom: 40px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.event-page-detail-content p{
+	font: 1.6em 'LatoLight';
+	color: #333;
+	margin-left: 30px;
+	margin-bottom: 30px;
+	line-height: 24px;
+}
+.event-page-detail-content p a{
+	font: 1em 'LatoLight';
+	color: #2ea4d4;
+}
+.event-page-detail-content img{
+	margin-bottom: 20px;
+}
+.event-page-detail-content h1{
+	font: 2.4em 'LatoBold';
+	color: #333;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+.event-page-detail-sponsors{
+	margin-bottom: 40px;
+}
+.event-page-detail-sponsors img{
+	float: left;
+	margin-right: 30px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.event-page-detail-whoisgoing{
+	background: #fff;
+	padding: 30px 0px 15px 30px;
+	margin-bottom: 40px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	text-align: center;
+}
+.event-page-detail-whoisgoing-area{
+	margin-bottom: 15px;
+}
+.event-page-detail-whoisgoing-user{
+	width: 160px;
+	float: left;
+	margin-right: 60px;
+}
+.event-page-detail-whoisgoing-user-image{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60px 60px;
+	float: left;
+	position: relative;
+	margin-right: 15px;
+}
+.event-page-detail-whoisgoing-user p{
+	font: 1.4em 'LatoRegular';
+	line-height: 60px;  /* need vertical align here!!!! */
+	color: #333;
+}
+.event-page-detail-whoisgoing-show-all{
+	font: 1.4em 'LatoBold';
+	color: #2ea4d4;
+	text-transform: uppercase;
+}
+
+.event-page-detail-user-profile{
+	background: #333;
+	padding: 30px 10px 15px 10px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	text-align: center;
+	width: 240px;
+}
+.event-page-detail-user-profile-user-image{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80px 80px;
+	position: relative;
+	margin: auto;
+	margin-bottom: 15px;
+}
+.event-page-detail-user-profile-name{
+	font: 1.8em 'LatoBold';
+	color: #fff;
+	line-height: 24px;
+	margin-bottom: 10px;
+}
+.event-page-detail-user-profile-position, .event-page-detail-user-profile-location{
+	font: 1.4em 'LatoRegular';
+	color: #999;
+	margin-bottom: 10px;
+}
+.event-page-detail-user-info{
+	margin-bottom: 15px;
+	border-bottom: 1px solid #666;
+}
+.event-page-detail-user-email{
+	margin-top: 14px;
+}
+.event-page-detail-user-email i{
+	font-size: 2em;
+	color: #666;
+}
+/*sidebar*/
+.event-page-sidebar-purchase-button{
+	background: #2ea4d4;
+	width: 100%;
+	text-align: center;
+	padding: 20px 0px 15px 0px;
+	margin-bottom: 20px; 
+}
+.event-page-sidebar-purchase-button span{
+	font: 1.8em 'LatoBold';
+	color: #e7e9ed;
+	text-transform: uppercase;
+}
+.event-page-sidebar-add-to-calendar-text{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.event-page-sidebar-add-to-calendar-text i{
+	color: #999;
+	font-size: 2em;
+}
+.event-page-sidebar-add-to-calendar-text i span{
+	font: 0.8em 'LatoRegular';
+	color: #999;
+	margin-left:8px;
+}
+.event-page-sidebar-price-box{
+	background: #fff;
+	padding: 25px 0px 25px 0px;
+	margin-bottom: 20px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	text-align: center;
+	font: 3em 'LatoBold';
+}
+.event-page-sidebar-user-profile{
+	background: #fff;
+	padding: 30px 10px 15px 10px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	text-align: center;
+	margin-bottom: 20px;
+}
+.event-page-sidebar-user-info{
+	margin-bottom: 15px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.event-page-sidebar-user-profile-user-image{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80px 80px;
+	position: relative;
+	margin: auto;
+	margin-bottom: 15px;
+}
+.event-page-sidebar-user-profile-name{
+	font: 1.8em 'LatoBold';
+	color: #333;
+	line-height: 24px;
+	margin-bottom: 10px;
+}
+.event-page-sidebar-user-email{
+	margin-top: 14px;
+}
+.event-page-sidebar-user-email i{
+	font-size: 2em;
+	color: #333;
+}
+.event-page-sidebar-share-box{
+	background: #fff;
+	padding: 25px 0px 25px 0px;
+	margin-bottom: 20px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	font: 3em 'LatoBold';
+}
+.event-page-sidebar-share-box-social-area{
+	margin: 0 auto;
+	width: 266px;
+}
+.event-page-sidebar-share-box-social-area i{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50px 50px;
+	text-align: center;
+	color: #fff;
+	background: #333;
+	font-size: 2.2em;
+	line-height: 50px;
+}
+.event-page-sidebar-share-box-social-area a{
+	margin-right: 20px;
+}
+.event-page-sidebar-share-box-social-area a:last-child{
+	margin-right: 0px;
+}
+
+/*CSS4 - ADD LINK BOX
+------------------------------------------------------*/
+
+.event-page-add-link-box{
+	width: 700px;
+	padding: 20px 30px;
+	background: #666;
+}
+.event-page-add-link-box h1{
+	font: 2em 'LatoBold';
+	color: #fff;
+	margin-bottom: 25px;
+}
+.event-page-add-link-box textarea{
+	font: 1.4em 'LatoRegular';
+	color: #333;
+    border: none;
+    margin-bottom: 30px;
+    resize: none;
+    overflow: hidden;
+    width: 690px;
+    height: 40px;
+    padding: 0px;
+    padding-left:10px;
+    background: #fff;
+    line-height: 40px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.event-page-add-link-box span{
+	background: #2ea4d4;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 11px 24px;
+	font: 1.2em 'LatoBold';
+	cursor: pointer;
+	float: right;
+}
+
+/*CSS4 - ADD SPONSOR BOX
+------------------------------------------------------*/
+
+.event-page-add-sponsor-box{
+	width: 145px;
+	height: 145px;
+	background: transparent;
+	border: 2px dashed #cfcfcf;
+	position: relative;
+	text-align: center;
+	color: #cfcfcf;
+	cursor: pointer;
+}
+.event-page-add-sponsor-box i{
+	font-size: 4em;
+	margin-top: 55px;
+}
+.event-page-add-sponsor-box p{
+	font: 1.4em 'LatoBold';
+	text-transform: uppercase;
+	margin-top: 22px;
+}
+
