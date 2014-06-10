@@ -31,36 +31,36 @@
 			news/article/tutorial/guide -> detailed info ==> full-content-page
 */-->
 <head>
-	<link rel="stylesheet" href="css/plugins/content.css">
-	<link rel="stylesheet" href="css/plugins/content_articles.css">
+	<link rel="stylesheet" href="css/tg-content.css">
 </head>
 
 <!--button ng-click="compose()" class="btn btn-compose btn-success pull-right">
 	<i class="icon-edit"></i>Compose
 </button-->
 <div ng-controller="ContentNewsCtrl">
-<div ng-repeat="item in articles track by $index" class="article unselectable borderboxbutton" ng-click="goToArticle(item.name)">
-	<h1>{{item.title}}</h1>
-	<div class="left"><img src="http://placehold.it/120x80"/>
-		<div class="clearfix"></div>
-		<rating value="item.rate" max="5" readonly="true"></rating>
+	<div class="row-fluid tg-mainpage clearfix">
+
+            <h1>News (350)</h1>
+            <div class="tg-mainpage-button">
+                <i class="fa fa-chevron-down"><span>Filter</span></i>
+                <i class="fa fa-plus"><span>Create News</span></i>
+            </div>
+    </div>
+	<div class="row-fluid">          
+		<div ng-repeat="item in articles track by $index" class="span4 content-box" ng-click="goToArticle(item.name)">
+	
+
+              <img src="http://placehold.it/320x180">
+              <div class="content-box-content">
+                <span class="content-box-category">{{item.tags}}</span>
+                <h1>{{item.title}}</h1>
+                <p>{{item.excerpt||item.description}}</p>
+              </div>
+              <div class="content-box-meta">
+                      <i class="fa fa-clock-o"><span>{{item.time}}28 mins ago</span></i>
+                      <i class="fa fa-comment-o"><span>{{item.comment}}79</span></i>
+                      <span class="content-box-meta-point">{{item.points}}236 POINTS</span>
+              </div>
+        </div>
 	</div>
-	<div class="right">
-		<div class="meta">
-			<ul>
-				<li>{{item.country}}</li>
-				<li>{{item.owner}}</li>
-				<li>{{item.month}} {{item.day}}</li>
-			</ul>
-		</div>
-		<p>{{item.excerpt||item.description}}</p>
-		<div class="social-sharing">
-			<ul>
-				<li><i class="icon-facebook-sign facebook pull-right"></i>{{item.fb}}</li>
-				<li><i class="icon-google-plus-sign google-plus pull-right"></i>{{item.gp}}</li>
-				<li><i class="icon-twitter-sign twitter pull-right"></i>{{item.tw}}</li>
-			</ul>
-		</div>
-	</div>
-</div>
 </div>
