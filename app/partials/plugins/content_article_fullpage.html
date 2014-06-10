@@ -9,10 +9,10 @@
                   <span class="content-fullpage-category">{{article.category}}STARTUP</span>
                   <h1>{{article.title}}</h1>
                   	<div class="content-fullpage-meta clearfix">
-                      <p>From <a href="#">{{article.from}}Techcrunch</a></p> /Posted {{article.posted}}28 mins ago
+                      <p>From <a href="#">{{article.from}}Techcrunch</a></p> <p>&nbsp;/Posted {{article.posted}}28 mins ago by <a>{{article.by}}Efraim Pettersson</a></p>
                       <span class="content-fullpage-meta-author" style="background:black;"></span>
                   	</div> 
-                  <div class="content-fullpage-stats-points clearfix">
+                  <div class="content-fullpage-stats clearfix">
                       <div class="content-fullpage-stats-points">
                             <span>{{article.points}}236</span>
                             <p>Points</p>
@@ -34,7 +34,7 @@
                   </p>
                   <img src="http://placehold.it/670x378"/>
                   <div class="content-fullpage-content-caption">
-                  China will receive nearly a quarter of global phone shipments this year, which Gartner estimates will hit 1.9 billion, a five percent increase on last year.
+                  {{image.info}}China will receive nearly a quarter of global phone shipments this year, which Gartner estimates will hit 1.9 billion, a five percent increase on last year.
                   </div>
                   <p>
                   {{article.subcontent2}}Aabra ka Dabara , This is the sub content where you have to write the subcontent of the main content .. Nd you know what do i mean by sub contect .. hopefully you are smart enough to understand that you crazy taht's why you are still reading this useless content .
@@ -96,7 +96,19 @@
                             </div><!-- END OF OTHER POST -->
               </div>
         </div> <!-- END OF DISCUSSION AREA -->
+              
+
               <div class="content-fullpage-footer">
+              <div class="content-fullpage-stats clearfix">
+                      <div class="content-fullpage-stats-points">
+                            <span>{{article.points}}236</span>
+                            <p>Points</p>
+                      </div>
+                      <div class="content-fullpage-stats-comments">
+                            <span>{{article.comment}}79</span>
+                            <p>Comments</p>
+                  	  </div>
+               </div>
                   <div class="content-fullpage-footer-tags">
                         <p>Tags: 
                         <a href="#">Hong Kong</a>/
