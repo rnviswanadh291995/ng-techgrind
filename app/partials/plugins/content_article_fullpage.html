@@ -1,17 +1,17 @@
 <head>
 	<link rel="stylesheet" href="css/plugins/content_article_fullpage.css">
 	<link rel="stylesheet" href="css/tg-content.css">
-</head>
-<body>       
+</head>  
+    <div class="container tg-main-container"> 
         <div class="row-fluid">
-        	<div class="span7">
+        	<div class="span7 offset1">
         		  <div class="content-fullpage-title"> 
                   <span class="content-fullpage-category">{{article.category}}STARTUP</span>
                   <h1>{{article.title}}</h1>
                   	<div class="content-fullpage-meta clearfix">
-                      <p>From <a href="#">{{article.from}}Techcrunch</a></p></div>  /Posted {{article.posted}}28 mins ago
+                      <p>From <a href="#">{{article.from}}Techcrunch</a></p> /Posted {{article.posted}}28 mins ago
                       <span class="content-fullpage-meta-author" style="background:black;"></span>
-                  	
+                  	</div> 
                   <div class="content-fullpage-stats-points clearfix">
                       <div class="content-fullpage-stats-points">
                             <span>{{article.points}}236</span>
@@ -96,9 +96,26 @@
                             </div><!-- END OF OTHER POST -->
               </div>
         </div> <!-- END OF DISCUSSION AREA -->
+              <div class="content-fullpage-footer">
+                  <div class="content-fullpage-footer-tags">
+                        <p>Tags: 
+                        <a href="#">Hong Kong</a>/
+                        <a href="#">Startup</a>/
+                        <a href="#">Investment</a>/
+                        <a href="#">Startup</a></p>
+                  </div>
+                  <div class="content-fullpage-footer-rating">
+                        <p>Rate Article:
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        </p>
+                  </div>
+              </div>
         </div>
               <div class="span3">
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         <div class="content-box-small" style="width:270px;"> <!-- normally, width equal to container DIV -->
                     <img src="http://placehold.it/270x100">
                       <div class="content-box-small-content"> 
@@ -118,22 +135,5 @@
                     </div>     
 	</div>
     </div>
-            <div class="content-fullpage-footer">
-                  <div class="content-fullpage-footer-tags">
-                        <p>Tags: 
-                        <a href="#">Hong Kong</a>/
-                        <a href="#">Startup</a>/
-                        <a href="#">Investment</a>/
-                        <a href="#">Startup</a></p>
-                  </div>
-                  <div class="content-fullpage-footer-rating">
-                        <p>Rate Article:
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        </p>
-                  </div>
-              </div>
- </body>
+            
+      </div>

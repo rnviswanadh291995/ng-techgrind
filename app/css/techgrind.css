@@ -54,6 +54,7 @@ html, body {
 	font-size: 10px; /* no ^^, <--- this changes the font-size to 10px....percentages base off DPI resolution //efraim */
 	font-family: 'LatoLight';
 	color: #333;
+	background: #bab9b9;
 }
 [class*="span"] {
 	padding:0px;
@@ -97,11 +98,12 @@ textarea:-ms-input-placeholder{
 /* NAVBAR-TOP
 ----------------------------------------- */
 .tg-navbar-top {
-	height: 60px;
-	background-color: #eee;
+	height: 40px;
+	background-color: #fff;
 	top: 0px;
 	margin: 0px;
 	padding: 0px;
+	padding-top: 20px;
 }
 .tg-navbar-top i {
 	float: right;
@@ -114,7 +116,6 @@ textarea:-ms-input-placeholder{
 	background: url('../img/logo.png') top left no-repeat;
 	display: block;
 	float: left;
-	background-color: #000;
 }
 .tg-navbar-top-settings {
 	color: #999;
@@ -152,10 +153,11 @@ textarea:-ms-input-placeholder{
 ----------------------------------------- */
 
 .tg-navbar-left {
-	/* position: fixed; */   /* turn on this one in real page */
+	position: fixed;   /* turn on this one in real page */
 	text-align: center;
 	top: 120px;
 	width: 50px;
+	z-index: 999;
 }
 .tg-navbar-left i {
 	font-size: 2.3em;
@@ -238,6 +240,9 @@ textarea:-ms-input-placeholder{
 /* MAINPAGE
 ----------------------------------------- */
 /* these are the overall styles used in outlining each mainpage (container pages, eg: home, events, resources, products, profiles) */
+.tg-main-container{
+	background: #e7e9ed;
+}
 .tg-mainpage h1 {
 	float: left;
 	font: 2.4em 'LatoBlack';

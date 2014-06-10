@@ -1,65 +1,26 @@
-<div class="navbar navbar-fixed-top main-menu">
-<div class="navbar-inner">
-	<div class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
+<div class="container">
+	<div class="row-fluid tg-navbar-top clearfix">
+		<div class="span10 offset1">
+                <a class="tg-navbar-top-logo" href="http://techgrind.asia"></a>
+                <i class="fa fa-lock"></i>
+                <div class="tg-navbar-top-settings">
+                <i class="fa fa-bell"></i>
+                <p>{{ user().notification }}24</p>
+                <i class="fa fa-envelope"></i>
+                <p>{{ user().mail }}8</p>
+                  <div class="tg-navbar-top-settings-img" style="background: black"></div>
+                </div>
+        </div>
 	</div>
-	<!-- Logo -->
-	<div class="logo"></div>
-	<!-- Collapsable Navbar -->
-	<div class="nav-collapse collapse">
-		<!-- Main Menu -->
-		<ul class="main-menu unselectable">
-			<li ng-class="active('/home')"><a data-target="#/home" href="#"><i class="icon-home"></i><span>Home</span></a></li>
-			<!--li ng-class="active('/regions')" class="dropdown"><a><i class="icon-globe icon-white"></i><span>Regions</span><b class="caret"></b></a>
-			<ul ng-controller="MenuCtrl" class="dropdown-menu">
-				<li ng-repeat="country in countries track by $index" class="sub-menu"><a href="#/regions/{{country.url}}">{{country.name}}</a></li>
-			</ul></li-->
-			<li ng-class="active('/events')"><a href="#/events"><i class="icon-bullhorn"></i><span>Events</span></a></li>
-			<li ng-class="active('/resources')" class="dropdown"><a><i class="icon-cloud-download"></i><span>Resources</span><b class="caret"></b></a>
-			<ul ng-controller="MenuCtrl" class="dropdown-menu">
-				<li ng-repeat="resource in resources track by $index" class="sub-menu"><a href="#/{{resource.url}}"><i class="{{resource.icon}}"></i>{{resource.name}}</a></li>
-			</ul></li>
-			<!--li ng-class="active('/partners')"><a href="#/partners"><i class="icon-star"></i><span>Partners</span></a></li-->
-			<!--li ng-class="active('/lists')" class="dropdown"><a><i class="icon-list"></i><span>TEST:Lists</span><b class="caret"></b></a>
-			<ul ng-controller="MenuCtrl" class="dropdown-menu">
-				<li ng-repeat="list in lists" class="sub-menu"><a href="#/{{list.url}}"><i class="{{list.icon}}"></i>{{list.name}}</a></li>
-			</ul></li-->
-		</ul>
-		<ul class="main-menu unselectable">
-			<!--li ng-class="active('/regions')" class="dropdown"><a><i class="icon-globe icon-white"></i><i class="icon-remove"></i><span>Regions</span><b class="caret"></b></a>
-			<ul ng-controller="MenuCtrl" class="dropdown-menu">
-				<li ng-repeat="country in countries track by $index" class="sub-menu"><a href="#/regions/{{country.url}}">{{country.name}}</a></li>
-			</ul></li-->
-			<li class="dropdown"><a><i class="icon-remove"></i><span>Profiles</span><b class="caret"></b></a>
-			<ul class="dropdown-menu">
-				<li ng-class="" class="sub-menu"><a href="#/profile/startups/{{startupid}}">startup-profile</a></li>
-				<li ng-class="" class="sub-menu"><a href="#/profile/people/{{userid}}">user-profile</a></li>
-			</ul></li>
-		</ul>
-		<!-- User Menu -->
-		<ul class="user-setting pull-right unselectable">
-			<li id="show-settings" ng-show="loginp()" class="dropdown"><a><i class="icon-cog"></i>Settings</a>
-			<ul class="dropdown-menu">
-				<li class="sub-menu"><a href="javascript:;">Account Settings</a></li>
-				<li class="divider"></li>
-				<li class="sub-menu"><a href="#/faq">Help</a></li>
-			</ul></li>
-			<li ng-show="loginp()" class="dropdown"><a><i class="icon-user"></i><span id="show-user-name">{{ user().fullname }}</span></a>
-			<ul class="dropdown-menu">
-				<li class="sub-menu"><a href="#/profile/people/{{userid}}">My Profile</a></li>
-				<li class="sub-menu"><a href="#/profile/startups/{{startupid}}">My Startups</a></li>
-				<li class="divider"></li>
-				<li class="sub-menu"><a ng-click="logout();$root.openlogin=false">Logout</a></li>
-			</ul></li>
-			<li id="show-login" ng-hide="loginp()" class="dropdown"><a id="login-link" ng-click="$root.openlogin=true"><i class="icon-user"></i>Login / Register</a></li>
-		</ul>
-	</div><!--/.nav-collapse -->
-</div>
-</div>
-<!-- needs fixing!!!!!! -->
-<!--div class="modal" modal="(openlogin || $root.openlogin) && !loginp()" close="openlogin=false;$root.openlogin=false"-->
-<div class="modal" ng-hide="loginp()" ng-show="($root.openlogin && !longinp())">
-	<div ng-include="'partials/__loginform.html'"></div>
+	<div class="tg-navbar-left"> <!-- Left Nav -->
+          <a href="#"><i class="fa fa-home"></i></a>
+          <a href="#" class="active"><i class="fa fa-bullhorn"></i></a>
+          <a href="#"><i class="fa fa-bar-chart-o"></i></a>
+          <a href="#"><i class="fa fa-calendar"></i></a>
+          <a href="#"><i class="fa fa-comment-o"></i></a>
+          <a href="#"><i class="fa fa-calendar-o"></i></a>
+          <a href="#"><i class="fa fa-gear"></i></a>
+          <a href="#"><i class="fa fa-search"></i></a>
+          <a href="#"><i class="fa fa-plus"></i></a>
+          </div>
 </div>
