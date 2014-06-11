@@ -205,6 +205,9 @@ textarea:-ms-input-placeholder{
 
 /* FOOTER
 ----------------------------------------- */
+.footer-container{
+	background: #fff;
+}
 .tg-footer {
 	margin-top: 20px;
 }
@@ -218,7 +221,6 @@ textarea:-ms-input-placeholder{
 .tg-footer-social {
 	float: right;
 	position: relative;
-	bottom: 10px;
 }
 .tg-footer-social i {
 	width: 26px;
@@ -242,6 +244,8 @@ textarea:-ms-input-placeholder{
 /* these are the overall styles used in outlining each mainpage (container pages, eg: home, events, resources, products, profiles) */
 .tg-main-container{
 	background: #e7e9ed;
+	padding-top: 40px;
+	padding-bottom: 30px;
 }
 .tg-mainpage h1 {
 	float: left;
@@ -257,6 +261,7 @@ textarea:-ms-input-placeholder{
 	float: left;
 	margin-right: 25px;
 	line-height: 42px;
+	cursor: pointer;
 }
 .tg-mainpage-button i span {
 	font: 1.125em 'LatoBlack';

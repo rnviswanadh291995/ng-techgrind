@@ -6,30 +6,14 @@
         <div class="widget-body">
         <tabset class="unselectable">
           <tab heading="News">
-            <div ng-include="'partials/plugins/content_articles.html'"></div>
+              <div ng-include="'partials/plugins/content_articles.html'"></div>
           </tab>
-          <tab heading="Events">
-          <div ng-include="'partials/plugins/info_event.html'"></div>  
+          <tab heading="Discussion">
+              <div ng-include="'partials/plugins/discussion_articles.html'"></div>  
           </tab>
-          <tab heading="Investors">
-            
+          <tab heading="Search">
+              <div ng-include="'partials/plugins/discussion_articles.html'"></div>  
           </tab>
-          <tab heading="Services">
-            
-          </tab>
-          <tab heading="Work Spaces">
-            
-          </tab>
-          <tab heading="Communities">
-            
-          </tab>
-          <tab></tab> <!-- SPACE -->
-          <tab heading="Discuss">
-            <!--div ng-include="'partials/plugins/social_facebook.html'"></div-->
-          </tab>
-          <button ng-click="compose()" class="btn btn-compose btn-success pull-right">
-            <i class="icon-edit"></i>Compose
-          </button>
         </tabset>
         </div>
       </div>

@@ -29,6 +29,35 @@
 <!--button ng-click="compose()" class="btn btn-compose btn-success pull-right">
 	<i class="icon-edit"></i>Compose
 </button-->
+
+<div class="container tg-main-container">
+  <div class="row-fluid">
+
+    <div class="span10 offset1">
+      <div class="widget">
+        <div class="widget-body">
+        <tabset class="unselectable">
+          <tab heading="Overview">
+            <div ng-include="'partials/plugins/profile_overview.html'"></div>
+          </tab>
+          <tab heading="Bio">
+            <div ng-include="'partials/plugins/profile_bio.html'"></div>
+          </tab>
+          <tab heading="Activity">
+            <div ng-include="'partials/plugins/profile_activity.html'"></div>
+          </tab>
+        </tabset>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<!-- old code below here -->
+
+
 <div ng-controller="ProfileUserCtrl">
 <div class="container">
 <div class="row">
