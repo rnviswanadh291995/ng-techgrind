@@ -12,12 +12,15 @@
       </div>
     </div>
 	</div>
-	<div class="tg-navbar-left"> <!-- Left Nav -->
-    <a href="#/home" class="active"><i class="fa fa-home"></i>Home</a>
-    <a href="#/events"><i class="fa fa-bullhorn"></i>Events</a>
-    <a href="#/resoruces" class=""><i class="fa fa-download"></i>Resources</a>
-    <a href="#/products" class=""><i class="fa fa-dollar"></i>Products</a>
-    <a href="#/profile"><i class="fa fa-bar-chart-o"></i>Profiles</a>
-    <a href="#"><i class="fa fa-search"></i>Search</a>
-  </div>
+	<ul class="tg-navbar-left"> <!-- Left Nav -->
+    <li ng-class="active('/home')" class="active"><a href="#/home"><i class="fa fa-home"></i><p>Home</p></a></li>
+    <li ng-class="active('/events')" class=""><a href="#/events"><i class="fa fa-bullhorn"></i><p>Events</p></a></li>
+    <li ng-class="active('/resources')" class="dropdown"><a><i class="fa fa-cloud-download"></i><p>Resources</p><i class="caret"></i></a>
+    <ul ng-controller="MenuCtrl" class="dropdown-menu">
+      <li ng-repeat="resource in resources track by $index" class="sub-menu"><a href="#/{{resource.url}}"><i class="{{resource.icon}}"></i>{{resource.name}}</a></li>
+    </ul></li>
+    <li ng-class="active('/products')" class=""><a href="#/products"><i class="fa fa-dollar"></i><p>Products</p></a></li>
+    <li ng-class="active('/profiles')" class=""><a href="#/profiles"><i class="fa fa-bar-chart-o"></i><p>Profiles</p></a></li>
+    <li class=""><a href="#"><i class="fa fa-search"></i><p>Search</p></a></li>
+  </ul>
 </div>

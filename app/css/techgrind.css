@@ -154,51 +154,125 @@ textarea:-ms-input-placeholder{
 
 .tg-navbar-left {
 	position: fixed;   /* turn on this one in real page */
-	text-align: center;
+	text-align: left;
+	list-style: none;
 	top: 120px;
-	width: 50px;
+	width: 100px;
 	z-index: 999;
+	padding: 0px;
+	margin: 0px;
 }
-.tg-navbar-left i {
+.tg-navbar-left a {
+	display:inline-block;
+	width:100%;
+	height:100%;
+	line-height:100%;
+	vertical-align:middle;
+	cursor:pointer;
+	text-decoration:none;
+}
+.tg-navbar-left ul {
+	margin:0px;
+	padding:0px;
+}
+.tg-navbar-left li {
+	padding: 0px;
+	margin: 0px;
+	display:inline-block;
+	width: 100%;
+	height: 100%;
+	line-height: 50px;
+}
+.tg-navbar-left li.active {
+	background: #333;
+}
+.tg-navbar-left li.active p, .tg-navbar-left li.active i {
+	color: #ddd;
+}
+.tg-navbar-left li:hover {
+	background: #333;
+}
+.tg-navbar-left li:hover p, .tg-navbar-left li:hover i {
+	color: #ddd;
+}
+.tg-navbar-left li i {
 	font-size: 2.3em;
 	width: 50px;
 	height: 50px;
-	color: #999999;
 	line-height: 50px;
+	padding-left: 5px;
+	color: #666;
+	display:inline;
 }
-.tg-navbar-left .active i {
-	background: #333;
-	color: #e7e9ed;
-}
-.tg-navbar-left i:hover {
-	background: #333;
-	color: #e7e9ed;
+.tg-navbar-left li p {
+	font-size: 2em;
+	margin: 0px;
+	padding: 0px;
+	margin-left: 5px;
+	color: #666;
+	font-weight: bold;
+	display:inline;
 }
 
 /* END > NAVBAR-LEFT
 ----------------------------------------- */
+/* Sub-Menu */
+.dropdown-menu {
+	padding: 0px;
+	margin: 0px;
+}
+.dropdown-menu [class^="icon-"],
+.dropdown-menu [class*=" icon-"] {
+	margin-right: 5px;
+}
+.dropdown-menu li.sub-menu {
+	width: 100%;
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+.dropdown-menu li.sub-menu a {
+	color: #444;
+	background: #fff;
+	font-weight: bold;
+	width: 80%;
+	height: 3em;
+	line-height: 3em;
+	vertical-align: middle;
+	margin: 0px;
+	padding: 0px;
+	padding-right: 1em;
+	padding-left: 1em;
+	cursor: pointer;
+}
+.dropdown-menu li.sub-menu:hover a {
+	color: #fff;
+	background: #444;
+}
+/* Create Dropdown-On-Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown:after .dropdown-menu {
+	display: none;
+}
+
 
 /* MAINTABS
 ----------------------------------------- */
 /* this class is the main-page tabs that load plugin pages in them */
 .tg-maintabs {
-	float: left;
-	position: relative;
-	margin: 66px 0 0 0;
-}
-
-.tg-maintabs li {
 	display: inline-block;
-	font: 1.8em 'LatoRegular';
 	color: #000;
-	padding: 18px 20px;
-	margin: 0;
+	margin: 0 0 0 1em;
 	cursor: pointer;
 }
-
-.tg-maintabs-active {
+.tg-maintabs .active {
 	font-family: 'LatoBlack' !important;
 	background: #e7e9ed;
+}
+.tg-maintabs tab {
+	font: 3em 'LatoRegular';
 }
 /* END > MAINTABS
 ----------------------------------------- */
