@@ -211,19 +211,6 @@ app.controller 'ActivationCtrl', ['$scope', '$routeParams', 'steam', (S, rp, ste
 	steam.post('activate', activationdata).then(handle_activation)
 ]
 
-# WIP
-# needs overhaul to manage control of each tab as separate controller
-app.controller 'HomeCtrl', ['$scope', '$http', 'ToolsRichEditorService', (S, http, richEditor) ->
-	#http.get('/mock').success (data) -> S.mock = data
-	#S.getblog = getblog()
-
-	S.compose = ->
-		richEditor.open()
-
-	S.tabCalendarSelect = ->
-		$('#calendar').fullCalendar 'render'
-]
-
 # COMPLETE: by Martin
 app.controller 'StartupGenomeCtrl', ['$scope', '$routeParams', 'steam', (S, rp, steam) ->
 	S.countries = {}
@@ -249,16 +236,6 @@ app.controller 'StartupGenomeCtrl', ['$scope', '$routeParams', 'steam', (S, rp, 
 	if rp.country
 		get_country(rp.country, rp.filter)
 
-]
-
-app.controller 'TestCtrl', ['$scope', '$location', 'steam', (S, loc, steam) ->
-
-	S.user = steam.user
-	handle_request = (data) ->
-		S.data = data
-
-	steam.get('delete').then(handle_request)
-	steam.get('login').then(handle_request)
 ]
 
 # this control needs to be redone

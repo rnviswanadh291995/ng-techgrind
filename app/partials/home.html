@@ -1,7 +1,7 @@
 <div class="container tg-main-container">
   <div class="row-fluid">
-
-    <div class="span10 offset1">
+    <div class="span2"></div>
+    <div class="span10">
       <div class="widget">
         <div class="widget-body">
         <tabset class="unselectable tg-maintabs">
@@ -18,34 +18,14 @@
         </div>
       </div>
     </div>
-
-    <!-- div class="span3">
-      <div class="widget">
-        <div class="widget-body">
-          <div ng-include="'partials/plugins/widget_filterbox.html'"></div>
-        </div>
-      </div>
-      <div class="widget">
-        <div class="widget-body">
-          <div calendar="calendar"></div>
-        </div>
-      </div>
-      <div class="widget">
-        <div class="widget-body">
-          <div map="{{filterbox.region}}"></div>
-        </div>
-      </div>
-      <div class="widget">
-        <div class="widget-body">
-          <a href="#/contact"><img src="http://placehold.it/250x200" tooltip="Advertise with us! Reach startups, service providers, investors, and communities all across Asia! Click Here to contact us!"/></a>
-        </div>
-        <div class="widget-body">
-          <img src="http://placehold.it/250x200"/>
-        </div>
-      </div>
-      <!--div ng-include="'partials/plugins/social_twitter.html'"></div>
-    </div-->
-    
   </div>
+
+  <!-- debug -->
+  <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span10">
+      <pre>{{ sexpr(data) }}</pre>
+    </div>
+  </div>
+
 </div>
-<pre>{{ sexpr(data) }}</pre>

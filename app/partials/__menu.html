@@ -1,6 +1,6 @@
 <div class="container">
-	<div class="row-fluid tg-navbar-top clearfix">
-		<div class="span10 offset1">
+	<div class="row">
+    <div class="tg-navbar-top">
       <a class="tg-navbar-top-logo" href="http://techgrind.asia"></a>
       <i class="fa fa-lock"></i>
       <div class="tg-navbar-top-settings">
@@ -8,16 +8,16 @@
         <p>{{ user().mail }}8</p>
         <i class="fa fa-bell"></i>
         <p>{{ user().notification }}24</p>
-        <div class="tg-navbar-top-settings-img" style="background: black"></div>
+        <div class="tg-navbar-top-settings-img"></div>
       </div>
     </div>
-	</div>
+  </div>
 	<ul class="tg-navbar-left"> <!-- Left Nav -->
     <li ng-class="active('/home')" class="active"><a href="#/home"><i class="fa fa-home"></i><p>Home</p></a></li>
     <li ng-class="active('/events')" class=""><a href="#/events"><i class="fa fa-bullhorn"></i><p>Events</p></a></li>
     <li ng-class="active('/resources')" class="dropdown"><a><i class="fa fa-cloud-download"></i><p>Resources</p><i class="caret"></i></a>
     <ul ng-controller="MenuCtrl" class="dropdown-menu">
-      <li ng-repeat="resource in resources track by $index" class="sub-menu"><a href="#/{{resource.url}}"><i class="{{resource.icon}}"></i>{{resource.name}}</a></li>
+      <li ng-repeat="resource in resources" class="sub-menu"><a href="#/{{resource.url}}"><i class="fa {{resource.icon}}"></i>{{resource.name}}</a></li>
     </ul></li>
     <li ng-class="active('/products')" class=""><a href="#/products"><i class="fa fa-dollar"></i><p>Products</p></a></li>
     <li ng-class="active('/profiles')" class=""><a href="#/profiles"><i class="fa fa-bar-chart-o"></i><p>Profiles</p></a></li>

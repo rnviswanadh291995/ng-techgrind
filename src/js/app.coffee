@@ -34,7 +34,7 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.directives.lazy-loading-img'
 	'TechGrindApp.directives.ui.tinymce'
 	'TechGrindApp.controllers'
-	#'TechGrindApp.controllers.home' # this needs to be added, and translated from coffee to native-js
+	'TechGrindApp.controllers.home'
 	'TechGrindApp.controllers.events'
 	'TechGrindApp.controllers.res-jobs'
 	'TechGrindApp.controllers.res-docs'
