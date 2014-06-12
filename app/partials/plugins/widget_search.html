@@ -1,0 +1,29 @@
+<head>
+</head>
+
+<div ng-controller="ContentNewsCtrl">
+	<div class="row-fluid">
+          <div class="page-search-search-area">
+          <textarea placeholder="Type to search"></textarea>
+          </div>
+    </div>
+    <div class="row-fluid">
+    	<div class="search-page-result-category-area">
+              <a class="search-page-result-category-selected">Discussions (8)</a>
+              <a class="search-page-result-category">News (264)</a>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div ng-repeat="item in articles track by $index" class="span4 search-page-result-box" ng-click="goToArticle(item.name)">
+              	<div class="search-page-result-box-content">
+               		<span class="search-page-result-box-category">{{item.tags}}Announcement</span>
+                	<h1>{{item.title}}</h1>
+             	</div>
+              	<div class="search-page-result-box-meta">
+                      <i class="fa fa-clock-o"><span>{{item.time}}28 mins ago</span></i>
+                      <i class="fa fa-comment-o"><span>{{item.comment}}79</span></i>
+                      <span class="search-page-result-box-meta-point">{{item.points}}236 POINTS</span>
+              	</div>
+        </div>
+    </div>
+</div>
