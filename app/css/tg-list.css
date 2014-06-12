@@ -8,12 +8,23 @@ Event page:
 http://ngtg.techgrind.asia:8000/#/events/SLAP
 
 */
-
+/*----- FIX SPAN4 PROBLEM FOR CONTENT BOX -------*/
+/*-----------------------------------------------*/
+.event-page-event.span9:first-child {
+  margin-left : 8.5%;
+}
+/*
 /* CSS2 - EVENT AREA
 -----------------------------------------------------*/
 
+.event-page-area{
+	margin-top: 15px;
+}
+.event-page-event.span9{
+	margin-left: 8.5%;
+}
 .event-page-event{
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	cursor: pointer;
 }
 .event-page-event:hover .event-page-event-date-area{
@@ -343,7 +354,7 @@ http://ngtg.techgrind.asia:8000/#/events/SLAP
 }
 .event-page-sidebar-share-box-social-area{
 	margin: 0 auto;
-	width: 266px;
+	width: 230px;
 }
 .event-page-sidebar-share-box-social-area i{
 	width: 50px;
@@ -359,7 +370,7 @@ http://ngtg.techgrind.asia:8000/#/events/SLAP
 	line-height: 50px;
 }
 .event-page-sidebar-share-box-social-area a{
-	margin-right: 20px;
+	margin-right: 7px;
 }
 .event-page-sidebar-share-box-social-area a:last-child{
 	margin-right: 0px;
