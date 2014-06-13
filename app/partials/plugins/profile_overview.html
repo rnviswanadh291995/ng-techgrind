@@ -1,0 +1,51 @@
+<head>
+  
+</head>
+
+<div class="row-fluid">
+  <div class="span6">
+    <div class="profile-page-overview-box">
+      <h3 class="profile-page-overview-box-title">Companies</h3>
+      <div class="profile-page-overview-box-content">
+        <div class="profile-page-overview-box-company-box">
+          <span class="profile-page-overview-box-company-box-image" style="background: black;"></span>
+          <span class="profile-page-overview-box-company-box-name">{{userprofile.company}}</span>
+          <span class="profile-page-overview-box-company-box-role">{{userprofile.position}}</span>
+          <span class="profile-page-overview-box-company-box-website"><a href="{{userprofile.companylink}}">{{userprofile.companylink}}</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="profile-page-overview-box">
+      <h3 class="profile-page-overview-box-title">Web Profiles</h3>
+      <div class="profile-page-overview-box-content">
+        <ul class="profile-page-overview-box-web">
+          <a href="{{userprofile.linkedin}}"><li><i class="fa fa-linkedin"></i></li></a>
+          <a href="{{userprofile.gplus}}"><li><i class="fa fa-google-plus"></i></li></a>
+          <a href="{{userprofile.facebook}}"><li><i class="fa fa-facebook"></i></li></a>
+          <a href="{{userprofile.twitter}}"><li><i class="fa fa-twitter"></i></li></a></a>
+          <a href="{{userprofile.github}}"><li><i class="fa fa-github"></i></li></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="span6">
+    <div class="profile-page-overview-box">
+      <h3 class="profile-page-overview-box-title">What I Do</h3>
+      <div class="profile-page-overview-box-content">
+        {{userprofile.biolong}}
+      </div>
+    </div>
+    <div class="profile-page-overview-box">
+      <h3 class="profile-page-overview-box-title">Skills</h3>
+      <div class="profile-page-overview-box-content">
+        {{userprofile.portfolio}}
+      </div>
+    </div>
+    <div class="profile-page-overview-box">
+      <h3 class="profile-page-overview-box-title">Interests</h3>
+      <div class="profile-page-overview-box-content">
+        
+      </div>
+    </div>
+  </div>
+</div>

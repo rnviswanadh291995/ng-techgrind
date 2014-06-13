@@ -13,7 +13,6 @@ http://ngtg.techgrind.asia:8000/#/profile/startups
 
 .profile-page-header {
 	background: #f8f8fa;
-	width: 100%;
 	min-height: 280px;
 	position: relative;
 	text-align: center;
@@ -31,15 +30,18 @@ http://ngtg.techgrind.asia:8000/#/profile/startups
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 120px 120px;
+	background-color: #e7e9ed;
 	float: left;
 	position: relative;
 	margin-top: 20px;
 }
 
 .profile-page-header-profile {
-	margin: 40px 0 0 25px;
+	margin: 40px 0 0 0;
 	float: left;
 	position: relative;
+	width: 100%;
+	margin-right: -430px;
 }
 
 .profile-page-header-profile-join-date {
@@ -52,17 +54,29 @@ http://ngtg.techgrind.asia:8000/#/profile/startups
 	color: #333;
 	margin-top: 0;
 	margin-bottom: 7px;
+	display: inline-block;
+	clear: both;
+	float: left;
+	margin-left: 130px;
 }
 
 .profile-page-header-profile-role {
 	font: 1.8em 'LatoRegular';
 	color: #333;
 	margin-bottom: 7px;
+	display: inline-block;
+	clear: both;
+	float: left;
+	margin-left: 130px;
 }
 
 .profile-page-header-profile-location {
 	font: 1.4em 'LatoRegular';
 	color: #999;
+	display: inline-block;
+	clear: both;
+	float: left;
+	margin-left: 130px;
 }
 
 .profile-page-header-profile-location i.fa {
@@ -105,6 +119,7 @@ http://ngtg.techgrind.asia:8000/#/profile/startups
 	font: 1.4em 'LatoBold';
 	cursor: pointer;
 	text-transform: uppercase;
+	border: 0;
 }
 
 .profile-page-header-button:hover {
@@ -120,7 +135,7 @@ http://ngtg.techgrind.asia:8000/#/profile/startups
 	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
 	padding: 25px 30px;
-	margin: 0 30px 30px 0;
+	margin: 0 0 30px 0;
 }
 
 .profile-page-overview-box-title {
