@@ -43,13 +43,32 @@
                 <i class="fa fa-chevron-down"><span>Filter</span></i>
                 <i ng-click="compose()" class="fa fa-plus"><span>New Discussion</span></i>
             </div>
-    </div>
+     </div>
+            <div class="discussion-page-new-post">
+            <div class="discussion-page-new-post-container">
+              <span class="discussion-page-new-post-user-image" style="background: black"></span>
+              <div class="discussion-page-new-post-post clearfix"> 
+                  <div class="discussion-page-new-post-postbox clearfix">
+                    <select>
+                      <option value="" disabled selected>Choose category</option>
+                      <option value="">Category 1</option>
+                      <option value="">Category 2</option>
+                      <option value="">Category 3</option>
+                    </select>
+                    <input type="text" placeholder="Title">
+                    <textarea placeholder="Text"></textarea>
+                    <span class="discussion-page-new-post-postbox-post-button">PUBLISH</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+    
 	<div class="row-fluid discussion-page-box-area">          
 		<div ng-repeat="item in articles track by $index" class="span4 discussion-page-box" ng-click="goToArticle(item.name)">
 		<!--Here goToarticle has been used for just an example and to save time by not writting the contents, Discussions controllers has to be made separately -->
 
               <div class="discussion-page-box-category">
-              		{{discussion.header}}<a href="../app/partials/plugin/discussion_article_fullpage.html">Announcement</a>
+              		{{discussion.header}}Announcement
               </div>
               <div class="discussion-page-box-content">
                 <!--span class="discussion-page-box-category">{{item.tags}}</span-->
