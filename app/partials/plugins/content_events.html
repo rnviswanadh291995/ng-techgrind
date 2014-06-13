@@ -1,0 +1,24 @@
+<div ng-controller="EventsCtrl">
+    <div class="row-fluid tg-mainpage clearfix">
+            <h1>Events (67)</h1>
+            <div class="tg-mainpage-button">
+                <i class="fa fa-chevron-down"><span>Filter</span></i>
+                <i class="fa fa-plus"><span>Add Event</span></i>
+            </div>
+    </div>
+    <div class="row-fluid event-page-area">          
+        <div ng-repeat="event in events.meetup" class="span9 event-page-event" ng-click="listClickLink(event.name)">
+              <div class="event-page-event-date-area">
+                    <span class="event-page-event-date-area-day">{{event.day}}25</span>
+                    <span class="event-page-event-date-area-month">{{event.month}}APR</span>
+              </div>
+              <div class="event-page-event-content clearfix"> 
+                    <span class="event-page-event-content-category">{{event.region}}</span>
+                    <h1>{{event.name}}</h1>
+                    <p>{{event.description}}</p>
+                    <i class="event-page-event-content-date fa fa-calendar"><span>{{event.date}}April 25, 2014 10:00 AM / 2 Days</span></i>
+                    <i class="event-page-event-content-location fa fa-map-marker"><span>{{event.location}}Roadhouse Barbecue, Bangkok</span></i>
+              </div>
+        </div>
+    </div>
+</div>

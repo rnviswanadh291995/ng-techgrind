@@ -41,7 +41,7 @@ http://ngtg.techgrind.asia:8000/#/article/XYZ
 	font: 2.4em 'LatoBlack';
 }
 .content-box-content p {
-	font-size: 1.4em;
+	font: 1.4em 'LatoLight';
 }
 .content-box-meta {
 	color: #cfcfcf;

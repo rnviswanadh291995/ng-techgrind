@@ -15,6 +15,13 @@ http://ngtg.techgrind.asia:8000/#/members
 
 */
 
+/*----- FIX SPAN4 PROBLEM FOR CONTENT BOX -------*/
+/*-----------------------------------------------*/
+.search-page-result-box.span4:nth-child(3n + 4) {
+  margin-left : 0px;
+}
+/*
+
 /* CSS1 - SEARCH AREA
 --------------------------------------------------------- */
 .page-search-search-area textarea{
@@ -64,8 +71,7 @@ http://ngtg.techgrind.asia:8000/#/members
 /*result box*/
 .search-page-result-box{
 	background: #fff;
-	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
@@ -73,8 +79,7 @@ http://ngtg.techgrind.asia:8000/#/members
 }
 .search-page-result-box-content{
 	margin: 20px;
-	height: 170px;
-	padding-top: 20px;
+	height: 140px;
 }
 .search-page-result-box-category{
 	font: 1.4em 'LatoBold';

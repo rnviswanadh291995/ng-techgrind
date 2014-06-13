@@ -23,221 +23,85 @@
   <i class="icon-edit"></i>Compose
 </button-->
 <div ng-controller="InfoEventCtrl">
-<div class="container">
-<div class="row">
-  <div class="breadcrumb">
-    <span><a href="#/events">Events</a>&nbsp;/&nbsp;{{event.title}}</span>
-  </div>
-</div>
-<div class="row">
-  <div class="span8">
-    <div class="widget">
-      <div class="widget-body">
-        <tabset class="unselectable">
-          <tab heading="Information">
-            <div class="info-event-information">
-
-                <div class="event-title">
-                  <span ng-hide="edit.title">{{event.title}}</span>
-                  <input type="text" ng-show="edit.title" ng-model="event.title"></input>
-                  <i ng-hide="edit.title || !owner" ng-click="edit.title=!edit.title" class="icon-pencil"></i>
-                  <i ng-show="edit.title" ng-click="update_event();edit.title=!edit.title" class="icon-ok"></i>
-                  <i ng-show="edit.title" ng-click="edit.title=!edit.title;reset();" class="icon-remove"></i>
-                </div>
-
-                <div class="event-tagscloud pull-right">
-
-                  <span ng-repeat="tag in event.tags" ng-hide="edit.tags" class="event-tags"> {{tag + ($last ? "" : ",")}} </span>
-                  <textarea ng-show="edit.tags" ng-model="event.tags" rows="2"/>
-                  <i ng-hide="edit.tags || !owner" ng-click="edit.tags=!edit.tags" class="icon-pencil"></i>
-                  <i ng-show="edit.tags" ng-click="update_event();edit.tags=!edit.tags" class="icon-ok"></i>
-                  <i ng-show="edit.tags" ng-click="edit.tags=!edit.tags;reset();" class="icon-remove"></i>
-                </div>
-
-                <div class="event-description">
-                  <span ng-hide="edit.description">{{event.description}}</span>
-                  <textarea class="form-control" ng-show="edit.description" rows="5" style="width:70%;" ng-model="event.description"/>
-                  <i ng-hide="edit.description || !owner" ng-click="edit.description=!edit.description" class="icon-pencil"></i>
-                  <i ng-show="edit.description" ng-click="update_event();edit.description=!edit.description" class="icon-ok"></i>
-                  <i ng-show="edit.description" ng-click="edit.description=!edit.description; reset();" class="icon-remove"></i>
-                </div>
-
-                <div class="event-schedule">
-                  <table class="table table-bordered table-condensed">
-                    <tbody ng-repeat="iEvent in event.schedule">
-                      <tr ng-hide="$index == eventItem.selected">
-                        <td>
-                          {{iEvent.city}}
-                        </td>
-                        <td>
-                          {{iEvent.address}}
-                        </td>
-                        <td>
-                          {{iEvent.date}}
-                        </td>
-                        <td>
-                          {{iEvent.time}}
-                        </td>
-                        <td>
-                          {{iEvent.source}}
-                        </td>
-                        <td>
-                          <i ng-click="editEvent($index);" ng-hide="!owner" class="icon-pencil"></i>
-                      </td>
-                      </tr>
-                      <tr ng-show="$index == eventItem.selected">
-                        <td>
-                          <input ng-model="iEvent.city" type="text"/>
-                        </td>
-                        <td>
-                          <input ng-model="iEvent.address" type="text"/>
-                        </td>
-                        <td>
-                          <input ng-model="iEvent.date" type="text"/>
-                        </td>
-                        <td>
-                          <input ng-model="iEvent.time" type="text" size="5"/>
-                        </td>
-                        <td>
-                          <input ng-model="iEvent.source" type="text"/>
-                        </td>
-                        <td>
-                          <i ng-click="update_schedule($index, iEvent);" class="icon-ok"></i>
-                          <i ng-click="cancelEventEdit();" class="icon-remove"></i>
-                      </td>
-                      </tr>
-
-
-
-                          <!--
-                        <td>
-                          <span ng-hide="event_{{$index}}" >{{event.city}}</span>
-                          <input ng-show="event_{{$index}}" ng-model="event.city" type="text"/>
-                        </td>
-                        <td>
-                          <span ng-hide="event_{{$index}}">{{event.address}}</span>
-                          <input ng-show="event_{{$index}}" ng-model="event.address" type="text"/>
-                        </td>
-                        <td>
-                          <span ng-hide="event_{{$index}}">{{event.date}}</span>
-                          <input ng-show="event_{{$index}}" ng-model="event.date" type="text"/>
-                        </td>
-                        <td>
-                          <span ng-hide="event_{{$index}}">{{event.time}}</span>
-                          <input ng-show="event_{{$index}}" ng-model="event.time" type="text" size="5"/>
-                        </td>
-                        <td>
-                          <span ng-hide="event_{{$index}}">{{event.source}}</span>
-                          <input ng-show="event_{{$index}}" ng-model="event.source" type="text"/>
-                        </td>
-                        <td>
-                          <i ng-hide="edit.eventschedule" ng-click="edit.eventschedule=!edit.eventschedule;editEvent($index);" class="icon-pencil"></i>
-                          -->
-
-
-                          <!--
-                          <i ng-show="edit.eventschedule_{{$index}}" ng-click="update_event();(edit.eventschedule_{{$index}})=!(edit.eventschedule_{{$index}});" class="icon-ok"></i>
-                          <i ng-show="edit.eventschedule_{{$index}}" ng-click="edit.eventschedule_{{$index}}=!edit.eventschedule_{{$index}};" class="icon-remove"></i>
-                        </td>
-                      </tr>
-                          -->
-                    </tbody>
-                  </table>
-                </div>
-
-                    <div ng-hide="edit.newevent || !owner">
-                      <button ng-click="edit.newevent=!edit.newevent"  class="btn"> Add Event </button>
-                    </div>
-
-                <div ng-show="edit.newevent" class="widget-body">
-
-                  <span > New Event Details </span> 
-
-                  <form novalidate="true" name="myform" class="container">
-                      <span ng-show="myform.$invalid"> Please fill out all fields. </span> <br />
-
-                      <input ng-model="newschedule.address" type="text" placeholder="Address" /> <br/>
-                      <input ng-model="newschedule.city" type="text" placeholder="City" /> <br/>
-                      <input ng-model="newschedule.country" type="text" placeholder="Country" /> <br/>
-                      <input ng-model="newschedule.date" type="text" placeholder="Date" ng-required="true" /> <br/>
-                      <p class="input-group">
-                          <input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="newschedule.date" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-                      </p>
-                      <input ng-model="newschedule.time" type="text" placeholder="Time" /> <br/>
-                      <input ng-model="newschedule.source" type="text" placeholder="Source" /> <br/>
-                      <button ng-click="cancelNewEvent();edit.newevent=!edit.newevent;" > Cancel </button>
-                      <button ng-disabled="myform.$invalid" ng-click="add_schedule();edit.newevent=!edit.newevent;" > Submit </button>
-                      </form>
+    <div class="container tg-main-container"> 
+        <div class="row-fluid">
+          <div class="span7 offset2">
+                    <div class="event-page-detail-header clearfix"> 
+                  <h1>{{event.name}}</h1>
+                  <p>{{event.description}}</p>
+                  <i class="event-page-detail-date fa fa-calendar"><span>{{iEvent.date}} {{iEvent.time}}April 25, 2014 10:00 AM / 2 Days</span></i>
+                  <i class="event-page-detail-location fa fa-map-marker"><span>{{iEvent.address}} {{iEvent.city}}Roadhouse Barbecue, Bangkok</span></i>
+              </div>
+              <div class="event-page-detail-section-header">Event Detail</div> <!-- header off each section -->
+              <div class="event-page-detail-content">
+                  <p>The Founder Institute is the world's largest idea-stage accelerator. Join us for an informational event where you can meet local Directors, ask questions and learn how you can launch a startup in Hong Kong with help from top CEOs, experienced peers and a structured approach. What is it like to be in the Founder Institute? Who are some of the peers that you will be working with? Can the Institute help you build your dream company? For updates, go to <a href="#">https://fi.co/e/14491/TIA</a></p>
+                  <img src="http://placehold.it/670x378"/>
+                  <h1>Good to know</h1>
+                  <p>The Founder Institute is the world's largest idea-stage accelerator. Join us for an informational event where you can meet local Directors, ask questions and learn how you can launch a startup in Hong Kong with help from top CEOs, experienced peers and a structured approach. </p>
+              </div>
+              <div class="event-page-detail-section-header">Sponsors</div>
+              <div class="event-page-detail-sponsors clearfix">
+                  <img src="http://placehold.it/145x145"/>
+                  <img src="http://placehold.it/145x145"/>
+              </div>
+              <div class="event-page-detail-section-header">Who is going (28)</div>
+              <div class="event-page-detail-whoisgoing" style="width:670px;">
+                  <div class="event-page-detail-whoisgoing-area clearfix">
+                      <div class="event-page-detail-whoisgoing-user clearfix">
+                          <span class="event-page-detail-whoisgoing-user-image" style="background:black;"></span>
+                          <p>Gartenblume</p>
                       </div>
+                      <div class="event-page-detail-whoisgoing-user clearfix">
+                          <span class="event-page-detail-whoisgoing-user-image" style="background:black;"></span>
+                          <p>Gartenblume</p>
                       </div>
-                      </tab>
-                      <tab heading=""> <!-- SPACER -->
-                      </tab>
-                      <tab heading="Media">
-                      <div>
+                  </div>
+                  <a href="#"><span class="event-page-detail-whoisgoing-show-all">Show all</span></a>
+              </div>
+              <div class="event-page-detail-user-profile">
+                  <div class="event-page-detail-user-info">
+                      <div class="event-page-detail-user-profile-user-image" style="background:white;"></div>
+                      <p class="event-page-detail-user-profile-name">Hans Wurstmann Schimmelreiter</p>
+                      <p class="event-page-detail-user-profile-position">UI Designer</p>
+                      <p class="event-page-detail-user-profile-location">Bangkok, Thailand</p>
+                  </div>
+                  <div class="event-page-detail-user-email">
+                      <i class="fa fa-envelope"></i>
+                  </div>
+              </div>
+          </div>
 
-            </div>
-          </tab>
-          <tab heading="Content">
-            <div>
-
-            </div>
-          </tab>
-          <tab heading="Documents">
-            <div>
-
-            </div>
-          </tab>
-          <tab heading=""> <!-- SPACER -->            
-          </tab>
-          <tab heading="Discussion">
-            <div>
-
-            </div>
-          </tab>
-        </tabset>
-      </div>
-    </div> <!-- //WIDGET -->
-  </div> <!-- //SPAN -->
-
-  <div class="span4">
-    <div class="widget">
-      <div class="widget-body">
-        Sponsors???
-      </div>
-    </div> <!-- //WIDGET -->
-  </div> <!-- //SPAN -->
-
-  <div class="span4">
-    <div class="widget">
-      <div class="widget-body">
-        Offering/selling, memberships? etc...
-      </div>
-    </div> <!-- //WIDGET -->
-  </div> <!-- //SPAN -->
-
-  <div class="span4">
-    <div class="widget">
-      <div class="widget-body">
-        Anything else....
-      </div>
-    </div> <!-- //WIDGET -->
-  </div> <!-- //SPAN -->
-
-</div> <!-- //ROW -->
-
-</div> <!-- //CONTAINER -->
-<div class="row" style="margin:10px;">
-  <pre>{{ sexpr(newschedule) }}</pre>
-  <pre>{{ sexpr(event) }}</pre>
-  <pre>{{ sexpr(rp) }}</pre>
-  <pre>{{ sexpr(data) }}</pre>
-  <pre>{{ sexpr(user()) }}</pre>
-  <pre>{{ sexpr(result) }}</pre>
-  <pre>{{ sexpr(myform) }}</pre>
+          <div class="span3">
+              <div class="event-page-sidebar-purchase-button">
+                      <a href="#"><span>Purchase Ticket</span></a>
+                  </div>
+                  <div class="event-page-sidebar-add-to-calendar-text">
+                      <i class="fa fa-calendar"><span>Add event to my calendar</span></i>
+                  </div>
+                  <div class="event-page-detail-section-header">Price</div>
+                  <div class="event-page-sidebar-price-box">
+                      THB 3,500.00
+                  </div>
+                  <div class="event-page-detail-section-header">Organizer</div>
+                  <div class="event-page-sidebar-user-profile">
+                      <div class="event-page-sidebar-user-info">
+                          <div class="event-page-sidebar-user-profile-user-image" style="background:black;"></div>
+                          <p class="event-page-sidebar-user-profile-name">Hans Wurstmann<br>Schimmelreiter</p>
+                      </div>
+                      <div class="event-page-sidebar-user-email">
+                          <i class="fa fa-envelope"></i>
+                      </div>
+                  </div>
+                  <div class="event-page-detail-section-header">Share</div>
+                  <div class="event-page-sidebar-share-box">
+                      <div class="event-page-sidebar-share-box-social-area">
+                          <a href="#"><i class="fa fa-envelope"></i></a>
+                          <a href="#"><i class="fa fa-facebook"></i></a>
+                          <a href="#"><i class="fa fa-twitter"></i></a>
+                          <a href="#"><i class="fa fa-google-plus"></i></a>
+                      </div>
+                  </div>
+          </div>
+        </div>
+    </div>
 </div>
-</div> <!-- //CONTROLLER -->
-

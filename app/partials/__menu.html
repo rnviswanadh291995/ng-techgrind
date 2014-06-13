@@ -1,16 +1,16 @@
 <div class="container">
-	<div class="row">
-    <div class="tg-navbar-top">
-      <a class="tg-navbar-top-logo" href="http://techgrind.asia"></a>
-      <i class="fa fa-lock"></i>
-      <div class="tg-navbar-top-settings">
-        <i class="fa fa-envelope"></i>
-        <p>{{ user().mail }}8</p>
-        <i class="fa fa-bell"></i>
-        <p>{{ user().notification }}24</p>
-        <div class="tg-navbar-top-settings-img"></div>
+	<div class="row-fluid tg-navbar-top clearfix">
+      <div class="span10 offset1">
+          <a class="tg-navbar-top-logo" href="http://techgrind.asia"></a>
+          <i class="fa fa-lock"></i>
+          <div class="tg-navbar-top-settings">
+            <i class="fa fa-envelope"></i>
+            <p>{{ user().mail }}8</p>
+            <i class="fa fa-bell"></i>
+            <p>{{ user().notification }}24</p>
+            <div class="tg-navbar-top-settings-img"></div>
+          </div>
       </div>
-    </div>
   </div>
 	<ul class="tg-navbar-left"> <!-- Left Nav -->
     <li ng-class="active('/home')" class="active"><a href="#/home"><i class="fa fa-home"></i><p>Home</p></a></li>
