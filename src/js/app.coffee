@@ -54,6 +54,7 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.plugins.widget.filterbox'
 	'ui.bootstrap'
 	'ngRoute'
+	'ngSanitize'
 	'LocalStorageModule'
 	'ToolsRichEditor'
 ]
