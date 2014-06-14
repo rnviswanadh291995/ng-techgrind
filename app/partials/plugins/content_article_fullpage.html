@@ -38,6 +38,22 @@
                   <p>
                   {{article.subcontent2}}Aabra ka Dabara , This is the sub content where you have to write the subcontent of the main content .. Nd you know what do i mean by sub contect .. hopefully you are smart enough to understand that you crazy taht's why you are still reading this useless content .
                   </p>
+		<div class="span8">
+			<div class="widget articlefullpage">
+				<button class="pull-left btn-back btn-warning" onclick="history.go(-1);" tooltip="(BACK)" tooltip-placement="bottom">
+					<i class="icon-arrow-left"></i>
+				</button>
+				<div class="article-header">
+					<h3>{{article.title}}</h3>
+				</div>
+				<div class="article-body"> <!-- the CONTENT -->
+					<div class="article-content">
+						<img class="article-img img-polaroid" src="http://placehold.it/300x200"/>
+						<div ng-bind-html="article.content"></div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /span -->
 
         </div>
         <div class="content-page-discussion"> <!-- DISCUSSION AREA -->
