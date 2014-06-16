@@ -51,6 +51,9 @@ appModule.controller "ContentNewsCtrl", [ "$scope", "steam", "$routeParams", "$l
       $scope.articles = data["article-list"]  if data["article-list"]
       return
 
+    $scope.debug = (item) ->
+      sexpr({date: new Date(item.publication_date*1000).toString(), title: item.title, oid: item.oid, name: item.name, mod: new Date(item.modified*1000).toString(), version: item.version })
+
     steam.get("/home/techgrind/articles/" + region).then get_articles
     
     #$scope.gotoFullPage = function(id) {
