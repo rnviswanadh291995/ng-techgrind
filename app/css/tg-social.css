@@ -246,7 +246,7 @@ This file should have all template elements that are specific to the discussion 
 	margin-top: 5px;
 	font: 2.4em 'LatoBlack';
 	overflow: hidden;
-	height: 120px;
+	max-height: 120px;
 }
 .discussion-page-box-meta{
 	color: #cfcfcf;
