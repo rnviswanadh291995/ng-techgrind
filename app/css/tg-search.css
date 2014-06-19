@@ -89,6 +89,8 @@ http://ngtg.techgrind.asia:8000/#/members
 .search-page-result-box-content h1{
 	margin-top: 5px;
 	font: 2.4em 'LatoBlack';
+	overflow: hidden;
+	height: 92px;
 }
 .search-page-result-box-meta{
 	color: #cfcfcf;

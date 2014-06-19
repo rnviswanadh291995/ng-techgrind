@@ -39,9 +39,13 @@ http://ngtg.techgrind.asia:8000/#/article/XYZ
 .content-box-content h1 {
 	margin-top: 5px;
 	font: 2.4em 'LatoBlack';
+	height: 85px;
+	overflow: hidden;
 }
 .content-box-content p {
 	font: 1.4em 'LatoLight';
+	overflow: hidden;
+	height: 88px;
 }
 .content-box-meta {
 	color: #cfcfcf;

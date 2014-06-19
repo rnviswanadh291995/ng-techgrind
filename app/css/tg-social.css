@@ -231,6 +231,7 @@ This file should have all template elements that are specific to the discussion 
 }
 .discussion-page-box-content{
 	margin: 20px;
+	margin-top: 10px;
 	height: 150px; /* older height-170px */
 	/* padding-top: 20px;*/
 }
@@ -238,12 +239,14 @@ This file should have all template elements that are specific to the discussion 
 	font: 1.4em 'LatoBold';
 	color: #2ea4d4;
 	text-transform: uppercase;
-	margin-top:10px;
+	margin-top: 20px;
 	margin-left:20px;
 }
 .discussion-page-box-content h1{
 	margin-top: 5px;
 	font: 2.4em 'LatoBlack';
+	overflow: hidden;
+	height: 120px;
 }
 .discussion-page-box-meta{
 	color: #cfcfcf;
