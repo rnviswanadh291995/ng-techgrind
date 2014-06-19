@@ -166,7 +166,7 @@ textarea:-ms-input-placeholder{
 }
 .tg-navbar-left a {
 	display:inline-block;
-	width:100%;
+	width: 100%;
 	height:100%;
 	line-height:100%;
 	vertical-align:middle;
@@ -180,10 +180,15 @@ textarea:-ms-input-placeholder{
 .tg-navbar-left li {
 	padding: 0px;
 	margin: 0px;
-	display:inline-block;
-	width: 100%;
+	width: 50px;
 	height: 100%;
 	line-height: 50px;
+	overflow: hidden;
+	transition: width 0.4s ease-in-out;
+	-webkit-transition: width 0.4s ease-in-out;
+}
+.tg-navbar-left li:hover{
+	width: 160px;
 }
 .tg-navbar-left li.active {
 	background: #333;
