@@ -127,51 +127,55 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 		controller: 'ContentArticleFullPageCtrl'
 
 ## PROFILE PAGES
-	$routeProvider.when '/profile/people',
+	$routeProvider.when '/profiles',
 		templateUrl: 'partials/info_userprofile.html'
 		controller: 'ProfileUserCtrl'
 
-	$routeProvider.when '/profile/people/:userid',
+	$routeProvider.when '/profiles/people',
 		templateUrl: 'partials/info_userprofile.html'
 		controller: 'ProfileUserCtrl'
 
-	$routeProvider.when '/profile/startups',
+	$routeProvider.when '/profiles/people/:userid',
+		templateUrl: 'partials/info_userprofile.html'
+		controller: 'ProfileUserCtrl'
+
+	$routeProvider.when '/profiles/startups',
 		templateUrl: 'partials/controller/info_startupprofile.html'
 		controller: 'ProfileStartupCtrl'
 
-	$routeProvider.when '/profile/startups/:startupid',
+	$routeProvider.when '/profiles/startups/:startupid',
 		templateUrl: 'partials/controller/info_startupprofile.html'
 		controller: 'ProfileStartupCtrl'
 
-	$routeProvider.when '/profile/investors',
+	$routeProvider.when '/profiles/investors',
 		templateUrl: 'partials/controller/info_investorprofile.html'
 		controller: 'ProfileInvestorCtrl'
 
-	$routeProvider.when '/profile/investors/:investorid',
+	$routeProvider.when '/profiles/investors/:investorid',
 		templateUrl: 'partials/controller/info_investorprofile.html'
 		controller: 'ProfileInvestorCtrl'
 
-	$routeProvider.when '/profile/services',
+	$routeProvider.when '/profiles/services',
 		templateUrl: 'partials/controller/info_serviceprofile.html'
 		controller: 'ProfileServicesCtrl'
 
-	$routeProvider.when '/profile/services/:serviceid',
+	$routeProvider.when '/profiles/services/:serviceid',
 		templateUrl: 'partials/controller/info_serviceprofile.html'
 		controller: 'ProfileServicesCtrl'
 
-	$routeProvider.when '/profile/spaces',
+	$routeProvider.when '/profiles/spaces',
 		templateUrl: 'partials/controller/info_spaceprofile.html'
 		controller: 'ProfileSpacesCtrl'
 
-	$routeProvider.when '/profile/spaces/:spaceid',
+	$routeProvider.when '/profiles/spaces/:spaceid',
 		templateUrl: 'partials/controller/info_spaceprofile.html'
 		controller: 'ProfileSpacesCtrl'
 
-	$routeProvider.when '/profile/community',
+	$routeProvider.when '/profiles/community',
 		templateUrl: 'partials/controller/info_communityprofile.html'
 		controller: 'ProfileCommunityCtrl'
 
-	$routeProvider.when '/profile/community/:communityid',
+	$routeProvider.when '/profiles/community/:communityid',
 		templateUrl: 'partials/controller/info_communityprofile.html'
 		controller: 'ProfileCommunityCtrl'
 
