@@ -1,0 +1,29 @@
+.tg-navbar-left-mobile {
+	width: 200px;
+	height: auto;
+	display: table-row;
+	background: #f00
+}
+
+.tg-navbar-left-mobile li {
+	float:none;
+	display:block;
+	height:50px;
+	width:150px;
+	line-height:2em;
+	max-width:150px;
+}
+
+.tg-navbar-left-mobile i {
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+.tg-navbar-left-mobile b {
+	float:right;
+}
+
+.tg-navbar-left-mobile p {
+
+}
