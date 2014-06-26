@@ -101,7 +101,7 @@ textarea:-ms-input-placeholder{
 	z-index: 999;
 	height: 40px;
 	width: inherit;
-	background-color: #fff;
+	background-color: #e8e9ed;
 	top: 0px;
 	margin: 0px;
 	padding: 0px;
@@ -159,6 +159,7 @@ textarea:-ms-input-placeholder{
 	color: white;
 	background: #f1634d;
 	cursor: pointer;
+	float:left;
 }
 .tg-navbar-left-trigger-button:hover{
 	opacity: 0.9;
@@ -171,7 +172,22 @@ textarea:-ms-input-placeholder{
 	text-transform: uppercase;
 	margin-left: 20px;
 }
-
+.tg-navbar-right-trigger-button{
+	width: 50px;
+	height: 50px;
+	padding-top: 30px;
+	padding-left: 30px;
+	color: white;
+	background: #141414;
+	cursor: pointer;
+	float: right;
+}
+.tg-navbar-right-trigger-button:hover{
+	opacity: 0.9;
+}
+.tg-navbar-right-trigger-button i{
+	font-size: 2em;
+}
 .tg-menu-overlay{
 	position: fixed;
 	top: 0;
@@ -179,7 +195,7 @@ textarea:-ms-input-placeholder{
 	width:200px;
 	height: 100%;
 	background: #bab9b9;
-		-moz-transform: translateX(-200px);
+	-moz-transform: translateX(-200px);
 	-webkit-transform: translateX(-200px);
 	-o-transform: translateX(-200px);
 	-ms-transform: translateX(-200px);
@@ -216,6 +232,55 @@ textarea:-ms-input-placeholder{
 	background: #141414;
 }
 .tg-menu-icon{
+	width:30px;
+	float: left;
+}
+
+.tg-tools-overlay{
+	position: fixed;
+	float: right;
+	top: 0;
+	z-index: 1001;
+	width:200px;
+	height: 100%;
+	background: #bab9b9;
+	-moz-transform: translateX(1170px);
+	-webkit-transform: translateX(1170px);
+	-o-transform: translateX(1170px);
+	-ms-transform: translateX(1170px);
+	transform: translateX(1170px);
+}
+.tg-tools{
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.tg-tools.collapse{
+	height: 100% !important;
+	-moz-transform: translateX(1170px);
+	-webkit-transform: translateX(1170px);
+	-o-transform: translateX(1170px);
+	-ms-transform: translateX(1170px);
+	transform: translateX(1170px);
+}
+.tg-tools.in.collapse{
+	-moz-transform: translateX(970px);
+	-webkit-transform: translateX(970px);
+	-o-transform: translateX(970px);
+	-ms-transform: translateX(970px);
+	transform: translateX(970px);
+}
+.tg-tools-slidebar{
+	width: 200px;
+	height: 100%;
+	background: #141414;
+}
+.tg-tools-icon{
 	width:30px;
 	float: left;
 }
