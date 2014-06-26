@@ -1,4 +1,40 @@
 <div class="container">
+      <div class="tg-menu-overlay hidden-phone hidden-tablet">
+      </div>
+      <div class="tg-menu collapse hidden-phone hidden-tablet">
+          <div class="tg-menu-slidebar">
+                <ul class="tg-navbar-left hidden-phone hidden-tablet"> 
+                  <li ng-class="active('/home')" class="active" data-toggle="collapse" data-target=".tg-menu"><a href="#/home">
+                      <div class="tg-menu-icon"><i class="fa fa-home"></i></div>
+                      <p>Home</p></a>
+                  </li>
+                  <li ng-class="active('/events')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/events">
+                      <div class="tg-menu-icon"><i class="fa fa-bullhorn"></i></div>
+                      <p>Events</p></a>
+                  </li>
+                  <li ng-class="active('/resources')" class="dropdown" data-toggle="collapse" data-target=".tg-menu"><a>
+                      <div class="tg-menu-icon"><i class="fa fa-cloud-download"></i></div>
+                      <p>Resources</p><i class="caret"></i></a>
+                          <ul ng-controller="MenuCtrl" class="dropdown-menu">
+                              <li ng-repeat="resource in resources" class="sub-menu"><a href="#/{{resource.url}}"><i class="fa {{resource.icon}}"></i>{{resource.name}}</a>
+                              </li>
+                          </ul>
+                  </li>
+                  <li ng-class="active('/products')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/products">
+                      <div class="tg-menu-icon"><i class="fa fa-dollar"></i></div>
+                      <p>Products</p></a>
+                  </li>
+                  <li ng-class="active('/profiles')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/profiles">
+                      <div class="tg-menu-icon"><i class="fa fa-bar-chart-o"></i></div>
+                      <p>Profiles</p></a>
+                  </li>
+                  <li class="" data-toggle="collapse" data-target=".tg-menu"><a href="#">
+                      <div class="tg-menu-icon"><i class="fa fa-search"></i></div>
+                      <p>Search</p></a>
+                  </li>
+                </ul>
+          </div>
+      </div>
 	<div class="row-fluid tg-navbar-top clearfix">
       <div class="span10 offset1">
           <a class="tg-navbar-top-logo" href="http://techgrind.asia"></a>
@@ -12,7 +48,9 @@
           </div>
       </div>
   </div>
-	<ul class="tg-navbar-left hidden-phone hidden-tablet"> <!-- Left Nav -->
+  
+  <!--
+	<ul class="tg-navbar-left hidden-phone hidden-tablet"> 
     <li ng-class="active('/home')" class="active"><a href="#/home"><i class="fa fa-home"></i><p>Home</p></a></li>
     <li ng-class="active('/events')" class=""><a href="#/events"><i class="fa fa-bullhorn"></i><p>Events</p></a></li>
     <li ng-class="active('/resources')" class="dropdown"><a><i class="fa fa-cloud-download"></i><p>Resources</p><i class="caret"></i></a>
@@ -23,4 +61,5 @@
     <li ng-class="active('/profiles')" class=""><a href="#/profiles"><i class="fa fa-bar-chart-o"></i><p>Profiles</p></a></li>
     <li class=""><a href="#"><i class="fa fa-search"></i><p>Search</p></a></li>
   </ul>
+  -->
 </div>

@@ -462,14 +462,6 @@ ul.thumbnails li.span12 + li {
 ----------------------------------------- */
 /* Landscape phones and down */
 @media (max-width: 480px) {
-	body {
-		padding: 2%;
-		width: auto;
-		height: auto;
-	}
-	.tg-main-container .span10.offset1{
-		width: 100% !important;
-	}
 	.content-box-area .span4{
 		width: 100% !important;
 		padding-right: 10px;
@@ -477,19 +469,12 @@ ul.thumbnails li.span12 + li {
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-	body {
-		padding: 2%;
-		width: auto;
-		height: auto;
-	}
+@media (min-width: 481px) and (max-width: 767px) {
 	.content-box-area .span4{
 		width: 48.61878453038674%;
-		float: left;
+		/*float: left;*/
 	}
-	.content-box.span4:nth-child(2n) {
- 		margin-left : 1.5%;
-	}
+
 }
 
 @media (max-width: 980px) {

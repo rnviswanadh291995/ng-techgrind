@@ -147,22 +147,91 @@ textarea:-ms-input-placeholder{
 	position: relative;
 	bottom: 10px;
 }
+.tg-navbar-main{
+	height: 80px;
+	background: #fff;
+}
+.tg-navbar-left-trigger-button{
+	width: 170px;
+	height: 50px;
+	padding-top: 30px;
+	padding-left: 30px;
+	color: white;
+	background: #f1634d;
+	cursor: pointer;
+}
+.tg-navbar-left-trigger-button:hover{
+	opacity: 0.9;
+}
+.tg-navbar-left-trigger-button i{
+	font-size: 2em;
+}
+.tg-navbar-left-trigger-button i span{
+	font: 0.7em 'LatoBold';
+	text-transform: uppercase;
+	margin-left: 20px;
+}
 
+.tg-menu-overlay{
+	position: fixed;
+	top: 0;
+	z-index: 1001;
+	width:200px;
+	height: 100%;
+	background: #bab9b9;
+		-moz-transform: translateX(-200px);
+	-webkit-transform: translateX(-200px);
+	-o-transform: translateX(-200px);
+	-ms-transform: translateX(-200px);
+	transform: translateX(-200px);
+}
+.tg-menu{
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.tg-menu.collapse{
+	height: 100% !important;
+	-moz-transform: translateX(-200px);
+	-webkit-transform: translateX(-200px);
+	-o-transform: translateX(-200px);
+	-ms-transform: translateX(-200px);
+	transform: translateX(-200px);
+}
+.tg-menu.in.collapse{
+	-moz-transform: translateX(0px);
+	-webkit-transform: translateX(0px);
+	-o-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	transform: translateX(0px);
+}
+.tg-menu-slidebar{
+	width: 200px;
+	height: 100%;
+	background: #141414;
+}
+.tg-menu-icon{
+	width:30px;
+	float: left;
+}
 /* END > NAVBAR-TOP
 ----------------------------------------- */
 
-/* NAVBAR-LEFT
+/* NAVBAR-LEFT --> CHANGE TO MENU
 ----------------------------------------- */
 
 .tg-navbar-left {
-	position: fixed;
 	text-align: left;
 	list-style: none;
-	top: 120px;
-	width: 160px;
+	width: 170px;
+	margin-left: 30px;
+	padding-top: 90px;
 	z-index: 999;
-	padding: 0px;
-	margin: 0px;
 }
 .tg-navbar-left a {
 	display:inline-block;
@@ -180,45 +249,36 @@ textarea:-ms-input-placeholder{
 .tg-navbar-left li {
 	padding: 0px;
 	margin: 0px;
-	width: 50px;
+	width: 170px;
 	height: 100%;
-	line-height: 50px;
+	line-height: 60px;
 	overflow: hidden;
-	transition: width 0.4s ease-in-out;
-	-webkit-transition: width 0.4s ease-in-out;
 }
-.tg-navbar-left li:hover{
-	width: 160px;
+.tg-navbar-left li:hover i{
+	color: #ec6552;
 }
-.tg-navbar-left li.active {
-	background: #333;
+.tg-navbar-left li:hover p{
+	color: #ec6552;
 }
-.tg-navbar-left li.active p, .tg-navbar-left li.active i {
-	color: #ddd;
-}
-.tg-navbar-left li:hover {
-	background: #333;
-}
-.tg-navbar-left li:hover p, .tg-navbar-left li:hover i {
-	color: #ddd;
+.tg-navbar-left li.active i, .tg-navbar-left li.active p{
+	color: #ec6552;
 }
 .tg-navbar-left li i {
-	font-size: 2.3em;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-	padding-left: 5px;
-	color: #666;
+	font-size: 2em;
+	height: 60px;
+	line-height: 60px;
+	color: #ffffff;
 	display:inline;
 }
 .tg-navbar-left li p {
-	font-size: 2em;
+	font: 1.4em 'LatoBold';
+	text-transform: uppercase;
 	margin: 0px;
 	padding: 0px;
 	margin-left: 5px;
-	color: #666;
-	font-weight: bold;
+	color: #ffffff;
 	display:inline;
+	line-height: 61px;
 }
 /* Sub-Menu */
 .dropdown-menu, .dropdown-menu ul, .dropdown-menu li {
@@ -326,7 +386,7 @@ textarea:-ms-input-placeholder{
 /* these are the overall styles used in outlining each mainpage (container pages, eg: home, events, resources, products, profiles) */
 .tg-main-container{
 	background: #e7e9ed;
-	padding-top: 40px;
+	padding-top: 20px;
 	padding-bottom: 30px;
 }
 .tg-mainpage h1 {
@@ -358,16 +418,27 @@ textarea:-ms-input-placeholder{
 ----------------------------------------- */
 /* Landscape phones and down */
 @media (max-width: 480px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
 	body {
 		padding: 2%;
 		width: auto;
 		height: auto;
 	}
+	.tg-maintabs{
+		margin: 0 1em 0 1em;
+	}
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-
+@media (min-width: 481px) and (max-width: 767px) {
+	.row-fluid [class*="span"]{
+		margin-left: 2.127659574468085%;
+		float: left;
+	}
 }
 
 @media (max-width: 980px) {
