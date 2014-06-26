@@ -37,10 +37,13 @@ This file should have all template elements that are specific to the discussion 
 
 /* ------------------------------------------------- */
 
+<<<<<<< HEAD
 /*----- FIX SPAN4 PROBLEM FOR DISCUSSION PAGE BOX -------*/
 /*-----------------------------------------------*/
 
 /*
+=======
+>>>>>>> fc0229a126507aed465e5bc38de4f655a85614cb
 /* Filter Selector */
 
 .discussion-page-filter-button-selected {
@@ -428,11 +431,14 @@ This file should have all template elements that are specific to the discussion 
 	margin-left: 8px;
 }
 
+<<<<<<< HEAD
 /* -----------------------------------------
 	RESPONSIVE DESIGN
 ----------------------------------------- */
 /* Landscape phones and down */
 @media (max-width: 480px) {
+=======
+>>>>>>> fc0229a126507aed465e5bc38de4f655a85614cb
 /* -------------Responsive Design-------------
 --------------FOR discussion_articles-------------------
 */
@@ -453,6 +459,10 @@ This file should have all template elements that are specific to the discussion 
 	.discussion-page-new-post {
 	display: none;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> fc0229a126507aed465e5bc38de4f655a85614cb
 }
 
 /* Landscape phone to portrait tablet */
@@ -475,16 +485,22 @@ This file should have all template elements that are specific to the discussion 
 	.discussion-page-box-area .span4{
 		width: 48.61878453038674%;
 	}
+<<<<<<< HEAD
 	.discussion-page-box-area .span4:nth-child(2n + 1) {
  		margin-left : 0px;
  	}
+=======
+>>>>>>> fc0229a126507aed465e5bc38de4f655a85614cb
 	.discussion-page-box.span4:nth-child(2n + 1) {
  		margin-left: 0px;
 	}
 }
 @media (min-width: 981px) {
 	.discussion-page-box.span4:nth-child(3n + 4) {
+<<<<<<< HEAD
   		margin-left : 0px;
+=======
+>>>>>>> fc0229a126507aed465e5bc38de4f655a85614cb
 		margin-left: 0px;
 	}
 }
