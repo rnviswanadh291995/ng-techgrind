@@ -107,10 +107,23 @@ textarea:-ms-input-placeholder{
 	padding: 0px;
 	padding-top: 20px;
 }
-.tg-navbar-top i {
-	float: right;
-	font-size: 1.7em;
-	line-height: 25px;
+.tg-navbar-top-search{
+	margin-left: 30px;
+	color: #a7a9ab;
+	cursor: pointer;
+}
+.tg-navbar-top-search i{
+	font-size: 2em;
+}
+.tg-navbar-top-search i:hover{
+	color: #858689;
+}
+.tg-navbar-top-icon{
+	text-align: center;
+	color: #f1634d;
+}
+.tg-navbar-top-icon i{
+	font-size: 2.4em;
 }
 .tg-navbar-top-logo {
 	width: 200px;
@@ -120,8 +133,9 @@ textarea:-ms-input-placeholder{
 	float: left;
 }
 .tg-navbar-top-settings {
-	color: #999;
+	color: #a7a9ab;
 	float: right;
+	margin-right: 30px;
 	font-family: 'LatoBold';
 	line-height: 2em;
 }
@@ -131,31 +145,39 @@ textarea:-ms-input-placeholder{
 	font-size: 1.7em
 }
 .tg-navbar-top-settings p {
-	color: #2ea4d4;
+	color: #a7a9ab;
 	float: left;
 	margin-right: 15px;
 	font-size: 1.4em;
 }
 .tg-navbar-top-settings-img {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
+	width: 30px;
+	height: 30px;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 40px 40px;
 	float: right;
 	position: relative;
-	bottom: 10px;
+	bottom: 6px;
 }
+
+/* END > NAVBAR-TOP
+----------------------------------------- */
+
+/* NAVBAR-LEFT --> CHANGE TO MENU
+----------------------------------------- */
+
 .tg-navbar-main{
 	height: 80px;
 	background: #fff;
+	position: fixed;
+	width: inherit;
+	margin-top: 20px;
+	z-index: 999;
 }
 .tg-navbar-left-trigger-button{
-	width: 170px;
+	width: 200px;
 	height: 50px;
 	padding-top: 30px;
-	padding-left: 30px;
 	color: white;
 	background: #f1634d;
 	cursor: pointer;
@@ -166,6 +188,7 @@ textarea:-ms-input-placeholder{
 }
 .tg-navbar-left-trigger-button i{
 	font-size: 2em;
+	margin-left: 30px;
 }
 .tg-navbar-left-trigger-button i span{
 	font: 0.7em 'LatoBold';
@@ -173,10 +196,9 @@ textarea:-ms-input-placeholder{
 	margin-left: 20px;
 }
 .tg-navbar-right-trigger-button{
-	width: 50px;
+	width: 80px;
 	height: 50px;
 	padding-top: 30px;
-	padding-left: 30px;
 	color: white;
 	background: #141414;
 	cursor: pointer;
@@ -187,6 +209,9 @@ textarea:-ms-input-placeholder{
 }
 .tg-navbar-right-trigger-button i{
 	font-size: 2em;
+	margin-left: 50%;
+	position: relative;
+	right: 10px;
 }
 .tg-menu-overlay{
 	position: fixed;
@@ -205,6 +230,7 @@ textarea:-ms-input-placeholder{
 	position: fixed;
 	top: 0;
 	z-index: 1000;
+	overflow: visible;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
@@ -244,11 +270,7 @@ textarea:-ms-input-placeholder{
 	width:200px;
 	height: 100%;
 	background: #bab9b9;
-	-moz-transform: translateX(1170px);
-	-webkit-transform: translateX(1170px);
-	-o-transform: translateX(1170px);
-	-ms-transform: translateX(1170px);
-	transform: translateX(1170px);
+	margin-left: 1200px;
 }
 .tg-tools{
 	position: fixed;
@@ -262,18 +284,14 @@ textarea:-ms-input-placeholder{
 }
 .tg-tools.collapse{
 	height: 100% !important;
-	-moz-transform: translateX(1170px);
-	-webkit-transform: translateX(1170px);
-	-o-transform: translateX(1170px);
-	-ms-transform: translateX(1170px);
-	transform: translateX(1170px);
+	margin-left: 1200px;
 }
 .tg-tools.in.collapse{
-	-moz-transform: translateX(970px);
-	-webkit-transform: translateX(970px);
-	-o-transform: translateX(970px);
-	-ms-transform: translateX(970px);
-	transform: translateX(970px);
+	-moz-transform: translateX(-200px);
+	-webkit-transform: translateX(-200px);
+	-o-transform: translateX(-200px);
+	-ms-transform: translateX(-200px);
+	transform: translateX(-200px);
 }
 .tg-tools-slidebar{
 	width: 200px;
@@ -284,11 +302,6 @@ textarea:-ms-input-placeholder{
 	width:30px;
 	float: left;
 }
-/* END > NAVBAR-TOP
------------------------------------------ */
-
-/* NAVBAR-LEFT --> CHANGE TO MENU
------------------------------------------ */
 
 .tg-navbar-left {
 	text-align: left;
@@ -317,12 +330,9 @@ textarea:-ms-input-placeholder{
 	width: 170px;
 	height: 100%;
 	line-height: 60px;
-	overflow: hidden;
+	overflow: visible;
 }
-.tg-navbar-left li:hover i{
-	color: #ec6552;
-}
-.tg-navbar-left li:hover p{
+.tg-navbar-left li:hover .main-menu-icon{
 	color: #ec6552;
 }
 .tg-navbar-left li.active i, .tg-navbar-left li.active p{
@@ -346,13 +356,46 @@ textarea:-ms-input-placeholder{
 	line-height: 61px;
 }
 /* Sub-Menu */
+.dropdown:hover .tg-dropdown-menu{
+	display: block;
+}
+.tg-dropdown-menu{
+	z-index: 998;
+	position: absolute;
+	top: 0;
+	left: 170px;
+	min-width: 200px;
+	width: auto;
+	background: #1c1c1c;
+	display: none;
+}
+.tg-dropdown-menu:hover{
+	display: block;
+}
+.tg-dropdown-menu li.sub-menu{
+	list-style: none;
+	color: #fff;
+	min-width: 200px;
+	width: auto;
+}
+.tg-dropdown-menu li:hover i{
+	color: #ec6552;
+}
+.tg-dropdown-menu li:hover p{
+	color: #ec6552;
+}
+.tg-dropdown-menu .sub-menu{
+	margin-left:20px;
+}
+
+/*-- NO USE ANYMORE
 .dropdown-menu, .dropdown-menu ul, .dropdown-menu li {
 	padding: 0px;
 	margin: 0px;
-	left: 160px;
+	left: 170px;
 	top: 0px;
-	background: #ddd;
-	color: #333;
+	background: #2a2a2a;
+	color: #fff;
 }
 .dropdown-menu [class^="icon-"],
 .dropdown-menu [class*=" icon-"] {
@@ -381,13 +424,15 @@ textarea:-ms-input-placeholder{
 	color: #fff;
 	background: #444;
 }
-/* Create Dropdown-On-Hover */
+/* Create Dropdown-On-Hover 
 .dropdown:hover .dropdown-menu {
 	display: block;
 }
 .dropdown:after .dropdown-menu {
 	display: none;
-}
+}*/
+
+
 /* END > NAVBAR-LEFT
 ----------------------------------------- */
 
@@ -451,7 +496,7 @@ textarea:-ms-input-placeholder{
 /* these are the overall styles used in outlining each mainpage (container pages, eg: home, events, resources, products, profiles) */
 .tg-main-container{
 	background: #e7e9ed;
-	padding-top: 20px;
+	padding-top:100px;
 	padding-bottom: 30px;
 }
 .tg-mainpage h1 {
@@ -483,7 +528,31 @@ textarea:-ms-input-placeholder{
 ----------------------------------------- */
 /* Landscape phones and down */
 @media (max-width: 480px) {
-
+	.tg-navbar-top .span4{
+		width: 48.93617021276595% !important;
+		float: left;
+	}
+	.tg-navbar-left-trigger-button{
+		width: 78%;
+	}
+	.tg-navbar-right-trigger-button{
+		width: 22%;
+	}
+	.tg-navbar-top-settings{
+		margin-right:5px;
+	}
+	.tg-navbar-top-icon{
+		display: none !important;
+	}
+	.tg-navbar-top-search{
+		margin-left:15px;
+	}
+	.tg-navbar-main{
+		margin-top: 30px;
+	}
+	.tg-main-container{
+		padding-top: 110px;
+	}
 }
 
 /* Landscape phone to portrait tablet */
@@ -495,6 +564,18 @@ textarea:-ms-input-placeholder{
 	}
 	.tg-maintabs{
 		margin: 0 1em 0 1em;
+	}
+	.tg-navbar-top, .tg-navbar-main{
+		width: 96%;
+	}
+	.tg-navbar-top .span4{
+		width: 31.914893617021278%;
+	}
+	.tg-tools-overlay{
+		margin-left:96% !important;
+	}
+	.tg-tools.collapse {
+		margin-left:96% !important;
 	}
 }
 
@@ -527,5 +608,19 @@ textarea:-ms-input-placeholder{
 		line-height: 50px;
 		padding: 0px;
 		vertical-align: middle;
+	}
+	.tg-tools-overlay{
+		margin-left:724px;
+	}
+	.tg-tools.collapse {
+		margin-left:724px;
+	}
+}
+@media (min-width: 981px) and (max-width: 1200px) {
+	.tg-tools-overlay{
+		margin-left:940px;
+	}
+	.tg-tools.collapse {
+		margin-left:940px;
 	}
 }
