@@ -547,12 +547,6 @@ textarea:-ms-input-placeholder{
 	.tg-navbar-top-search{
 		margin-left:15px;
 	}
-	.tg-navbar-main{
-		margin-top: 30px;
-	}
-	.tg-main-container{
-		padding-top: 110px;
-	}
 }
 
 /* Landscape phone to portrait tablet */
@@ -576,6 +570,12 @@ textarea:-ms-input-placeholder{
 	}
 	.tg-tools.collapse {
 		margin-left:96% !important;
+	}
+	.tg-navbar-main{
+		margin-top: 30px;
+	}
+	.tg-main-container{
+		padding-top: 110px;
 	}
 }
 
