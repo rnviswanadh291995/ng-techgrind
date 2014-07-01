@@ -159,7 +159,6 @@ textarea:-ms-input-placeholder{
 	position: relative;
 	bottom: 6px;
 }
-
 /* END > NAVBAR-TOP
 ----------------------------------------- */
 
@@ -171,13 +170,12 @@ textarea:-ms-input-placeholder{
 	background: #fff;
 	position: fixed;
 	width: inherit;
-	margin-top: 20px;
+	top: 60px;
 	z-index: 999;
 }
 .tg-navbar-left-trigger-button{
 	width: 200px;
-	height: 50px;
-	padding-top: 30px;
+	height: 80px;
 	color: white;
 	background: #f1634d;
 	cursor: pointer;
@@ -189,6 +187,8 @@ textarea:-ms-input-placeholder{
 .tg-navbar-left-trigger-button i{
 	font-size: 2em;
 	margin-left: 30px;
+	height: 78px;
+	line-height: 78px;
 }
 .tg-navbar-left-trigger-button i span{
 	font: 0.7em 'LatoBold';
@@ -261,7 +261,6 @@ textarea:-ms-input-placeholder{
 	width:30px;
 	float: left;
 }
-
 .tg-tools-overlay{
 	position: fixed;
 	float: right;
@@ -445,13 +444,40 @@ textarea:-ms-input-placeholder{
 	margin: 0 0 0 1em;
 	cursor: pointer;
 }
-.tg-maintabs .active {
-	font-family: 'LatoBlack' !important;
-	background: #e7e9ed;
+
+.nav-tabs>.active>a{
+	color: #f1634d;
+	border: none;
+  	border-bottom: 2px solid #f1634d;
 }
-.tg-maintabs tab {
-	font: 3em 'LatoRegular';
+.nav-tabs{
+	position: fixed;
+	top: 60px;
+	z-index: 999;
+	margin-left: 110px;
+	border-bottom: none;
 }
+.nav-tabs li{
+	height: 78px;
+}
+.nav-tabs li a{
+	font: 1.4em 'LatoBold';
+	color: #000;
+	line-height: 78px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border: none;
+	margin-right: 0px;
+	text-transform: uppercase;
+}
+.nav-tabs li a:hover{
+	border: none !important;
+	background: none !important;
+	border-bottom: 2px solid #f1634d !important;
+	color: #f1634d !important;
+}
+
+
 /* END > MAINTABS
 ----------------------------------------- */
 
@@ -496,7 +522,7 @@ textarea:-ms-input-placeholder{
 /* these are the overall styles used in outlining each mainpage (container pages, eg: home, events, resources, products, profiles) */
 .tg-main-container{
 	background: #e7e9ed;
-	padding-top:100px;
+	padding-top:130px;
 	padding-bottom: 30px;
 }
 .tg-mainpage h1 {
@@ -571,11 +597,11 @@ textarea:-ms-input-placeholder{
 	.tg-tools.collapse {
 		margin-left:96% !important;
 	}
-	.tg-navbar-main{
-		margin-top: 30px;
-	}
 	.tg-main-container{
 		padding-top: 110px;
+	}
+	.nav-tabs{
+		display: none;
 	}
 }
 
@@ -615,6 +641,9 @@ textarea:-ms-input-placeholder{
 	.tg-tools.collapse {
 		margin-left:724px;
 	}
+	.nav-tabs{
+		margin-left: 140px;
+	}
 }
 @media (min-width: 981px) and (max-width: 1200px) {
 	.tg-tools-overlay{
@@ -622,5 +651,8 @@ textarea:-ms-input-placeholder{
 	}
 	.tg-tools.collapse {
 		margin-left:940px;
+	}
+	.nav-tabs{
+		margin-left: 125px;
 	}
 }
