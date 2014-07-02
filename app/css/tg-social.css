@@ -437,7 +437,7 @@ This file should have all template elements that are specific to the discussion 
 	RESPONSIVE DESIGN
 ----------------------------------------- */
 /* Landscape phones and down */
-@media (max-width: 480px) {
+
 /* -------------Responsive Design-------------
 --------------FOR discussion_articles-------------------
 */
@@ -471,9 +471,9 @@ This file should have all template elements that are specific to the discussion 
 		width: 48.61878453038674%;
 		float: left;
 	}
-	/*.discussion-page-box.span4:nth-child(2n) {
+	.discussion-page-box.span4:nth-child(2n) {
  		margin-left : 1.5%;
-	}*/
+	}
 }
 
 @media (max-width: 980px) {
@@ -485,6 +485,9 @@ This file should have all template elements that are specific to the discussion 
  	}
 	.discussion-page-box.span4:nth-child(2n + 1) {
  		margin-left: 0px;
+	}
+	.discussion-page-box.span4:nth-child(2n) {
+ 		margin-left : 1.5%;
 	}
 	
 }
