@@ -47,6 +47,56 @@ app.controller 'AppCtrl', ['$scope', '$location', 'steam', (S, loc, steam) ->
 
 # COMPLETE: by Efraim
 app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
+	S.mainMenu = [
+		name: 'Home'
+		url: 'home'
+		icon: 'fa-home'
+	,
+		name: 'Events'
+		url: 'events'
+		icon: 'fa-bullhorn'
+	,
+		name: 'Jobs'
+		url: 'jobs'
+		icon: 'fa-laptop'
+	,
+		name: 'Resources'
+		icon: 'fa-cloud-download'
+		submenu: [
+			name: 'Guides & Tutorials'
+			url: 'res-guides'
+			icon: ''
+		,
+			name: 'Docs & Templates'
+			url: 'res-docs'
+			icon: ''
+		,
+			name: 'Photos & Video'
+			url: 'res-media'
+			icon: ''
+		]
+	,
+		name: 'TechGrind'
+		icon: 'fa-cogs'
+		submenu: [
+			name: 'Startup Hubs'
+			url: 'tg-hubs'
+			icon: ''
+		,
+			name: 'Membership'
+			url: 'tg-members'
+			icon: ''
+		,
+			name: 'Community'
+			url: 'tg-activities'
+			icon: ''
+		,
+			name: 'Incubator'
+			url: 'tg-incubator'
+			icon: ''
+		]
+	];
+
 	S.countries = [
 		name: 'Cambodia'
 		url: 'cambodia'
@@ -75,6 +125,7 @@ app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
 		name: 'Vietnam'
 		url: 'vietnam'
 	];
+
 	S.resources = [
 		name: 'Startup Jobs'
 		url: 'resources/jobs'

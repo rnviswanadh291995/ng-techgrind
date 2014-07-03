@@ -164,7 +164,6 @@ textarea:-ms-input-placeholder{
 
 /* NAVBAR-LEFT --> CHANGE TO MENU
 ----------------------------------------- */
-
 .tg-navbar-main{
 	height: 80px;
 	background: #fff;
@@ -226,6 +225,7 @@ textarea:-ms-input-placeholder{
 	-ms-transform: translateX(-200px);
 	transform: translateX(-200px);
 }
+/* style everything in tg-menu, by styling an element of tg-menu */
 .tg-menu{
 	position: fixed;
 	top: 0;
@@ -252,16 +252,22 @@ textarea:-ms-input-placeholder{
 	-ms-transform: translateX(0px);
 	transform: translateX(0px);
 }
-.tg-menu-slidebar{
+.tg-menu i[class*="fa"],
+.tg-menu i[class^="fa"] {
+	width: 30px;
+	float: left;
+}
+.tg-menu b[class*="fa"],
+.tg-menu b[class^="fa"] {
+	width: 30px;
+	margin-left: 10px;
+}
+.tg-menu-slidebar {
 	width: 200px;
 	height: 100%;
 	background: #141414;
 }
-.tg-menu-icon{
-	width:30px;
-	float: left;
-}
-.tg-tools-overlay{
+.tg-menu-tools-overlay {
 	position: fixed;
 	float: right;
 	top: 0;
@@ -271,7 +277,7 @@ textarea:-ms-input-placeholder{
 	background: #bab9b9;
 	margin-left: 1200px;
 }
-.tg-tools{
+.tg-menu-tools{
 	position: fixed;
 	top: 0;
 	z-index: 1000;
@@ -281,27 +287,27 @@ textarea:-ms-input-placeholder{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.tg-tools.collapse{
+.tg-menu-tools.collapse{
 	height: 100% !important;
 	margin-left: 1200px;
 }
-.tg-tools.in.collapse{
+.tg-menu-tools.in.collapse{
 	-moz-transform: translateX(-200px);
 	-webkit-transform: translateX(-200px);
 	-o-transform: translateX(-200px);
 	-ms-transform: translateX(-200px);
 	transform: translateX(-200px);
 }
-.tg-tools-slidebar{
+.tg-menu-tools-slidebar{
 	width: 200px;
 	height: 100%;
 	background: #141414;
 }
-.tg-tools-icon{
-	width:30px;
+.tg-menu-tools i[class*="fa"],
+.tg-menu-tools i[class^="fa"] {
+	width: 30px;
 	float: left;
 }
-
 .tg-navbar-left {
 	text-align: left;
 	list-style: none;
@@ -331,7 +337,11 @@ textarea:-ms-input-placeholder{
 	line-height: 60px;
 	overflow: visible;
 }
-.tg-navbar-left li:hover .main-menu-icon{
+.tg-navbar-left li:hover
+[class*="fa"],
+.tg-navbar-left li:hover
+[class^="fa"],
+.tg-navbar-left li:hover p {
 	color: #ec6552;
 }
 .tg-navbar-left li.active i, .tg-navbar-left li.active p{
@@ -351,7 +361,7 @@ textarea:-ms-input-placeholder{
 	padding: 0px;
 	margin-left: 5px;
 	color: #ffffff;
-	display:inline;
+	display: inline;
 	line-height: 61px;
 }
 /* Sub-Menu */
@@ -359,7 +369,6 @@ textarea:-ms-input-placeholder{
 	display: block;
 }
 .tg-dropdown-menu{
-	z-index: 998;
 	position: absolute;
 	top: 0;
 	left: 170px;
