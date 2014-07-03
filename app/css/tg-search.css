@@ -79,18 +79,23 @@ http://ngtg.techgrind.asia:8000/#/members
 }
 .search-page-result-box-content{
 	margin: 20px;
+	margin-top: 10px;
 	height: 140px;
+	/*margin: 20px;
+	height: 140px;*/
 }
 .search-page-result-box-category{
 	font: 1.4em 'LatoBold';
 	color: #2ea4d4;
 	text-transform: uppercase;
+	margin-top: 20px;
+	margin-left:20px;
 }
 .search-page-result-box-content h1{
-	margin-top: 5px;
+	margin-top: 2px;
 	font: 2.4em 'LatoBlack';
 	overflow: hidden;
-	max-height: 92px;
+	max-height: 86px;
 }
 .search-page-result-box-meta{
 	color: #cfcfcf;
@@ -119,4 +124,61 @@ http://ngtg.techgrind.asia:8000/#/members
 	padding: 0 12px;
 	border-radius: 12px;
 	font-size: 1.1em;
+}
+/* -------------Responsive Design-------------
+--------------FOR widget_search.html-------------------
+*/
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	body {
+		padding: 2%;
+		width: auto;
+		height: auto;
+	}
+	.tg-main-container .span10.offset1{
+		width: 100% !important;
+	}
+	.page-search-search-area .span4{
+		width: 100% !important;
+		padding-right: 10px;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	body {
+		padding: 2%;
+		width: auto;
+		height: auto;
+	}
+	.page-search-search-area .span4{
+		width: 48.61878453038674%;
+		float: left;
+	}
+	.search-page-result-box.span4:nth-child(2n) {
+ 		margin-left : 1.5%;
+	}
+}
+
+@media (max-width: 980px) {
+	.page-search-search-area .span4{
+		width: 48.61878453038674%;
+	}
+	.page-search-search-area .span4:nth-child(2n + 1) {
+ 		margin-left : 0px;
+ 	}
+	.search-page-result-box.span4:nth-child(2n + 1) {
+ 		margin-left: 0px;
+	}
+	.search-page-result-box.span4:nth-child(2n) {
+ 		margin-left : 1.5%;
+	}
+	/*.search-page-result-box.span4:nth-child(3n + 4) {
+  		margin-left : 0px;
+	}*/
+}
+@media (min-width: 981px) {
+	.search-page-result-box.span4:nth-child(3n + 4) {
+  		margin-left : 0px;
+	}
 }
