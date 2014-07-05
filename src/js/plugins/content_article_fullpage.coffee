@@ -22,9 +22,10 @@ appModule.controller "ContentArticleFullPageCtrl", [
     user = null
     self = this
     article = null
+    $scope.test = rp
     get_article = (data) ->
-      $scope.article = data["article"]  if data["article"]
-      return
+      $scope.article = data["article"]
+      $scope.test = data
 
     steam.get("/home/techgrind/articles/all/" + rp.name).then get_article
     self.isOpen = false

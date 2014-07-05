@@ -47,6 +47,7 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.controllers.content.articles.fullpage'
 	'TechGrindApp.controllers.content.docbrowser'
 	'TechGrindApp.controllers.content.mediabrowser'
+	'TechGrindApp.controllers.content.comments'
 	'TechGrindApp.controllers.list.tableview'
 	'TechGrindApp.controllers.list.entities'
 	'TechGrindApp.controllers.info.event'
