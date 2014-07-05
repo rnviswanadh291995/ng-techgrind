@@ -1,0 +1,30 @@
+<div ng-repeat="c in comments" class="content-page-discussion-content-reply-post"> <!-- REPLY POST -->
+<span class="content-page-discussion-content-user-image" style="background: black"></span>
+<div class="content-page-discussion-content-post-answer clearfix">
+    <div class="content-page-discussion-content-header clearfix">
+        <h1>{{c.author}}</h1>
+        <div class="content-page-discussion-content-meta">
+        <i class="fa fa-clock-o"></i>
+        <p>{{c.publication_date*1000|date:'dd/MM/yyyy @ h:mma'}}</p>
+        </div>
+    </div>
+    <div class="content-page-discussion-content-postbox clearfix">
+        <p>{{c.subject}}</p>
+        <p>{{c.content}}</p>
+        <div class="content-page-discussion-content-postbox-social">
+        <a href="#">LIKE</a>
+        <a href="#">REPLY</a>
+        <form>
+          <textarea ng-model="c.reply"  cols="80" rows="5"></textarea>
+          <button title="send" ng-click="send_reply(c)"></button>
+        http://stackoverflow.com/questions/13714884/difficulty-with-ng-model-ng-repeat-and-inputs
+        </form>
+        </div>
+    </div>
+</div>
+      <div ng-switch on="c.annotations.length > 0">
+        <div ng-switch-when="true">
+          <div ng-init="comments = c.annotations;" ng-include="'partials/plugins/comments.html'"></div>  
+        </div>
+      </div>
+</div> <!-- END OF REPLY POST -->

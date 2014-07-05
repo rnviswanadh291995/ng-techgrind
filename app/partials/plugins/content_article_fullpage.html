@@ -5,19 +5,19 @@
         <div class="row-fluid">
         	<div class="span7 offset2">
         		  <div class="content-fullpage-title"> 
-                  <span class="content-fullpage-category">{{article.category}}STARTUP</span>
+                  <span class="content-fullpage-category">{{article.category}}</span>
                   <h1>{{article.title}}</h1>
                   	<div class="content-fullpage-meta clearfix">
-                      <p>From <a href="#">{{article.from}}Techcrunch</a></p> <p>&nbsp;/Posted {{article.posted}}28 mins ago by <a>{{article.by}}Efraim Pettersson</a></p>
+                      <p>From <a href="#">{{article.from}}Techcrunch</a></p> <p>&nbsp;/Posted {{article.posted}} by <a>{{article.by}}</a></p>
                       <span class="content-fullpage-meta-author" style="background:black;"></span>
                   	</div> 
                   <div class="content-fullpage-stats clearfix">
                       <div class="content-fullpage-stats-points">
-                            <span>{{article.points}}236</span>
+                            <span>{{article.points}}</span>
                             <p>Points</p>
                       </div>
                       <div class="content-fullpage-stats-comments">
-                            <span>{{article.comment}}79</span>
+                            <span>{{article.comment}}</span>
                             <p>Comments</p>
                   	  </div>
                   </div>
@@ -27,16 +27,16 @@
                   <p>{{article.content}}</p>
 
 
-                  <h2>{{article.subtitle}}110,000 Bussinesses are using it..</h2>
+                  <h2>{{article.subtitle}}</h2>
                   <p>
-                  {{article.subcontent1}}Aabra ka Dabara , This is the sub content where you have to write the subcontent of the main content .. Nd you know what do i mean by sub contect .. hopefully you are smart enough to understand that you crazy taht's why you are still reading this useless content .
-                  </p>
+                  {{article.subcontent1}}
+                   </p>
                   <img src="http://placehold.it/670x378"/>
                   <div class="content-fullpage-content-caption">
-                  {{image.info}}China will receive nearly a quarter of global phone shipments this year, which Gartner estimates will hit 1.9 billion, a five percent increase on last year.
+                  {{image.info}}
                   </div>
                   <p>
-                  {{article.subcontent2}}Aabra ka Dabara , This is the sub content where you have to write the subcontent of the main content .. Nd you know what do i mean by sub contect .. hopefully you are smart enough to understand that you crazy taht's why you are still reading this useless content .
+                  {{article.subcontent2}}
                   </p>
 		<div class="span8">
 			<div class="widget articlefullpage">
@@ -56,7 +56,7 @@
 		</div> <!-- /span -->
 
         </div>
-        <div class="content-page-discussion"> <!-- DISCUSSION AREA -->
+        <div ng-controller="CommentCtrl" class="content-page-discussion"> <!-- DISCUSSION AREA -->
                     <a class="content-page-content-discussion-toggle-button"><i class="fa fa-comment-o"><span>520</span></i></a>
                       <div class="content-page-discussion-content">
                             <div class="content-page-discussion-content-owner-post"><!-- OWNER POST -->
@@ -110,6 +110,9 @@
                                 </div> <!-- END OF REPLY POST -->
                             </div><!-- END OF OTHER POST -->
               </div>
+<div ng-include="'partials/plugins/comments.html'" ng-model="comments"></div>
+<pre> {{ sexpr(debug) }} </pre>
+<pre> {{ sexpr(data) }} </pre>
         </div> <!-- END OF DISCUSSION AREA -->
               
 
@@ -162,5 +165,7 @@
                     </div>     
 	</div>
     </div>
+<pre>{{ sexpr(article) }}</pre>
+<pre>{{ sexpr(test) }}</pre>
             
       </div>
