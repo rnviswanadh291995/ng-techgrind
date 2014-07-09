@@ -214,7 +214,7 @@ textarea:-ms-input-placeholder{
 	position: relative;
 }
 
-.tg-menu-overlay{
+.tg-menu-overlay {
 	position: fixed;
 	top: 0;
 	z-index: 1001;
@@ -228,7 +228,7 @@ textarea:-ms-input-placeholder{
 	transform: translateX(-200px);
 }
 /* style everything in tg-menu, by styling an element of tg-menu */
-.tg-menu{
+.tg-menu {
 	position: fixed;
 	top: 0;
 	z-index: 1000;
@@ -239,7 +239,7 @@ textarea:-ms-input-placeholder{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.tg-menu.collapse{
+.tg-menu.collapse {
 	height: 100% !important;
 	-moz-transform: translateX(-200px);
 	-webkit-transform: translateX(-200px);
@@ -247,7 +247,7 @@ textarea:-ms-input-placeholder{
 	-ms-transform: translateX(-200px);
 	transform: translateX(-200px);
 }
-.tg-menu.in.collapse{
+.tg-menu.in.collapse {
 	-moz-transform: translateX(0px);
 	-webkit-transform: translateX(0px);
 	-o-transform: translateX(0px);
@@ -279,7 +279,7 @@ textarea:-ms-input-placeholder{
 	background: #bab9b9;
 	margin-left: 1200px;
 }
-.tg-tools{
+.tg-tools {
 	position: fixed;
 	top: 0;
 	z-index: 1000;
@@ -289,18 +289,18 @@ textarea:-ms-input-placeholder{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.tg-tools.collapse{
+.tg-tools.collapse {
 	height: 100% !important;
 	margin-left: 1200px;
 }
-.tg-tools.in.collapse{
+.tg-tools.in.collapse {
 	-moz-transform: translateX(-200px);
 	-webkit-transform: translateX(-200px);
 	-o-transform: translateX(-200px);
 	-ms-transform: translateX(-200px);
 	transform: translateX(-200px);
 }
-.tg-tools-slidebar{
+.tg-tools-slidebar {
 	width: 200px;
 	height: 100%;
 	background: #141414;
@@ -328,7 +328,7 @@ textarea:-ms-input-placeholder{
 	cursor:pointer;
 	text-decoration:none;
 }
-.tg-navbar-left ul {
+.tg-navbar-left accordion-group {
 	margin:0px;
 	padding:0px;
 }
@@ -347,7 +347,7 @@ textarea:-ms-input-placeholder{
 .tg-navbar-left li:hover p {
 	color: #ec6552;
 }
-.tg-navbar-left li.active i, .tg-navbar-left li.active p{
+.tg-navbar-left li.active i, .tg-navbar-left li.active p {
 	color: #ec6552;
 }
 .tg-navbar-left li i {
@@ -369,7 +369,11 @@ textarea:-ms-input-placeholder{
 }
 /* Sub-Menu */
 .tg-menu-submenu {
-
+	display:none;
+}
+.tg-menu-submenu li {
+	display:inline;
+	margin-left: 10px;
 }
 
 /* OLD submenu

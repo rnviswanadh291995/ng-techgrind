@@ -47,6 +47,7 @@ app.controller 'AppCtrl', ['$scope', '$location', 'steam', (S, loc, steam) ->
 
 # COMPLETE: by Efraim
 app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
+
 	S.menuActive = 
 		name: 'Home'
 		url: 'home'
@@ -102,56 +103,7 @@ app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
 		]
 	];
 
-	S.countries = [
-		name: 'Cambodia'
-		url: 'cambodia'
-	,
-		name: 'China'
-		url: 'china'
-	,
-		name: 'Indonesia'
-		url: 'indonesia'
-	,
-		name: 'India'
-		url: 'india'
-	,
-		name: 'Malaysia'
-		url: 'malaysia'
-	,
-		name: 'Philippines'
-		url: 'philippines'
-	,
-		name: 'Singapore'
-		url : 'singapore'
-	,
-		name: 'Thailand'
-		url: 'thailand'
-	,
-		name: 'Vietnam'
-		url: 'vietnam'
-	];
 
-	S.resources = [
-		name: 'Startup Jobs'
-		url: 'resources/jobs'
-		icon: 'icon-laptop'
-	,
-		name: 'Docs & Templates'
-		url: 'resources/docs'
-		icon: 'icon-file-text'
-	,
-		name: 'Guides & Tutorials'
-		url: 'resources/guides'
-		icon: 'icon-lightbulb'
-	,
-		name: 'Photos & Video'
-		url: 'resources/media'
-		icon: 'icon-film'
-	,
-		name: 'TeamSpeak Server'
-		url: 'resources/teamspeak'
-		icon: 'icon-group'
-	];
 ]
 
 # COMPLETE: by Martin
