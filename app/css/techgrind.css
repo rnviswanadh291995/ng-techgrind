@@ -269,7 +269,7 @@ textarea:-ms-input-placeholder{
 	height: 100%;
 	background: #141414;
 }
-.tg-menu-tools-overlay {
+.tg-tools-overlay {
 	position: fixed;
 	float: right;
 	top: 0;
@@ -279,7 +279,7 @@ textarea:-ms-input-placeholder{
 	background: #bab9b9;
 	margin-left: 1200px;
 }
-.tg-menu-tools{
+.tg-tools{
 	position: fixed;
 	top: 0;
 	z-index: 1000;
@@ -289,24 +289,24 @@ textarea:-ms-input-placeholder{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.tg-menu-tools.collapse{
+.tg-tools.collapse{
 	height: 100% !important;
 	margin-left: 1200px;
 }
-.tg-menu-tools.in.collapse{
+.tg-tools.in.collapse{
 	-moz-transform: translateX(-200px);
 	-webkit-transform: translateX(-200px);
 	-o-transform: translateX(-200px);
 	-ms-transform: translateX(-200px);
 	transform: translateX(-200px);
 }
-.tg-menu-tools-slidebar{
+.tg-tools-slidebar{
 	width: 200px;
 	height: 100%;
 	background: #141414;
 }
-.tg-menu-tools i[class*="fa"],
-.tg-menu-tools i[class^="fa"] {
+.tg-tools i[class*="fa"],
+.tg-tools i[class^="fa"] {
 	width: 30px;
 	float: left;
 }
@@ -523,7 +523,7 @@ textarea:-ms-input-placeholder{
 	line-height: 42px;
 	cursor: pointer;
 }
-.tg-mainpage-button i span {
+.tg-mainpage-button span {
 	font: 1.125em 'LatoBlack';
 	margin-left: 8px;
 }

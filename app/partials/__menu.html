@@ -3,29 +3,31 @@ header comment here
 
 -->
 
-<div class="container">
-  <div class="tg-menu-overlay"> <!-- START MENUBAR -->
+<div class="container" ng-controller="MenuCtrl">
+
+  <!-- START MENUBAR -->
+  <div class="tg-menu-overlay">
   </div>
   <div class="tg-menu collapse">
     <div class="tg-menu-slidebar">
-      <ul ng-controller="MenuCtrl" class="tg-navbar-left">
+      <ul class="tg-navbar-left">
         <!-- WIP: dynamic menu loading with dynamic sub-menu -->
-        <li ng-repeat="menuItem in mainMenu" ng-class="active('/{{menuItem.url}}')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/{{menuItem.url}}"><i class="fa {{menuItem.icon}}"></i><p>{{menuItem.name}}</p><b class="fa fa-chevron-left" ng-show="{{menuItem.submenu}}" ng-toggle="tg-menu-submenu"></b></a>
+        <li ng-repeat="menuItem in mainMenu" ng-class="active('/{{menuItem.url}}')" class="" data-toggle="collapse" data-target=".tg-menu" ng-click="$parent.menuActive.name = menuItem.name;$parent.menuActive.icon = menuItem.icon"><a href="#/{{menuItem.url}}"><i class="fa {{menuItem.icon}}"></i><p>{{menuItem.name}}</p><b class="fa fa-chevron-left" ng-show="{{menuItem.submenu}}" ng-toggle="tg-menu-submenu"></b></a>
           <ul class="tg-menu-submenu">
-            <li ng-repeat="menuSubItem in menuItem.submenu" ng-class="active('/{{menuItem.url}}')" class="" data-toggle=""><a href="#/{{menuSubItem.url}}"><i class="fa {{menuSubItem.icon}}"></i><p>{{menuSubItem.name}}</p></a></li>
+            <li ng-repeat="menuSubItem in menuItem.submenu" ng-class="active('/{{menuItem.url}}')" class="" data-toggle="" ng-click="$parent.menuActive.name = menuItem.name;$parent.menuActive.icon = menuItem.icon"><a href="#/{{menuSubItem.url}}"><i class="fa {{menuSubItem.icon}}"></i><p>{{menuSubItem.name}}</p></a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div> <!-- END MENU BAR -->
-  <div class="tg-menu-tools-container">
-    <div class="tg-menu-tools-overlay"> <!-- START TOOLSBAR -->
-    </div>
-    <div class="tg-menu-tools collapse">
-      <div class="tg-menu-tools-slidebar">
-      </div>
-    </div> <!-- END TOOLS BAR -->
+  
+  <!-- START TOOLSBAR -->
+  <div class="tg-tools-overlay">
   </div>
+  <div class="tg-tools collapse">
+    <div class="tg-tools-slidebar">
+    </div>
+  </div> <!-- END TOOLS BAR -->
 
   <div class="row-fluid tg-navbar-top clearfix">
       <div class="span4">
@@ -47,7 +49,7 @@ header comment here
 
   <div class="row-fluid tg-navbar-main clearfix">
     <div class="tg-navbar-left-trigger-button" data-toggle="collapse" data-target=".tg-menu">
-      <i class="fa fa-bars"></i><span>Home</span>
+      <i class="fa fa-bars"></i><span>{{menuActive.name}}</span><b class="fa {{menuActive.icon}}"></b>
     </div>
     <div class="tg-navbar-right-trigger-button" data-toggle="collapse" data-target=".tg-tools">
       <i class="fa fa-wrench"></i>

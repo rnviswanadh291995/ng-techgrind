@@ -47,6 +47,11 @@ app.controller 'AppCtrl', ['$scope', '$location', 'steam', (S, loc, steam) ->
 
 # COMPLETE: by Efraim
 app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
+	S.menuActive = 
+		name: 'Home'
+		url: 'home'
+		icon: 'fa-home'
+
 	S.mainMenu = [
 		name: 'Home'
 		url: 'home'
