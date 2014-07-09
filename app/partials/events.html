@@ -1,22 +1,31 @@
-<head>
-  <!-- link rel="stylesheet" href="css/plugins/list_tableview.css"-->
-</head>
+<!--/*
+  jobs:
+    display-style___________
+
+    example:
+    
+    functional goal___________
+    *
+    *
+    *
+*/-->
 
 <div class="container">
+
   <div class="row-fluid tg-main-container">
-    <div class="span10 offset1">
-      <div class="widget">
-        <div class="widget-body">
-        <tabset class="unselectable">
-          <tab heading="Events">
-              <div ng-include="'partials/plugins/content_events.html'"></div>  
-          </tab>
-          <tab heading="Add Events">
-              <div ng-include="'partials/plugins/widget_add_event.html'"></div> 
-          </tab>
-        </tabset>
-        </div>
-      </div>
+    <div class="span12">
+      <tabset class="unselectable tg-maintabs">
+        <tab heading="Events">
+          <div ng-include="'partials/plugins/content_events.html'"></div>  
+        </tab>
+        <tab heading="Calendar">
+          <div class="calendar" ng-class="ng-calendar"></div>
+        </tab>
+        <tab heading="Add Event">
+          <div ng-include="'partials/plugins/widget_add_event.html'"></div> 
+        </tab>
+      </tabset>
     </div>
   </div>
+
 </div>

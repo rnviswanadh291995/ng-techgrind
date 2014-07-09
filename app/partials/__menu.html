@@ -1,46 +1,20 @@
+<!--
+header comment here
+
+-->
+
 <div class="container">
   <div class="tg-menu-overlay"> <!-- START MENUBAR -->
   </div>
   <div class="tg-menu collapse">
     <div class="tg-menu-slidebar">
       <ul ng-controller="MenuCtrl" class="tg-navbar-left">
-        <li ng-repeat="menuItem in mainMenu" ng-class="active('/{{menuItem.url}}')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/{{menuItem.url}}">
-          <i class="fa {{menuItem.icon}}"></i>
-          <p>{{menuItem.name}}</p><b class="fa fa-chevron-left" ng-show="{{menuItem.submenu}}" ng-toggle="active()"></b></a>
+        <!-- WIP: dynamic menu loading with dynamic sub-menu -->
+        <li ng-repeat="menuItem in mainMenu" ng-class="active('/{{menuItem.url}}')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/{{menuItem.url}}"><i class="fa {{menuItem.icon}}"></i><p>{{menuItem.name}}</p><b class="fa fa-chevron-left" ng-show="{{menuItem.submenu}}" ng-toggle="tg-menu-submenu"></b></a>
+          <ul class="tg-menu-submenu">
+            <li ng-repeat="menuSubItem in menuItem.submenu" ng-class="active('/{{menuItem.url}}')" class="" data-toggle=""><a href="#/{{menuSubItem.url}}"><i class="fa {{menuSubItem.icon}}"></i><p>{{menuSubItem.name}}</p></a></li>
+          </ul>
         </li>
-
-        <!--
-        <li ng-class="active('/home')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/home">
-          <div class="tg-menu-icon"><i class="fa fa-home"></i></div>
-          <p class="main-menu-icon">Home</p></a>
-        </li>
-        <li ng-class="active('/events')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/events">
-          <div class="tg-menu-icon"><i class="main-menu-icon fa fa-bullhorn"></i></div>
-          <p class="main-menu-icon">Events</p></a>
-        </li>
-        <li ng-class="active('/resources')" class="dropdown" data-toggle="collapse" data-target=".tg-menu"><a>
-          <div class="tg-menu-icon"><i class="main-menu-icon fa fa-cloud-download"></i></div>
-          <p class="main-menu-icon">Resources</p><i class="caret"></i></a>
-            <ul ng-controller="MenuCtrl" class="tg-dropdown-menu">
-              <li ng-repeat="resource in resources" class="sub-menu" data-toggle="collapse" data-target=".tg-menu"><a href="#/{{resource.url}}">
-              <div class="tg-menu-icon"><i class="fa fa-laptop {{resource.icon}}"></i></div>
-              <p>{{resource.name}}</p></a>
-              </li>
-            </ul>
-        </li>
-        <li ng-class="active('/products')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/products">
-          <div class="tg-menu-icon"><i class="main-menu-icon fa fa-dollar"></i></div>
-          <p class="main-menu-icon">Products</p></a>
-        </li>
-        <li ng-class="active('/profiles')" class="" data-toggle="collapse" data-target=".tg-menu"><a href="#/profiles">
-          <div class="tg-menu-icon"><i class="main-menu-icon fa fa-bar-chart-o"></i></div>
-          <p class="main-menu-icon">Profiles</p></a>
-        </li>
-        <li class="" data-toggle="collapse" class="" data-target=".tg-menu"><a href="#">
-          <div class="tg-menu-icon"><i class="main-menu-icon fa fa-search"></i></div>
-          <p class="main-menu-icon">Search</p></a>
-        </li>
-        -->
       </ul>
     </div>
   </div> <!-- END MENU BAR -->
@@ -70,42 +44,14 @@
           </div>
       </div>
   </div>
+
   <div class="row-fluid tg-navbar-main clearfix">
-      <div class="tg-navbar-left-trigger-button" data-toggle="collapse" data-target=".tg-menu">
-          <i class="fa fa-bars"><span>Home</span></i>
-      </div>
-      <div class="tg-navbar-right-trigger-button" data-toggle="collapse" data-target=".tg-tools">
-          <i class="fa fa-wrench"></i>
-      </div>    
-  </div>
-</div>
-  <!-- OLD TOP NAV BAR
-	<div class="row-fluid tg-navbar-top clearfix">
-    <div class="span10 offset1">
-      <a class="tg-navbar-top-logo" href="http://techgrind.asia"></a>
-      <i class="fa fa-lock"></i>
-      <div class="tg-navbar-top-settings">
-        <i class="fa fa-envelope"></i>
-        <p>{{ user().mail }}8</p>
-        <i class="fa fa-bell"></i>
-        <p>{{ user().notification }}24</p>
-        <div class="tg-navbar-top-settings-img"></div>
-      </div>
+    <div class="tg-navbar-left-trigger-button" data-toggle="collapse" data-target=".tg-menu">
+      <i class="fa fa-bars"></i><span>Home</span>
+    </div>
+    <div class="tg-navbar-right-trigger-button" data-toggle="collapse" data-target=".tg-tools">
+      <i class="fa fa-wrench"></i>
     </div>
   </div>
-  -->
 
-
-  <!--
-	<ul class="tg-navbar-left hidden-phone hidden-tablet"> 
-    <li ng-class="active('/home')" class="active"><a href="#/home"><i class="fa fa-home"></i><p>Home</p></a></li>
-    <li ng-class="active('/events')" class=""><a href="#/events"><i class="fa fa-bullhorn"></i><p>Events</p></a></li>
-    <li ng-class="active('/resources')" class="dropdown"><a><i class="fa fa-cloud-download"></i><p>Resources</p><i class="caret"></i></a>
-    <ul ng-controller="MenuCtrl" class="dropdown-menu">
-      <li ng-repeat="resource in resources" class="sub-menu"><a href="#/{{resource.url}}"><i class="fa {{resource.icon}}"></i>{{resource.name}}</a></li>
-    </ul></li>
-    <li ng-class="active('/products')" class=""><a href="#/products"><i class="fa fa-dollar"></i><p>Products</p></a></li>
-    <li ng-class="active('/profiles')" class=""><a href="#/profiles"><i class="fa fa-bar-chart-o"></i><p>Profiles</p></a></li>
-    <li class=""><a href="#"><i class="fa fa-search"></i><p>Search</p></a></li>
-  </ul>
-  -->
+</div>

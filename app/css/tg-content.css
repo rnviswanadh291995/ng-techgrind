@@ -26,6 +26,8 @@ http://ngtg.techgrind.asia:8000/#/article/XYZ
 .content-box img {
 	width: 320px;
 	height: 180px;
+	display: block;
+	margin: 0 auto;
 }
 .content-box-content {
 	margin: 20px;

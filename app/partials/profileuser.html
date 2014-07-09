@@ -1,0 +1,76 @@
+<!--/*
+	info_startupprofile:
+		display-style___________
+		the top element should be a "startup info card" spanning the width of the screen.
+			it should contain the following elements:
+		* logo
+		* name
+		* industry sectors (tags)
+		* one paragraph "pitchline"
+
+		the bottom element should be a 2-column tab-display customized by the user,
+			with elements
+		
+		example:
+		
+		functional goal___________
+		* showing a demo of their product (video, embedded pageview, etc)
+		* discussion tab, with threaded topics if desired, useful for feedback, Q&A, reviews, etc.
+		* news & content tab, showing all content & news with the startup tagged in it, or content created by the startup
+		* investors tab, showing all past & current investors
+		* fundraising tab (disabled:grayed out, enabled:active) -- for fundraising details (viewable by investor accounts only)
+		* jobs tab, listing all jobs available and application method (embedded form, email, etc)
+		* founders & team, listing of all founders & team - customizable by user to display what they want
+			
+		example-content -> displayed information ==> action-on-interaction:
+			news/article/tutorial/guide -> detailed info ==> full-content-page
+*/-->
+<head>
+	<link rel="stylesheet" href="css/tg-info.css">
+</head>
+
+<div ng-controller="ProfileUserCtrl">
+<div class="container tg-main-container">
+    <div class="row-fluid profile-page-header clearfix">
+      <div class="span10 offset1 profile-page-header-container">
+        <div class="profile-page-header-profile">
+        	<img class="profile-page-header-user-image" src="{{profileuser.image}}"/>
+          <span class="profile-page-header-profile-join-date">Member since 03/2014</span>
+          <h2 class="profile-page-header-profile-name">{{profileuser.name}}</h2>
+          <p class="profile-page-header-profile-role">{{profileuser.bioshort}}</p>
+          <p class="profile-page-header-profile-location"><i class="fa fa-map-marker"></i>{{profileuser.location}}</p>
+        </div>
+        <ul class="profile-page-header-stat">
+          <li><span class="profile-page-header-stat-number">{{profileuser.merit}}</span><br>Points</li>
+          <li><span class="profile-page-header-stat-number">{{profileuser.followers}}</span><br>Followers</li>
+          <li><span class="profile-page-header-stat-number">{{profileuser.following.length}}</span><br>Following</li>
+        </ul>
+        <div class="profile-page-header-button-group">
+          <button class="profile-page-header-button" ng-click="followMeStart()" ng-hide="isFollowing">Follow</button>
+          <button class="profile-page-header-button" ng-click="followMeStop()" ng-show="isFollowing">Unfollow</button>
+          <button class="profile-page-header-button" ng-click="messageMe()">Message</button>
+        </div>
+      </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span10 offset1">
+      <div class="widget">
+        <div class="widget-body">
+	        <tabset class="unselectable">
+	          <tab heading="About">
+	            <p>{{profileuser.aboutme}}</p>
+	          </tab>
+	          <tab heading="Content">
+	            <div ng-include="'partials/plugins/content_article.html'"></div>
+	          </tab>
+	          <tab heading="Activity">
+	            <div ng-include="'partials/plugins/list_events.html'"></div>
+	          </tab>
+	        </tabset>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</div>

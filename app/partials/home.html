@@ -1,27 +1,42 @@
+<!--/*
+  jobs:
+    display-style___________
+
+    example:
+    
+    functional goal___________
+    *
+    *
+    *
+*/-->
+
 <div class="container">
+
   <div class="row-fluid tg-main-container">
-    <div class="span10 offset1">
-        <tabset class="unselectable tg-maintabs">
-          <tab heading="News">
-              <div ng-include="'partials/plugins/content_articles.html'"></div>
-          </tab>
-          <tab heading="Discussion">
-              <div ng-include="'partials/plugins/discussion_articles.html'"></div>  
-          </tab>
-          <tab heading="Search">
-              <div ng-include="'partials/plugins/widget_search.html'"></div>  
-          </tab>
-          <tab heading="Full Discussion For Testing">
-              <div ng-include="'partials/plugins/discussion_article_fullpage.html'"></div>  
-          </tab>
-        </tabset>
-        </div>
+    <div class="span12">
+      <tabset class="unselectable tg-maintabs">
+        <tab heading="News">
+          <div ng-include="'partials/plugins/content_articles.html'"></div>
+        </tab>
+        <tab heading="Events">
+          <div ng-include="'partials/plugins/list_events.html'"></div>
+        </tab>
+        <tab heading="Discussion">
+          <div ng-include="'partials/plugins/discussion_articles.html'"></div>  
+        </tab>
+        <tab heading="Full Discussion For Testing">
+          <div ng-include="'partials/plugins/discussion_article_fullpage.html'"></div>  
+        </tab>
+        <tab heading="Search">
+          <div ng-include="'partials/plugins/widget_search.html'"></div>  
+        </tab>
+      </tabset>
+    </div>
   </div>
 
   <!-- debug -->
   <div class="row-fluid">
-    <div class="span2"></div>
-    <div class="span10">
+    <div class="span12">
       <pre>{{ sexpr(data) }}</pre>
     </div>
   </div>

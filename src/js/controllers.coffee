@@ -65,15 +65,15 @@ app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
 		submenu: [
 			name: 'Guides & Tutorials'
 			url: 'res-guides'
-			icon: ''
+			icon: 'fa-lightbulb-o'
 		,
 			name: 'Docs & Templates'
 			url: 'res-docs'
-			icon: ''
+			icon: 'fa-file-text'
 		,
 			name: 'Photos & Video'
 			url: 'res-media'
-			icon: ''
+			icon: 'fa-film'
 		]
 	,
 		name: 'TechGrind'
