@@ -11,7 +11,11 @@ header comment here
   <div class="tg-menu collapse">
     <div class="tg-menu-slidebar">
 
+      <div data-toggle="collapse" data-target=".tg-menu">
+        <i style="color:#f00; font-size:3em;" class="fa fa-bars"></i>
+      </div>
 
+    <!--
     <accordion close-others="true" class="tg-navbar-left">
       <accordion-group is-open="isOpen" ng-repeat="menuItem in mainMenu track by $index">
         <accordion-heading>
@@ -28,8 +32,35 @@ header comment here
         </div>
       </accordion-group>
     </accordion>
+    -->
 
+    <div ng-controller="MenuCtrl">
+      <div menumainnav model="mainMenu" id="test"></div>
+    </div>
 
+<!-- Menu Links 
+    <div ng-controller="MenuCtrl">
+      <ul class="tg-navbar-left nav">
+        <li ng-repeat="menuItem in mainMenu" ng-click="openMenuItem(menuItem)" ng-class="{'active':menuItem.selected}">
+          <a ng-if="!menuItem.submenu" href="#/{{menuItem.url}}"><i class="fa {{menuItem.icon}}"></i><p>{{menuItem.name}}</p></a>
+          <a ng-if="menuItem.submenu" data-toggle="collapse" data-target="tg-menu-submenu"><i class="fa {{menuItem.icon}}"></i><p>{{menuItem.name}}</p></a>
+          <ul ng-if="menuItem.submenu" ng-class="{ 'isOpen':menuItem.selected, 'isClosed':!menuItem.selected}" class="tg-menu-submenu subMenuList">
+            <li ng-repeat="subMenu in menuItem.submenu" ng-click="subMenu.selected=!subMenu.selected" ng-class="{'active':subMenu.selected}">
+              <a href="#/{{subMenu.url}}"><i class="fa {{subMenu.icon}}"></i><p>{{subMenu.name}}</p></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+<!--
+      <ul class="tg-navbar-left nav">
+        <li ng-repeat="menuItem in mainMenu" ng-class="active('/{{menuItem.url}}')" ng-attr="{'data-toggle=collapse':!menuItem.submenu}" class="" data-target=".tg-menu" ng-click=""><a href="#/{{menuItem.url}}"><i class="fa {{menuItem.icon}}"></i><p>{{menuItem.name}}</p><b class="fa fa-chevron-left" ng-show="{{menuItem.submenu}}" ng-toggle="tg-menu-submenu"></b></a>
+          <ul ng-if="menuItem.submenu" class="tg-menu-submenu">
+            <li ng-repeat="menuSubItem in menuItem.submenu" ng-class="active('/{{menuItem.url}}')" class="" data-toggle="" ng-click="$parent.menuActive.name = menuItem.name;$parent.menuActive.icon = menuItem.icon"><a href="#/{{menuSubItem.url}}"><i class="fa {{menuSubItem.icon}}"></i><p>{{menuSubItem.name}}</p></a></li>
+            </ul>
+        </li>
+      </ul>
 
       <!--<ul class="tg-navbar-left">
         <!-- WIP: dynamic menu loading with dynamic sub-menu -->

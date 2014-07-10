@@ -47,7 +47,6 @@ app.controller 'AppCtrl', ['$scope', '$location', 'steam', (S, loc, steam) ->
 
 # COMPLETE: by Efraim
 app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
-
 	S.menuActive = 
 		name: 'Home'
 		url: 'home'
@@ -103,8 +102,44 @@ app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
 		]
 	];
 
+	S.openMenuItem = (menuItem) ->
+		# Just making a shorthand for this
+    mi = S.mainMenu
+    # Resetting all to false
+    i = 0
+    while i < mi.length
+      curItem = mi[i]
+      if curItem is menuItem 
+        # Setting clicked element to toggle.
+        menuItem.selected = true
+        if curItem.submenu
+        	curItem.submenu.visible = true
+      else
+        mi[i].selected = false
+      i++
+    return
+  return
 
 ]
+
+app.directive 'menumainnav', ->
+	restrict: 'E'
+	scope:
+		model: '='
+	templateUrl: '<div id="{{parentId}}">
+	<div class="panel" ng-repeat="item in mainMenu">
+		<a href="#" data-toggle="collapse" data-parent="#{{parentId}}" data-target="#child{{$index}}" ng-click="{mainMenu.selected = item}"><i class="fa {{item.icon}}"></i><p>{{item.name}}</p>
+		</a>
+		<div ng-if="{item.submenu}" id="child{{$index}}" ng-class="collapse">
+			<ul>
+				<li ng-repeat="subitem in item.submenu"><i class="fa {{subitem.icon}}"></i><p>{{subitem.name}}</p></li>
+			</ul>
+		</div>
+	</div>
+</div>'
+	link: (scope, elm, attr) ->
+		console.log(""+elm)
+		scope.parentId = attr.id
 
 # COMPLETE: by Martin
 app.controller 'RegisterCtrl', ['$scope', '$location', 'steam', (S, loc, steam) ->

@@ -173,6 +173,13 @@ textarea:-ms-input-placeholder{
 	z-index: 999;
 }
 
+.isOpen{
+  max-height:100px;
+}
+.isClosed{
+  max-height:0;
+}
+
 .tg-navbar-left-trigger-button{
 	width: 160px;
 	height: 60px;
@@ -327,10 +334,6 @@ textarea:-ms-input-placeholder{
 	vertical-align:middle;
 	cursor:pointer;
 	text-decoration:none;
-}
-.tg-navbar-left accordion-group {
-	margin:0px;
-	padding:0px;
 }
 .tg-navbar-left li {
 	padding: 0px;
