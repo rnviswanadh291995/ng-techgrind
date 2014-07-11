@@ -30,6 +30,7 @@
 </head>
 
 <div ng-controller="ListEntitiesCtrl">
+	<pre style="padding-top: 100px;" >entities: {{ sexpr(entities.length) }}</pre>
 	<div class="table-wrapper">
 		<table class="table table-hover">
 			<tr ng-repeat="item in entities" ng-click="goToOrganization(item.slug)">
@@ -42,4 +43,6 @@
 	     	</tr>
 		</table>
 	</div>
+	<pre>debug: {{ sexpr(filter) }}</pre>
+	<pre>debug: {{ sexpr(debug) }}</pre>
 </div>

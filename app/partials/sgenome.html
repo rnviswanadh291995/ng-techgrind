@@ -1,7 +1,23 @@
-<div ng-repeat="country in countries">
-	<a href="#/sgenome/{{country.name}}">{{ country.name }}</a>
+<div>
+<div class="container">
+  <div class="row-fluid tg-main-container">
+    <div class="span10 offset1">
+      <div class="widget">
+        <div class="widget-body">
+        <tabset class="unselectable">
+          <tab heading="sgenome">
+            <div ng-repeat="country in countries">
+              <a href="#/sgenome/{{country.name}}">{{ country.name }}</a>
+            </div>
+            <pre ng-repeat="country in countries">{{ sexpr(country) }}</pre>
+            <pre>{{ sexpr(countries) }}</pre>
+            <pre>{{ sexpr(sgenome) }}</pre>
+            <pre>{{ sexpr(debug) }}</pre>
+          </tab>
+        </tabset>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<pre ng-repeat="country in countries">{{ sexpr(country) }}</pre>
-<pre>{{ sexpr(countries) }}</pre>
-<pre>{{ sexpr(sgenome) }}</pre>
-<pre>{{ sexpr(debug) }}</pre>
+</div>
