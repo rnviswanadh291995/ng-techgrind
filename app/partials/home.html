@@ -8,20 +8,9 @@
           <tab heading="News">
             <div ng-include="'partials/plugins/content_articles.html'"></div>
           </tab>
-          <tab heading="Startups">
-            
-          </tab>
-          <tab heading="Investors">
-            
-          </tab>
-          <tab heading="Services">
-            
-          </tab>
-          <tab heading="Work Spaces">
-            
-          </tab>
-          <tab heading="Communities">
-            
+          <tab ng-repeat="category in categories" heading="{{ category }}" active="selected" select="goto(category)">
+            <a href="#/home/{{ category }}">{{ category }}</a>
+             <pre>{{[selected, category, selected == category]}}</pre>
           </tab>
           <tab></tab> <!-- SPACE -->
           <tab heading="Discuss">

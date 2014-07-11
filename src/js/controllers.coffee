@@ -213,7 +213,7 @@ app.controller 'ActivationCtrl', ['$scope', '$routeParams', 'steam', (S, rp, ste
 
 # WIP
 # needs overhaul to manage control of each tab as separate controller
-app.controller 'HomeCtrl', ['$scope', '$http', 'ToolsRichEditorService', (S, http, richEditor) ->
+app.controller 'HomeCtrl', ['$scope', '$routeParams', '$location', 'ToolsRichEditorService', 'steam', (S, rp, loc, richEditor, steam) ->
 	#http.get('/mock').success (data) -> S.mock = data
 	#S.getblog = getblog()
 
@@ -222,6 +222,21 @@ app.controller 'HomeCtrl', ['$scope', '$http', 'ToolsRichEditorService', (S, htt
 
 	S.tabCalendarSelect = ->
 		$('#calendar').fullCalendar 'render'
+
+	S.selected = rp.category
+
+	# http://stackoverflow.com/questions/11003916/how-do-i-switch-views-in-angularjs-from-a-controller-function
+	S.goto = (category) ->
+		console.log("we are GO to:", category)
+		if S.selected != category
+			S.selected = category
+			loc.path "/home/"+category
+
+	get_categories = (data) ->
+		console.log sexpr data
+		S.categories = data.sgenome.categories
+
+	steam.get("/home/techgrind/organizations/categories").then get_categories
 ]
 
 # COMPLETE: by Martin
