@@ -80,3 +80,67 @@ appModule.controller "MenuAccordionCtrl", [ "$scope", "$rootScope", "$routeParam
         updateIOActive item.path, item.title
         return
   ]
+
+appModule.controller "MenuCtrl", [ "$scope", "$routeParams", "$location", (S, rp, loc) ->
+	S.menu = [
+		name: 'Home'
+		url: 'home'
+		icon: 'fa-home'
+	,
+		name: 'Events'
+		url: 'events'
+		icon: 'fa-bullhorn'
+	,
+		name: 'Jobs'
+		url: 'jobs'
+		icon: 'fa-laptop'
+	,
+		name: 'Resources'
+		icon: 'fa-cloud-download'
+		submenu: [
+			name: 'Guides & Tutorials'
+			url: 'res-guides'
+			icon: 'fa-lightbulb-o'
+		,
+			name: 'Docs & Templates'
+			url: 'res-docs'
+			icon: 'fa-file-text'
+		,
+			name: 'Photos & Video'
+			url: 'res-media'
+			icon: 'fa-film'
+		]
+	,
+		name: 'TechGrind'
+		icon: 'fa-cogs'
+		submenu: [
+			name: 'Startup Hubs'
+			url: 'tg-hubs'
+			icon: ''
+		,
+			name: 'Membership'
+			url: 'tg-members'
+			icon: ''
+		,
+			name: 'Community'
+			url: 'tg-activities'
+			icon: ''
+		,
+			name: 'Incubator'
+			url: 'tg-incubator'
+			icon: ''
+		]
+	]
+
+	activemenu = [ "home" ]
+
+	S.isactive = (entry) ->
+		return true if activemenu is entry
+		return false if entry.length > activemenu.length
+		for i in [0..entry.length]
+			return false if entry[i] isnt activemenu[i]
+		true
+
+	S.activate = (entry) ->
+		activemenu = entry
+	]

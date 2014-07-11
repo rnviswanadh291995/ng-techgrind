@@ -1,0 +1,7 @@
+<ul style="margin-top:200px;">
+<li ng-repeat="entry in menu">
+<a ng-show="entry.url" href="{{ entry.url }}"><h3>{{ entry.name }}</h3></a>
+<div ng-show="entry.submenu && isactive()"
+<pre>{{ entry }}</pre>
+</li>
+</ul>

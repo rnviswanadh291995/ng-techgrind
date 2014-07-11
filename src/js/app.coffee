@@ -191,6 +191,11 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 		templateUrl: 'partials/sgenome.html'
 		controller: 'StartupGenomeCtrl'
 
+## menu test
+	$routeProvider.when '/test/menu',
+		templateUrl: 'partials/test-menu.html'
+		controller: 'MenuCtrl'
+
 ## ADMIN AREA
 	$routeProvider.when '/admin',
 		templateUrl: 'partials/admin.html'
