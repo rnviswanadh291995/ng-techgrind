@@ -1,0 +1,70 @@
+<head>
+	<link rel="stylesheet" href="css/regions.css">
+	<link rel="stylesheet" href="css/plugins/content.css">
+</head>
+
+<div class="container">
+	<div class="row">
+
+		<div class="span8">
+			<div class="widget">
+				<div class="widget-head"><i class="icon-ellipsis-horizontal"></i></div>
+				<div class="widget-body">
+					<tabset class="unselectable">
+						<tab heading="Startups">
+							<div plugin="partials/plugins/list_entities.html" plugin-scope="{ filter: 'startups' }"></div>
+						</tab>
+						<tab heading="Investors">
+							<div plugin="partials/plugins/list_entities.html" plugin-scope="{ filter: ['Corporate Fund','Seed Fund','Venture Capital'] }"></div>
+						</tab>
+						<tab heading="Services">
+							<div plugin="partials/plugins/list_entities.html" plugin-scope="{ filter: 'service providers' }"></div>
+						</tab>
+					</tabset>
+				</div>
+			</div>
+		</div>
+
+		<div class="span4">
+			<div class="widget">
+				<div class="widget-head"><i class="icon-ellipsis-horizontal"></i></div>
+				<div style="padding-top:100px;" class="widget-body">
+					<tabset class="unselectable">
+						<tab heading="Coworking">
+							<div plugin="partials/plugins/list_entities.html" plugin-scope="{ filter: 'coworking spaces' }"></div>
+						</tab>
+						<tab heading="Communities">
+							<div plugin="partials/plugins/list_entities.html" plugin-scope="{ filter: 'online communities' }"></div>
+						</tab>
+						<tab heading="XSpaces">
+							<div plugin="partials/plugins/list_entities.html" plugin-scope="{ filter: 'hackerspace' }"></div>
+						</tab>
+					</tabset>
+				</div>
+			</div>
+		</div>
+
+		<div class="span4">
+			<div class="widget">
+				<div class="widget-head"><i class="icon-ellipsis-horizontal"></i>&nbsp;Regional Sponsors</div>
+				<div class="widget-body">
+					<center>
+						<table class="table table-hover table-striped">
+							<tbody ng-repeat="profile in profiles">
+								<tr>
+									<th><i class="{{profile.icon}}">&nbsp;</i><em>{{profile.role}}</em></th>
+								</tr>
+								<tr ng-repeat="detail in regionprofile[profile.type]">
+									<td>{{detail.name}}</td>
+									<td>{{detail.mail}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</center>
+				</div>
+			</div>
+		</div>
+
+	</div> <!-- /row -->
+</div>
+<pre>{{sexpr(rp)}}</pre>

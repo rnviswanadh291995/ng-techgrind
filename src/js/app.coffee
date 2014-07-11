@@ -196,6 +196,17 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 		templateUrl: 'partials/admin.html'
 		controller: 'AdminCtrl'
 
+## temp
+	$routeProvider.when '/plugin-test',
+		templateUrl: 'partials/plugin-test.html'
+		controller: 'TempCtrl'
+	$routeProvider.when '/plugin-test/:filter',
+		templateUrl: 'partials/plugin-test.html'
+		controller: 'TempCtrl'
+	$routeProvider.when '/plugin-test/:country/:filter',
+		templateUrl: 'partials/plugin-test.html'
+		controller: 'TempCtrl'
+
 # OTHERWISE
 	$routeProvider.otherwise redirectTo: '/home'
 ]

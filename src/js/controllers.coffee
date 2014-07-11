@@ -385,3 +385,7 @@ app.controller 'AdminCtrl', ['$scope', '$location', 'steam', (S, loc, steam) ->
 		steam.get('/home/techgrind/feeds/').then handle_feeds
 ]
 
+app.controller 'TempCtrl', ['$scope', '$location', 'steam', '$routeParams', (S, loc, steam, rp) ->
+	S.rp = rp
+]
+
