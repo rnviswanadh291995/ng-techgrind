@@ -47,6 +47,11 @@ app.controller 'AppCtrl', ['$scope', '$location', 'steam', (S, loc, steam) ->
 
 # COMPLETE: by Efraim
 app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
+	S.menuActive = 
+		name: 'Home'
+		url: 'home'
+		icon: 'fa-home'
+
 	S.mainMenu = [
 		name: 'Home'
 		url: 'home'
@@ -65,15 +70,15 @@ app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
 		submenu: [
 			name: 'Guides & Tutorials'
 			url: 'res-guides'
-			icon: ''
+			icon: 'fa-lightbulb-o'
 		,
 			name: 'Docs & Templates'
 			url: 'res-docs'
-			icon: ''
+			icon: 'fa-file-text'
 		,
 			name: 'Photos & Video'
 			url: 'res-media'
-			icon: ''
+			icon: 'fa-film'
 		]
 	,
 		name: 'TechGrind'
@@ -97,57 +102,44 @@ app.controller 'MenuCtrl', ['$scope', '$http', (S, http) ->
 		]
 	];
 
-	S.countries = [
-		name: 'Cambodia'
-		url: 'cambodia'
-	,
-		name: 'China'
-		url: 'china'
-	,
-		name: 'Indonesia'
-		url: 'indonesia'
-	,
-		name: 'India'
-		url: 'india'
-	,
-		name: 'Malaysia'
-		url: 'malaysia'
-	,
-		name: 'Philippines'
-		url: 'philippines'
-	,
-		name: 'Singapore'
-		url : 'singapore'
-	,
-		name: 'Thailand'
-		url: 'thailand'
-	,
-		name: 'Vietnam'
-		url: 'vietnam'
-	];
+	S.openMenuItem = (menuItem) ->
+		# Just making a shorthand for this
+    mi = S.mainMenu
+    # Resetting all to false
+    i = 0
+    while i < mi.length
+      curItem = mi[i]
+      if curItem is menuItem 
+        # Setting clicked element to toggle.
+        menuItem.selected = true
+        if curItem.submenu
+        	curItem.submenu.visible = true
+      else
+        mi[i].selected = false
+      i++
+    return
+  return
 
-	S.resources = [
-		name: 'Startup Jobs'
-		url: 'resources/jobs'
-		icon: 'icon-laptop'
-	,
-		name: 'Docs & Templates'
-		url: 'resources/docs'
-		icon: 'icon-file-text'
-	,
-		name: 'Guides & Tutorials'
-		url: 'resources/guides'
-		icon: 'icon-lightbulb'
-	,
-		name: 'Photos & Video'
-		url: 'resources/media'
-		icon: 'icon-film'
-	,
-		name: 'TeamSpeak Server'
-		url: 'resources/teamspeak'
-		icon: 'icon-group'
-	];
 ]
+
+app.directive 'menumainnav', ->
+	restrict: 'E'
+	scope:
+		model: '='
+	templateUrl: '<div id="{{parentId}}">
+	<div class="panel" ng-repeat="item in mainMenu">
+		<a href="#" data-toggle="collapse" data-parent="#{{parentId}}" data-target="#child{{$index}}" ng-click="{mainMenu.selected = item}"><i class="fa {{item.icon}}"></i><p>{{item.name}}</p>
+		</a>
+		<div ng-if="{item.submenu}" id="child{{$index}}" ng-class="collapse">
+			<ul>
+				<li ng-repeat="subitem in item.submenu"><i class="fa {{subitem.icon}}"></i><p>{{subitem.name}}</p></li>
+			</ul>
+		</div>
+	</div>
+</div>'
+	link: (scope, elm, attr) ->
+		console.log(""+elm)
+		scope.parentId = attr.id
 
 # COMPLETE: by Martin
 app.controller 'RegisterCtrl', ['$scope', '$location', 'steam', (S, loc, steam) ->

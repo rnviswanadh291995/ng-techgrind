@@ -165,58 +165,67 @@ textarea:-ms-input-placeholder{
 /* NAVBAR-LEFT --> CHANGE TO MENU
 ----------------------------------------- */
 .tg-navbar-main{
-	height: 80px;
+	height: 60px;
 	background: #fff;
 	position: fixed;
 	width: inherit;
 	top: 60px;
 	z-index: 999;
 }
+
+.isOpen{
+  max-height:100px;
+}
+.isClosed{
+  max-height:0;
+}
+
 .tg-navbar-left-trigger-button{
-	width: 200px;
-	height: 80px;
-	color: white;
+	width: 160px;
+	height: 60px;
+	color: #fff;
 	background: #f1634d;
 	cursor: pointer;
-	float:left;
+	float: left;
 }
 .tg-navbar-left-trigger-button:hover{
 	opacity: 0.9;
 }
-.tg-navbar-left-trigger-button i{
+.tg-navbar-left-trigger-button i {
 	font-size: 2em;
-	margin-left: 30px;
-	height: 78px;
-	line-height: 78px;
-}
-.tg-navbar-left-trigger-button i span{
-	font: 0.7em 'LatoBold';
-	text-transform: uppercase;
 	margin-left: 20px;
+	margin-right: 10px;
+	height: 58px;
+	line-height: 58px;
 }
-.tg-navbar-right-trigger-button{
-	width: 80px;
-	height: 50px;
-	padding-top: 30px;
-	color: white;
+.tg-navbar-left-trigger-button span {
+	font: 1.5em 'LatoBold';
+	text-transform: uppercase;
+}
+
+.tg-navbar-right-trigger-button {
+	width: 60px;
+	height: 60px;
 	background: #141414;
 	cursor: pointer;
 	float: right;
 }
-.tg-navbar-right-trigger-button:hover{
+.tg-navbar-right-trigger-button:hover {
 	opacity: 0.9;
 }
-.tg-navbar-right-trigger-button i{
+.tg-navbar-right-trigger-button i {
 	font-size: 2em;
-	margin-left: 50%;
+	color: #fff;
+	margin-left: 33%;
+	margin-top: 33%;
 	position: relative;
-	right: 10px;
 }
-.tg-menu-overlay{
+
+.tg-menu-overlay {
 	position: fixed;
 	top: 0;
 	z-index: 1001;
-	width:200px;
+	width: 200px;
 	height: 100%;
 	background: #bab9b9;
 	-moz-transform: translateX(-200px);
@@ -226,7 +235,7 @@ textarea:-ms-input-placeholder{
 	transform: translateX(-200px);
 }
 /* style everything in tg-menu, by styling an element of tg-menu */
-.tg-menu{
+.tg-menu {
 	position: fixed;
 	top: 0;
 	z-index: 1000;
@@ -237,7 +246,7 @@ textarea:-ms-input-placeholder{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.tg-menu.collapse{
+.tg-menu.collapse {
 	height: 100% !important;
 	-moz-transform: translateX(-200px);
 	-webkit-transform: translateX(-200px);
@@ -245,7 +254,7 @@ textarea:-ms-input-placeholder{
 	-ms-transform: translateX(-200px);
 	transform: translateX(-200px);
 }
-.tg-menu.in.collapse{
+.tg-menu.in.collapse {
 	-moz-transform: translateX(0px);
 	-webkit-transform: translateX(0px);
 	-o-transform: translateX(0px);
@@ -267,17 +276,17 @@ textarea:-ms-input-placeholder{
 	height: 100%;
 	background: #141414;
 }
-.tg-menu-tools-overlay {
+.tg-tools-overlay {
 	position: fixed;
 	float: right;
 	top: 0;
 	z-index: 1001;
-	width:200px;
+	width: 200px;
 	height: 100%;
 	background: #bab9b9;
 	margin-left: 1200px;
 }
-.tg-menu-tools{
+.tg-tools {
 	position: fixed;
 	top: 0;
 	z-index: 1000;
@@ -287,27 +296,28 @@ textarea:-ms-input-placeholder{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.tg-menu-tools.collapse{
+.tg-tools.collapse {
 	height: 100% !important;
 	margin-left: 1200px;
 }
-.tg-menu-tools.in.collapse{
+.tg-tools.in.collapse {
 	-moz-transform: translateX(-200px);
 	-webkit-transform: translateX(-200px);
 	-o-transform: translateX(-200px);
 	-ms-transform: translateX(-200px);
 	transform: translateX(-200px);
 }
-.tg-menu-tools-slidebar{
+.tg-tools-slidebar {
 	width: 200px;
 	height: 100%;
 	background: #141414;
 }
-.tg-menu-tools i[class*="fa"],
-.tg-menu-tools i[class^="fa"] {
+.tg-tools i[class*="fa"],
+.tg-tools i[class^="fa"] {
 	width: 30px;
 	float: left;
 }
+
 .tg-navbar-left {
 	text-align: left;
 	list-style: none;
@@ -325,10 +335,6 @@ textarea:-ms-input-placeholder{
 	cursor:pointer;
 	text-decoration:none;
 }
-.tg-navbar-left ul {
-	margin:0px;
-	padding:0px;
-}
 .tg-navbar-left li {
 	padding: 0px;
 	margin: 0px;
@@ -344,7 +350,7 @@ textarea:-ms-input-placeholder{
 .tg-navbar-left li:hover p {
 	color: #ec6552;
 }
-.tg-navbar-left li.active i, .tg-navbar-left li.active p{
+.tg-navbar-left li.active i, .tg-navbar-left li.active p {
 	color: #ec6552;
 }
 .tg-navbar-left li i {
@@ -365,6 +371,15 @@ textarea:-ms-input-placeholder{
 	line-height: 61px;
 }
 /* Sub-Menu */
+.tg-menu-submenu {
+	display:none;
+}
+.tg-menu-submenu li {
+	display:inline;
+	margin-left: 10px;
+}
+
+/* OLD submenu
 .dropdown:hover .tg-dropdown-menu{
 	display: block;
 }
@@ -450,29 +465,30 @@ textarea:-ms-input-placeholder{
 .tg-maintabs {
 	display: inline-block;
 	color: #000;
-	margin: 0 0 0 1em;
+	margin: 0 1em 0 1em;
 	cursor: pointer;
 }
 
 .nav-tabs>.active>a{
 	color: #f1634d;
 	border: none;
-  	border-bottom: 2px solid #f1634d;
+  border-bottom: 2px solid #f1634d;
 }
 .nav-tabs{
 	position: fixed;
 	top: 60px;
 	z-index: 999;
-	margin-left: 110px;
+	margin-left: 160px;
 	border-bottom: none;
 }
 .nav-tabs li{
-	height: 78px;
+	height: 58px;
+	border-right: solid 1px rgba(0,0,0,0.3);
 }
 .nav-tabs li a{
 	font: 1.4em 'LatoBold';
 	color: #000;
-	line-height: 78px;
+	line-height: 58px;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	border: none;
@@ -489,6 +505,38 @@ textarea:-ms-input-placeholder{
 
 /* END > MAINTABS
 ----------------------------------------- */
+
+/* MAINPAGE
+----------------------------------------- */
+/* these are the overall styles used in outlining each mainpage (container pages, eg: home, events, resources, products, profiles) */
+.tg-main-container {
+	background: #e7e9ed;
+	padding-top: 100px;
+	padding-bottom: 30px;
+}
+.tg-mainpage h1 {
+	float: left;
+	font: 2.4em 'LatoBlack';
+}
+.tg-mainpage-button {
+	float: right;
+	position: relative;
+	top: 5px;
+}
+.tg-mainpage-button i {
+	font-size: 1.6em;
+	float: left;
+	margin-right: 25px;
+	line-height: 42px;
+	cursor: pointer;
+}
+.tg-mainpage-button span {
+	font: 1.125em 'LatoBlack';
+	margin-left: 8px;
+}
+/* END > MAINPAGE
+----------------------------------------- */
+
 
 /* FOOTER
 ----------------------------------------- */
@@ -524,37 +572,6 @@ textarea:-ms-input-placeholder{
 }
 
 /* END > FOOTER
------------------------------------------ */
-
-/* MAINPAGE
------------------------------------------ */
-/* these are the overall styles used in outlining each mainpage (container pages, eg: home, events, resources, products, profiles) */
-.tg-main-container{
-	background: #e7e9ed;
-	padding-top:130px;
-	padding-bottom: 30px;
-}
-.tg-mainpage h1 {
-	float: left;
-	font: 2.4em 'LatoBlack';
-}
-.tg-mainpage-button {
-	float: right;
-	position: relative;
-	top: 5px;
-}
-.tg-mainpage-button i {
-	font-size: 1.6em;
-	float: left;
-	margin-right: 25px;
-	line-height: 42px;
-	cursor: pointer;
-}
-.tg-mainpage-button i span {
-	font: 1.125em 'LatoBlack';
-	margin-left: 8px;
-}
-/* END > MAINPAGE
 ----------------------------------------- */
 
 

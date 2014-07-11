@@ -36,7 +36,7 @@ app = angular.module 'TechGrindApp', [
 	'TechGrindApp.controllers'
 	'TechGrindApp.controllers.home'
 	'TechGrindApp.controllers.events'
-	'TechGrindApp.controllers.res-jobs'
+	'TechGrindApp.controllers.jobs'
 	'TechGrindApp.controllers.res-docs'
 	'TechGrindApp.controllers.res-guides'
 	'TechGrindApp.controllers.res-media'
@@ -81,7 +81,7 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 		templateUrl: 'partials/activation.html'
 		controller: 'ActivationCtrl'
 
-# MAIN MENU PAGES
+# MAIN CONTAINER PAGES
 	$routeProvider.when '/home',
 		templateUrl: 'partials/home.html'
 		controller: 'HomeCtrl'
@@ -90,17 +90,13 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 		templateUrl: 'partials/events.html'
 		controller: 'EventsCtrl'
 
-	$routeProvider.when '/resources/jobs',
-		templateUrl: 'partials/res-jobs.html'
-		controller: 'ResourcesJobsCtrl'
+	$routeProvider.when '/jobs',
+		templateUrl: 'partials/jobs.html'
+		controller: 'JobsCtrl'
 
 	$routeProvider.when '/resources/docs',
 		templateUrl: 'partials/res-docs.html'
 		controller: 'ResourcesDocsCtrl'
-
-	$routeProvider.when '/resources/guides',
-		templateUrl: 'partials/res-guides.html'
-		controller: 'ResourcesGuidesCtrl'
 
 	$routeProvider.when '/resources/media',
 		templateUrl: 'partials/res-media.html'
@@ -110,29 +106,29 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 		templateUrl: 'partials/res-media.html'
 		controller: 'ResourcesMediaCtrl'
 
+	$routeProvider.when '/resources/guides',
+		templateUrl: 'partials/res-guides.html'
+		controller: 'ResourcesGuidesCtrl'
+
 	$routeProvider.when '/resources/teamspeak',
 		templateUrl: 'partials/res-teamspeak.html'
 		controller: 'ResourcesTeamSpeakCtrl'
-
-## EVENTS
-	$routeProvider.when '/events/new',
-		templateUrl: 'partials/plugins/info_event.html'
-		controller: 'InfoEventCreateNewCtrl'
-
-	$routeProvider.when '/events/:name',
-		templateUrl: 'partials/plugins/info_event.html'
-		controller: 'InfoEventCtrl'
 
 ## CONTENT
 	$routeProvider.when '/content/:name',
 		templateUrl: 'partials/plugins/content_article_fullpage.html'
 		controller: 'ContentArticleFullPageCtrl'
 
-## PROFILE PAGES
-	$routeProvider.when '/profiles',
-		templateUrl: 'partials/info_userprofile.html'
-		controller: 'ProfileUserCtrl'
+## EVENTS
+	$routeProvider.when '/events/new',
+		templateUrl: 'partials/plugins/info_event.html'
+		controller: 'EventsCreateCtrl'
 
+	$routeProvider.when '/events/:name',
+		templateUrl: 'partials/plugins/info_event.html'
+		controller: 'EventsInfoCtrl'
+
+## PROFILE PAGES
 	$routeProvider.when '/profiles/people',
 		templateUrl: 'partials/info_userprofile.html'
 		controller: 'ProfileUserCtrl'

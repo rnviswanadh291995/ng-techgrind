@@ -14,94 +14,88 @@
 
     example:
 */-->
-<head>
-  <!--link rel="stylesheet" href="css/plugins/info.css"-->
-  <!--link rel="stylesheet" href="css/plugins/info_event.css"-->
-</head>
-
-<!--button ng-click="compose()" class="btn btn-compose btn-success pull-right">
-  <i class="icon-edit"></i>Compose
-</button-->
 <div ng-controller="InfoEventCtrl">
-    <div class="container tg-main-container"> 
-        <div class="row-fluid">
-          <div class="span7 offset2">
-                    <div class="event-page-detail-header clearfix"> 
-                  <h1>{{event.name}}</h1>
-                  <p>{{event.description}}</p>
-                  <i class="event-page-detail-date fa fa-calendar"><span>{{iEvent.date}} {{iEvent.time}}April 25, 2014 10:00 AM / 2 Days</span></i>
-                  <i class="event-page-detail-location fa fa-map-marker"><span>{{iEvent.address}} {{iEvent.city}}Roadhouse Barbecue, Bangkok</span></i>
-              </div>
-              <div class="event-page-detail-section-header">Event Detail</div> <!-- header off each section -->
-              <div class="event-page-detail-content">
-                  <p>The Founder Institute is the world's largest idea-stage accelerator. Join us for an informational event where you can meet local Directors, ask questions and learn how you can launch a startup in Hong Kong with help from top CEOs, experienced peers and a structured approach. What is it like to be in the Founder Institute? Who are some of the peers that you will be working with? Can the Institute help you build your dream company? For updates, go to <a href="#">https://fi.co/e/14491/TIA</a></p>
-                  <img src="http://placehold.it/670x378"/>
-                  <h1>Good to know</h1>
-                  <p>The Founder Institute is the world's largest idea-stage accelerator. Join us for an informational event where you can meet local Directors, ask questions and learn how you can launch a startup in Hong Kong with help from top CEOs, experienced peers and a structured approach. </p>
-              </div>
-              <div class="event-page-detail-section-header">Sponsors</div>
-              <div class="event-page-detail-sponsors clearfix">
-                  <img src="http://placehold.it/145x145"/>
-                  <img src="http://placehold.it/145x145"/>
-              </div>
-              <div class="event-page-detail-section-header">Who is going (28)</div>
-              <div class="event-page-detail-whoisgoing" style="width:670px;">
-                  <div class="event-page-detail-whoisgoing-area clearfix">
-                      <div class="event-page-detail-whoisgoing-user clearfix">
-                          <span class="event-page-detail-whoisgoing-user-image" style="background:black;"></span>
-                          <p>Gartenblume</p>
-                      </div>
-                      <div class="event-page-detail-whoisgoing-user clearfix">
-                          <span class="event-page-detail-whoisgoing-user-image" style="background:black;"></span>
-                          <p>Gartenblume</p>
-                      </div>
-                  </div>
-                  <a href="#"><span class="event-page-detail-whoisgoing-show-all">Show all</span></a>
-              </div>
-              <div class="event-page-detail-user-profile">
-                  <div class="event-page-detail-user-info">
-                      <div class="event-page-detail-user-profile-user-image" style="background:white;"></div>
-                      <p class="event-page-detail-user-profile-name">Hans Wurstmann Schimmelreiter</p>
-                      <p class="event-page-detail-user-profile-position">UI Designer</p>
-                      <p class="event-page-detail-user-profile-location">Bangkok, Thailand</p>
-                  </div>
-                  <div class="event-page-detail-user-email">
-                      <i class="fa fa-envelope"></i>
-                  </div>
-              </div>
-          </div>
 
-          <div class="span3">
-              <div class="event-page-sidebar-purchase-button">
-                      <a href="#"><span>Purchase Ticket</span></a>
-                  </div>
-                  <div class="event-page-sidebar-add-to-calendar-text">
-                      <i class="fa fa-calendar"><span>Add event to my calendar</span></i>
-                  </div>
-                  <div class="event-page-detail-section-header">Price</div>
-                  <div class="event-page-sidebar-price-box">
-                      THB 3,500.00
-                  </div>
-                  <div class="event-page-detail-section-header">Organizer</div>
-                  <div class="event-page-sidebar-user-profile">
-                      <div class="event-page-sidebar-user-info">
-                          <div class="event-page-sidebar-user-profile-user-image" style="background:black;"></div>
-                          <p class="event-page-sidebar-user-profile-name">Hans Wurstmann<br>Schimmelreiter</p>
-                      </div>
-                      <div class="event-page-sidebar-user-email">
-                          <i class="fa fa-envelope"></i>
-                      </div>
-                  </div>
-                  <div class="event-page-detail-section-header">Share</div>
-                  <div class="event-page-sidebar-share-box">
-                      <div class="event-page-sidebar-share-box-social-area">
-                          <a href="#"><i class="fa fa-envelope"></i></a>
-                          <a href="#"><i class="fa fa-facebook"></i></a>
-                          <a href="#"><i class="fa fa-twitter"></i></a>
-                          <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                  </div>
+<div class="container tg-main-container"> 
+  <div class="row-fluid">
+    <div class="span7 offset2">
+      <div class="event-page-detail-header clearfix"> 
+        <h1>{{event.name}}</h1>
+        <p>{{event.description}}</p>
+        <i class="event-page-detail-date fa fa-calendar"><span>{{iEvent.date}} {{iEvent.time}}April 25, 2014 10:00 AM / 2 Days</span></i>
+        <i class="event-page-detail-location fa fa-map-marker"><span>{{iEvent.address}} {{iEvent.city}}Roadhouse Barbecue, Bangkok</span></i>
+      </div>
+      <div class="event-page-detail-section-header">Event Detail</div> <!-- header off each section -->
+      <div class="event-page-detail-content">
+        <p>The Founder Institute is the world's largest idea-stage accelerator. Join us for an informational event where you can meet local Directors, ask questions and learn how you can launch a startup in Hong Kong with help from top CEOs, experienced peers and a structured approach. What is it like to be in the Founder Institute? Who are some of the peers that you will be working with? Can the Institute help you build your dream company? For updates, go to <a href="#">https://fi.co/e/14491/TIA</a></p>
+        <img src="http://placehold.it/670x378"/>
+        <h1>Good to know</h1>
+        <p>The Founder Institute is the world's largest idea-stage accelerator. Join us for an informational event where you can meet local Directors, ask questions and learn how you can launch a startup in Hong Kong with help from top CEOs, experienced peers and a structured approach. </p>
+      </div>
+      <div class="event-page-detail-section-header">Sponsors</div>
+      <div class="event-page-detail-sponsors clearfix">
+        <img src="http://placehold.it/145x145"/>
+        <img src="http://placehold.it/145x145"/>
+      </div>
+      <div class="event-page-detail-section-header">Who is going (28)</div>
+      <div class="event-page-detail-whoisgoing" style="width:670px;">
+        <div class="event-page-detail-whoisgoing-area clearfix">
+          <div class="event-page-detail-whoisgoing-user clearfix">
+            <span class="event-page-detail-whoisgoing-user-image" style="background:black;"></span>
+            <p>Gartenblume</p>
+          </div>
+          <div class="event-page-detail-whoisgoing-user clearfix">
+            <span class="event-page-detail-whoisgoing-user-image" style="background:black;"></span>
+            <p>Gartenblume</p>
           </div>
         </div>
+        <a href="#"><span class="event-page-detail-whoisgoing-show-all">Show all</span></a>
+      </div>
+      <div class="event-page-detail-user-profile">
+      <div class="event-page-detail-user-info">
+      <div class="event-page-detail-user-profile-user-image" style="background:white;"></div>
+      <p class="event-page-detail-user-profile-name">Hans Wurstmann Schimmelreiter</p>
+      <p class="event-page-detail-user-profile-position">UI Designer</p>
+      <p class="event-page-detail-user-profile-location">Bangkok, Thailand</p>
+      </div>
+      <div class="event-page-detail-user-email">
+      <i class="fa fa-envelope"></i>
+      </div>
+      </div>
     </div>
+
+    <div class="span3">
+    <div class="event-page-sidebar-purchase-button">
+    <a href="#"><span>Purchase Ticket</span></a>
+    </div>
+    <div class="event-page-sidebar-add-to-calendar-text">
+    <i class="fa fa-calendar"><span>Add event to my calendar</span></i>
+    </div>
+    <div class="event-page-detail-section-header">Price</div>
+    <div class="event-page-sidebar-price-box">
+    THB 3,500.00
+    </div>
+    <div class="event-page-detail-section-header">Organizer</div>
+    <div class="event-page-sidebar-user-profile">
+    <div class="event-page-sidebar-user-info">
+    <div class="event-page-sidebar-user-profile-user-image" style="background:black;"></div>
+    <p class="event-page-sidebar-user-profile-name">Hans Wurstmann<br>Schimmelreiter</p>
+    </div>
+    <div class="event-page-sidebar-user-email">
+    <i class="fa fa-envelope"></i>
+    </div>
+    </div>
+    <div class="event-page-detail-section-header">Share</div>
+    <div class="event-page-sidebar-share-box">
+    <div class="event-page-sidebar-share-box-social-area">
+    <a href="#"><i class="fa fa-envelope"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-google-plus"></i></a>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
 </div>

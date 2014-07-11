@@ -1,0 +1,41 @@
+<!--/*
+	jobs:
+		display-style___________
+		a standard main-container-page with tabs
+		* jobs available
+		* post new job
+		* hr services companies
+		* legal and employment resources
+
+		example:
+		
+		functional goal___________
+		* users should see job postings
+		* users should be able to post new jobs
+		* users should be able to search for jobs via criteria
+		* services companies should be able to list their services by creating a new profile
+		* service company profiles should be listed
+		* users should be able to view docs & legal resources
+		* users should be able to discuss docs & legal resources
+		* users should be able to post docs & legal resources
+*/-->
+
+<div class="container">
+
+  <div class="row-fluid tg-main-container">
+    <div class="span12">
+			<tabset class="unselectable tg-maintabs">
+			  <tab heading="Startup Jobs">
+					<div ng-include="''"></div>
+			  </tab>
+			  <tab heading="HR Services">
+					<div ng-include="'partials/plugins/widget_add_event.html'"></div> 
+			  </tab>
+			  <tab heading="Employment & Legal">
+					<div ng-include="'partials/inserts/res-jobs_startupjobs_employment.html'"></div>
+				</tab>
+			</tabset>
+    </div>
+  </div>
+
+</div>

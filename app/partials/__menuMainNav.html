@@ -1,0 +1,11 @@
+<div id="{{parentId}}">
+	<div class="panel" ng-repeat="item in mainMenu">
+		<a href="#" data-toggle="collapse" data-parent="#{{parentId}}" data-target="#child{{$index}}" ng-click="{mainMenu.selected = item}"><i class="fa {{item.icon}}"></i><p>{{item.name}}</p>
+		</a>
+		<div ng-if="{item.submenu}" id="child{{$index}}" ng-class="collapse">
+			<ul>
+				<li ng-repeat="subitem in item.submenu"><i class="fa {{subitem.icon}}"></i><p>{{subitem.name}}</p></li>
+			</ul>
+		</div>
+	</div>
+</div>
