@@ -40,9 +40,10 @@ appModule = angular.module("TechGrindApp.controllers.list.entities", ["TechGrind
 appModule.controller "ListEntitiesCtrl", [ "$scope", "steam", "$routeParams", "$location", ($scope, steam, rp, loc) ->
       get_countries = undefined
       get_country = undefined
+      console.log("getting:", $scope.filter)
+      $scope.debug = [ $scope.filter ]
       $scope.countries = {}
       $scope.sgenome = {}
-      $scope.debug = []
       $scope.entities = []
       $scope.user =
         userid: "efraimip"
@@ -50,7 +51,6 @@ appModule.controller "ListEntitiesCtrl", [ "$scope", "steam", "$routeParams", "$
 
       $scope.goToOrganization = (slug) ->
         loc.path "profile/startup/" + slug
-        return
 
       $scope.userFavorite = (organization_id) ->
         isFavoriteExist = $scope.user.favorite.indexOf(organization_id) isnt -1
@@ -60,23 +60,30 @@ appModule.controller "ListEntitiesCtrl", [ "$scope", "steam", "$routeParams", "$
           $scope.user.favorite.push organization_id
         $scope.entities[organization_id].favorited = (if ($scope.entities[organization_id].favorited) then false else true)
         console.log $scope.user.favorite
-        return
 
-      get_country = (country, filter) ->
-        $scope.debug.push = [
+      get_entities = (country, filter) ->
+        $scope.debug.push [
           "getting"
           country
           filter
         ]
-        if filter
-          filter = "/" + filter
+        console.log sexpr("get_entities", country, filter, $scope.debug)
+        if country
+          country = "/" + country
         else
-          filter = ""
-        steam.get("/home/techgrind/organizations/country/" + country + filter).then (data) ->
-          $scope.debug.push = "got " + country
-          $scope.entities = data.sgenome
+          country = ""
+        if filter
+          if !Array.isArray filter
+            filter = [ filter ]
+        else
+          filter = [""]
+        for category in filter
+          if (category != "")
+            category = "/"+category
+          steam.get("/home/techgrind/organizations" + country + category).then (data) ->
+            $scope.debug.push [ "got", country, category ]
+            $scope.entities = data.sgenome
 
-
-      return get_country(rp.region, rp.filter)  if rp.region
-      return $scope.entities
+      console.log(sexpr(["filter: ", $scope.filter ]))
+      get_entities(rp.region, $scope.filter)
   ]
