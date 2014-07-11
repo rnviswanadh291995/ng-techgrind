@@ -83,7 +83,10 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 	$routeProvider.when '/home',
 		templateUrl: 'partials/home.html'
 		controller: 'HomeCtrl'
-
+		
+	$routeProvider.when '/home/:typeID',
+		action: 'partials.plugins.list_entities'
+		
 	$routeProvider.when '/events',
 		templateUrl: 'partials/events.html'
 		controller: 'EventsCtrl'

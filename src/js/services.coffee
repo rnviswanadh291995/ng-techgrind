@@ -125,3 +125,194 @@ services.factory 'settings', (localStorageService) ->
                 localStorageService.get(key)
         set: (key, value) ->
                 localStorageService.add(key, value)
+
+# service "requestContext"
+# Data binding for home subviews
+services.factory 'listService', ($q, _) ->
+	getTypes = ->
+		deferred = $q.defer()
+		deferred.resolve( ng.copy( cache ) )
+		return deferred.promise
+
+	getTypeByID = (id) ->
+		deferred = $q.defer()
+		type = _.findWithProperty( cache, "id", id );
+		if type
+			deferred.resolve( ng.copy( category ) )
+		else
+			deferred.reject()
+		return deferred.promise
+		
+	#Setup list type data cache
+	cache = [{id: "startups",name: "Startups"},{id: "investors",name: "Investors"}]
+	
+	return {getTypes: getTypes,getTypeByID: getTypeByID}
+	
+services.factory 'requestContext', (RenderContext) ->
+	getAction = ->
+		return action
+
+	getNextSection = (prefix) ->
+		#Make sure the prefix is actually in the current action.
+		if !startsWith( prefix )
+			return null
+
+		# If the prefix is empty, return the first section.
+		if prefix == ""
+			return sections[ 0 ]
+
+		# Now that we know the prefix is valid, lets figure out the depth 
+		# of the current path.
+		depth = prefix.split( "." ).length
+
+		# If the depth is out of bounds, meaning the current action doesn't
+		# define sections to that path (they are equal), then return null.
+		if depth == sections.length
+			return null
+
+		# Return the section.
+		return sections[ depth ]
+				
+	getParam = (name, defaultValue) ->
+		if ng.isUndefined( defaultValue )
+			defaultValue = null;
+
+		return (params[ name ] || defaultValue)
+			
+	# I return the param as an int. If the param cannot be returned as an 
+	# int, the given default value is returned. If no default value is 
+	# defined, the return will be zero.
+	getParamAsInt = ( name, defaultValue ) ->
+		# Try to parse the number.
+		valueAsInt = ( this.getParam( name, defaultValue || 0 ) * 1 )
+
+		#Check to see if the coersion failed. If so, return the default.
+		if  isNaN( valueAsInt ) 
+			return (defaultValue || 0)
+		else
+			return valueAsInt
+
+	
+	# I return the render context for the given action prefix and sub-set of 
+	# route params.
+	getRenderContext = (requestActionLocation, paramNames ) ->
+		# Default the requestion action.
+		requestActionLocation = ( requestActionLocation || "" )
+
+		# Default the param names. 
+		paramNames = ( paramNames || [] )
+
+		# The param names can be passed in as a single name; or, as an array
+		# of names. If a single name was provided, let's convert it to the array.
+		if  !ng.isArray( paramNames )
+			paramNames = [ paramNames ]
+		
+		return (new RenderContext( this, requestActionLocation, paramNames ))
+		
+
+		# I determine if the action has changed in this particular request context.
+		hasActionChanged =() ->
+			return (action != previousAction)
+
+		# I determine if the given param has changed in this particular request 
+		# context. This change comparison can be made against a specific value 
+		# (paramValue); or, if only the param name is defined, the comparison will 
+		# be made agains the previous snapshot.
+		hasParamChanged = ( paramName, paramValue ) ->
+			# If the param value exists, then we simply want to use that to compare 
+			# against the current snapshot. 
+			if !ng.isUndefined( paramValue )
+				return !isParam( paramName, paramValue )
+
+			# If the param was NOT in the previous snapshot, then we'll consider
+			# it changing.
+			if !previousParams.hasOwnProperty( paramName ) && params.hasOwnProperty( paramName )
+				return true
+
+			else if previousParams.hasOwnProperty( paramName ) && !params.hasOwnProperty( paramName )
+				return true
+
+			# If we made it this far, the param existence has not change; as such,
+			# let's compare their actual values.
+			previousParams[ paramName ] != params[ paramName ]
+
+			# I determine if any of the given params have changed in this particular
+			# request context.
+			haveParamsChanged =( paramNames ) ->
+				for i in [0 ... paramNames.length]
+					if ( hasParamChanged( paramNames[ i ] ) ) 
+						# If one of the params has changed, return true - no need to
+						# continue checking the other parameters.
+						return true
+				
+				# If we made it this far then none of the params have changed.
+				return false
+
+			# I check to see if the given param is still the given value.
+			isParam = ( paramName, paramValue ) ->
+				# When comparing, using the coersive equals since we may be comparing 
+				# parsed value against non-parsed values.
+				if params.hasOwnProperty( paramName ) && ( params[ paramName ] == paramValue )
+					return true
+
+				# If we made it this far then param is either a different value; or, 
+				# is no longer available in the route.
+				return false
+
+			# I set the new request context conditions.
+			setContext = ( newAction, newRouteParams ) ->
+				# Copy the current action and params into the previous snapshots.
+				previousAction = action
+				previousParams = params
+				
+				# Set the action.
+				action = newAction;
+
+				# Split the action to determine the sections.
+				sections = action.split( "." );
+
+				# Update the params collection.
+				params = ng.copy( newRouteParams );
+
+
+
+			# I determine if the current action starts with the given path.
+			startsWith =( prefix ) ->
+				# When checking, we want to make sure we don't match partial sections for false
+				# positives. So, either it matches in entirety; or, it matches with an additional
+				# dot at the end.
+				if !prefix.length || ( action == prefix ) || ( action.indexOf( prefix + "." ) == 0 )
+					return( true )
+				
+				return( false )
+				
+				
+			# Store the current action path.
+			action = ""
+
+			# Store the action as an array of parts so we can more easily examine 
+			# parts of it.
+			sections = []
+
+			# Store the current route params.
+			params = {}
+
+			# Store the previous action and route params. We'll use these to make 
+			# a comparison from one route change to the next.
+			previousAction = ""
+			previousParams = {}
+
+
+			# Return the public API.
+			return({ 
+				getNextSection: getNextSection,
+				getParam: getParam,
+				getParamAsInt: getParamAsInt,
+				getRenderContext: getRenderContext,
+				hasActionChanged: hasActionChanged,
+				hasParamChanged: hasParamChanged,
+				haveParamsChanged: haveParamsChanged,
+				isParam: isParam,
+				setContext: setContext,
+				startsWith: startsWith
+			})

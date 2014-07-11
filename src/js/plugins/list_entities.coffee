@@ -37,46 +37,67 @@
 # click at the star = fixed on top (favorite) & add that entities  user.type.favorite[] for user record
 # click at the row = redirect to the start/service/investor profile page. example http://127.0.0.1:8000/#/people
 appModule = angular.module("TechGrindApp.controllers.list.entities", ["TechGrindApp.directives.ngErrSrc"])
-appModule.controller "ListEntitiesCtrl", [ "$scope", "steam", "$routeParams", "$location", ($scope, steam, rp, loc) ->
-      get_countries = undefined
-      get_country = undefined
-      $scope.countries = {}
-      $scope.sgenome = {}
-      $scope.debug = []
-      $scope.entities = []
-      $scope.user =
-        userid: "efraimip"
-        favorite: []
+#appModule.config 
+appModule.controller "ListEntitiesCtrl", [ "$scope", "steam", "$routeParams", "$location", "requestContext", ($scope, steam, rp, loc, rc) ->
+	get_countries = undefined
+	get_country = undefined
+	$scope.countries = {}
+	$scope.type = "startups"
+	$scope.sgenome = {}
+	$scope.debug = []
+	$scope.entities = []
+	$scope.user =
+		userid: "efraimip"
+		favorite: []
+	
+	$scope.goToOrganization = (slug) ->
+	  loc.path "profile/"+$scope.type+"/" + slug
+	  return
+    
+	$scope.userFavorite = (organization_id) ->
+		isFavoriteExist = $scope.user.favorite.indexOf(organization_id) isnt -1
+		if isFavoriteExist
+			$scope.user.favorite.splice $scope.user.favorite.indexOf(organization_id), 1
+		else
+			$scope.user.favorite.push organization_id
+		$scope.entities[organization_id].favorited = (if ($scope.entities[organization_id].favorited) then false else true)
+		console.log $scope.user.favorite
+		return
 
-      $scope.goToOrganization = (slug) ->
-        loc.path "profile/startup/" + slug
-        return
-
-      $scope.userFavorite = (organization_id) ->
-        isFavoriteExist = $scope.user.favorite.indexOf(organization_id) isnt -1
-        if isFavoriteExist
-          $scope.user.favorite.splice $scope.user.favorite.indexOf(organization_id), 1
-        else
-          $scope.user.favorite.push organization_id
-        $scope.entities[organization_id].favorited = (if ($scope.entities[organization_id].favorited) then false else true)
-        console.log $scope.user.favorite
-        return
-
-      get_country = (country, filter) ->
-        $scope.debug.push = [
-          "getting"
-          country
-          filter
-        ]
-        if filter
-          filter = "/" + filter
-        else
-          filter = ""
-        steam.get("/home/techgrind/organizations/country/" + country + filter).then (data) ->
-          $scope.debug.push = "got " + country
-          $scope.entities = data.sgenome
-
-
-      return get_country(rp.region, rp.filter)  if rp.region
-      return $scope.entities
-  ]
+	#Get the render context local to this controller (and relevant params)
+	renderContext = rc.getRenderContext("partials.plugins.list_entities");
+	
+	#--Define the scope variable--#
+	#Get the type of the list
+	$scope.type = rc.getParam("type");
+	#Get the country of the list
+	#$scope.country = rc.getParam("country");
+	$scope.country = 'malaysia'  
+	#Get the filter of the list
+	#$scope.country = rc.getParam("filter");
+	
+	#Handle changes to request context
+	# TODO
+	
+	#eg: http://dev-back1.techgrind.asia/scripts/rest/pike?request=/home/techgrind/organizations/malaysia/startups
+	get_country = (country, filter) ->
+		$scope.debug.push = [
+			"getting"
+			country
+			filter
+		]
+		if country
+			country = "/" + country + "/"
+		else
+			country = ""
+		if filter
+			filter = "/" + filter
+		else
+			filter = ""
+		steam.get("/home/techgrind/organizations/" + country + $scope.type).then (data) ->
+			$scope.debug.push = "got " + country
+			$scope.entities = data.sgenome
+			
+	return get_country($scope.region, $scope.filter)
+	#return $scope.entities
+]

@@ -4,32 +4,40 @@
     <div class="span9">
       <div class="widget">
         <div class="widget-body">
-        <tabset class="unselectable">
+         <tabset class="unselectable" ng-model="list.types">
           <tab heading="News">
             <div ng-include="'partials/plugins/content_articles.html'"></div>
           </tab>
-          <tab heading="Startups">
-            
+		  <tab heading="Startups" ng-class="{active:tab === 1}">
+            <div ng-include="'partials/plugins/list_entities.html'" ng-data="'startups, {{rp}}'"></div>
           </tab>
-          <tab heading="Investors">
-            
+          <tab heading="Investors" ng-class="{active:tab === 2}">
+            <div ng-include="'partials/plugins/list_entities.html'" ng-data="'investors, {{rp}}'"></div>
           </tab>
-          <tab heading="Services">
-            
+          <tab heading="Services" ng-class="{active:tab === 3}">
+            <div ng-include="'partials/plugins/list_entities.html'" ng-data="'services,{{rp}}'"></div>
           </tab>
-          <tab heading="Work Spaces">
-            
+          <tab heading="XSpaces" ng-class="{active:tab === 4}">
+            <div ng-include="'partials/plugins/list_entities.html'" ng-data="'hackerspace,{{rp}}'"></div>
           </tab>
-          <tab heading="Communities">
-            
+          <tab heading="Work Spaces" ng-class="{active:tab === 5}">
+            <div ng-include="'partials/plugins/list_entities.html'" ng-data="'coworking,{{rp}}'"></div>
+          </tab>
+          <tab heading="Communities" ng-class="{active:tab === 6}">
+            <div ng-include="'partials/plugins/list_entities.html'" ng-data="'community,{{rp}}'"></div>
           </tab>
           <tab></tab> <!-- SPACE -->
           <tab heading="Discuss">
+
             <!--div ng-include="'partials/plugins/social_facebook.html'"></div-->
+
           </tab>
-          <button ng-click="compose()" class="btn btn-compose btn-success pull-right">
+		  <button ng-click="compose()" class="btn btn-compose btn-success pull-right">
+
             <i class="icon-edit"></i>Compose
+
           </button>
+
         </tabset>
         </div>
       </div>
