@@ -130,7 +130,7 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
 
 ## PROFILE PAGES
 	$routeProvider.when '/profiles/people',
-		templateUrl: 'partials/info_userprofile.html'
+		templateUrl: 'partials/profileuser.html'
 		controller: 'ProfileUserCtrl'
 
 	$routeProvider.when '/profiles/people/:userid',
