@@ -85,8 +85,8 @@ header comment here
   </div> <!-- END TOOLS BAR -->
 
   <div class="row-fluid tg-navbar-top clearfix">
-      <div class="span4">
-          <a class="tg-navbar-top-search" href="#"><i class="fa fa-search"></i></a>
+      <div ng-controller="SearchCtrl" class="span4">
+          <a class="tg-navbar-top-search" href="#"><i class="fa fa-search"></i></a><input name="main-search" ng-model="search"> <span>we are searching {{current_search}}</span>
       </div>
       <div class="span4 tg-navbar-top-icon">
           <i class="fa fa-cogs"></i>

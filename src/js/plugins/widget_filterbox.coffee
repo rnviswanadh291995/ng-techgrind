@@ -20,6 +20,24 @@ appModule.controller "WidgetFilterbox", [ "$scope", "steam", "$http", "settings"
     $scope.active_regions = settings.get("regions")
     $scope.keywords = settings.get("keywords")
 ]
+
+appModule.controller "SearchCtrl", [ "$scope", "steam", "settings", (S, steam, settings) ->
+    S.regions = regions # list of available regions should come from the server in the future
+    S.categories = categories
+    S.active_regions = settings.get("regions")
+    S.keywords = settings.get("keywords")
+    S.search = ""
+
+    S.$watch "search", ->
+        # search for S.search
+        settings.set("current-search", S.search)
+
+    S.$watch ->
+        settings.get("current-search")
+      , ->
+        S.current_search = settings.get("current-search")
+]
+
 regions = [
   "Asia-Pacific"
   "Australia"
