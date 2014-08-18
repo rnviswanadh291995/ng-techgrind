@@ -1,171 +1,161 @@
 <head>
-	<link rel="stylesheet" href="css/plugins/content_article_fullpage.css">
-</head>  
-    <div class="container tg-main-container"> 
-        <div class="row-fluid">
-        	<div class="span7 offset2">
-        		  <div class="content-fullpage-title"> 
-                  <span class="content-fullpage-category">{{article.category}}</span>
-                  <h1>{{article.title}}</h1>
-                  	<div class="content-fullpage-meta clearfix">
-                      <p>From <a href="#">{{article.from}}Techcrunch</a></p> <p>&nbsp;/Posted {{article.posted}} by <a>{{article.by}}</a></p>
-                      <span class="content-fullpage-meta-author" style="background:black;"></span>
-                  	</div> 
-                  <div class="content-fullpage-stats clearfix">
-                      <div class="content-fullpage-stats-points">
-                            <span>{{article.points}}</span>
-                            <p>Points</p>
-                      </div>
-                      <div class="content-fullpage-stats-comments">
-                            <span>{{article.comment}}</span>
-                            <p>Comments</p>
-                  	  </div>
-                  </div>
-                  </div>
-               <div class="content-fullpage-content"> 
-                  <img src="http://placehold.it/670x378"/>
-                  <p>{{article.content}}</p>
+  <link rel="stylesheet" href="css/plugins/content_article_fullpage.css">
+</head>
 
-
-                  <h2>{{article.subtitle}}</h2>
-                  <p>
-                  {{article.subcontent1}}
-                   </p>
-                  <img src="http://placehold.it/670x378"/>
-                  <div class="content-fullpage-content-caption">
-                  {{image.info}}
-                  </div>
-                  <p>
-                  {{article.subcontent2}}
-                  </p>
-		<div class="span8">
-			<div class="widget articlefullpage">
-				<button class="pull-left btn-back btn-warning" onclick="history.go(-1);" tooltip="(BACK)" tooltip-placement="bottom">
-					<i class="icon-arrow-left"></i>
-				</button>
-				<div class="article-header">
-					<h3>{{article.title}}</h3>
-				</div>
-				<div class="article-body"> <!-- the CONTENT -->
-					<div class="article-content">
-						<img class="article-img img-polaroid" src="http://placehold.it/300x200"/>
-						<div ng-bind-html="article.content"></div>
-					</div>
-				</div>
-			</div>
-		</div> <!-- /span -->
-
+<div class="container tg-main-container"> 
+  <div class="row-fluid">
+    <div class="span7 offset2">
+      <div class="content-fullpage-title">
+        <span class="content-fullpage-category">{{article.category}}</span>
+        <h1>{{article.title}}</h1>
+        <div class="content-fullpage-meta clearfix">
+          <p>From <a href="#">{{article.from}}Techcrunch</a></p> <p>&nbsp;/Posted {{article.posted}} by <a>{{article.by}}</a></p>
+          <span class="content-fullpage-meta-author" style="background:black;"></span>
         </div>
-        <div ng-controller="CommentCtrl" class="content-page-discussion"> <!-- DISCUSSION AREA -->
-                    <a class="content-page-content-discussion-toggle-button"><i class="fa fa-comment-o"><span>520</span></i></a>
-                      <div class="content-page-discussion-content">
-                            <div class="content-page-discussion-content-owner-post"><!-- OWNER POST -->
-                                <span class="content-page-discussion-content-user-image" style="background: black"></span>
-                                    <div class="content-page-discussion-content-post clearfix"> 
-                                        <div class="content-page-discussion-content-header clearfix">
-                                        <h1>{{article.newconversation}}Hey Joana Molda, join the conversation!</h1>
-                                        </div>
-                                        <div class="content-page-discussion-content-postbox clearfix">
-                                            <textarea placeholder="Ask a question, share something or leave a comment ..."></textarea>
-                                            <span class="content-page-discussion-content-postbox-post-button">POST</span>
-                                        </div>
-                                    </div>
-                            </div> <!-- END OF OWNER POST-->
-                            <div class="content-page-discussion-content-other-post"> <!-- OTHER POST -->
-                                <span class="content-page-discussion-content-user-image" style="background: black"></span>
-                                <div class="content-page-discussion-content-post-answer clearfix">
-                                    <div class="content-page-discussion-content-header clearfix">
-                                        <h1>{{article.conversation}}Gartenblume</h1>
-                                        <div class="content-page-discussion-content-meta">
-                                        <i class="fa fa-clock-o"></i>
-                                        <p>{{conversation.when}}28 min ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="content-page-discussion-content-postbox clearfix">
-                                        <p>{{conversation.content}}In total, China will have 1.08 billion mobile phone users by the end of this year. China will receive nearly a quarter of global phone  this year.</p>
-                                        <div class="content-page-discussion-content-postbox-social">
-                                        <a href="#">LIKE</a>
-                                        <a href="#">REPLY</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="content-page-discussion-content-reply-post"> <!-- REPLY POST -->
-                                <span class="content-page-discussion-content-user-image" style="background: black"></span>
-                                <div class="content-page-discussion-content-post-answer clearfix">
-                                    <div class="content-page-discussion-content-header clearfix">
-                                        <h1>{{article.conversation}}Leo 0815</h1>
-                                        <div class="content-page-discussion-content-meta">
-                                        <i class="fa fa-clock-o"></i>
-                                        <p>{{conversation.when}}Apr 22, 2014</p>
-                                        </div>
-                                    </div>
-                                    <div class="content-page-discussion-content-postbox clearfix">
-                                        <p>{{converstaion.content}}In total, China will have 1.08 billion mobile phone users by the end of this year. China will receive nearly a quarter of global phone.</p>
-                                        <div class="content-page-discussion-content-postbox-social">
-                                        <a href="#">LIKE</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div> <!-- END OF REPLY POST -->
-                            </div><!-- END OF OTHER POST -->
+        <div class="content-fullpage-stats clearfix">
+          <div class="content-fullpage-stats-points">
+            <span>{{article.points}}</span>
+            <p>Points</p>
+          </div>
+          <div class="content-fullpage-stats-comments">
+            <span>{{article.comment}}</span>
+            <p>Comments</p>
+          </div>
+        </div>
+      </div>
+      <div class="content-fullpage-content">
+        <img src="http://placehold.it/670x378"/>
+        <p>{{article.content}}</p>
+        <h2>{{article.subtitle}}</h2>
+        <p>{{article.subcontent1}}</p>
+        <img src="http://placehold.it/670x378"/>
+        <div class="content-fullpage-content-caption">
+          {{image.info}}
+        </div>
+        <p>{{article.subcontent2}}</p>
+        <div class="span8">
+          <div class="widget articlefullpage">
+            <button class="pull-left btn-back btn-warning" onclick="history.go(-1);" tooltip="(BACK)" tooltip-placement="bottom"><i class="icon-arrow-left"></i></button>
+            <div class="article-header">
+              <h3>{{article.title}}</h3>
+            </div>
+            <div class="article-body"> <!-- the CONTENT -->
+              <div class="article-content">
+                <img class="article-img img-polaroid" src="http://placehold.it/300x200"/>
+                <div ng-bind-html="article.content"></div>
               </div>
-<div ng-include="'partials/plugins/comments.html'" ng-model="comments"></div>
-<pre> {{ sexpr(debug) }} </pre>
-<pre> {{ sexpr(data) }} </pre>
+            </div>
+          </div>
+        </div> <!-- /span -->
+      </div>
+      <div ng-controller="CommentCtrl" class="content-page-discussion"> <!-- DISCUSSION AREA -->
+        <a class="content-page-content-discussion-toggle-button"><i class="fa fa-comment-o"><span>520</span></i></a>
+        <div class="content-page-discussion-content">
+          <div class="content-page-discussion-content-owner-post"><!-- OWNER POST -->
+            <span class="content-page-discussion-content-user-image" style="background: black"></span>
+            <div class="content-page-discussion-content-post clearfix">
+              <div class="content-page-discussion-content-header clearfix">
+                <h1>{{article.newconversation}}Hey Joana Molda, join the conversation!</h1>
+              </div>
+              <div class="content-page-discussion-content-postbox clearfix">
+                <textarea placeholder="Ask a question, share something or leave a comment ..."></textarea>
+                <span class="content-page-discussion-content-postbox-post-button">POST</span>
+              </div>
+            </div>
+          </div> <!-- END OF OWNER POST-->
+          <div class="content-page-discussion-content-other-post"> <!-- OTHER POST -->
+            <span class="content-page-discussion-content-user-image" style="background: black"></span>
+            <div class="content-page-discussion-content-post-answer clearfix">
+              <div class="content-page-discussion-content-header clearfix">
+                <h1>{{article.conversation}}Gartenblume</h1>
+                <div class="content-page-discussion-content-meta">
+                  <i class="fa fa-clock-o"></i>
+                  <p>{{conversation.when}}28 min ago</p>
+                </div>
+              </div>
+              <div class="content-page-discussion-content-postbox clearfix">
+                <p>{{conversation.content}}In total, China will have 1.08 billion mobile phone users by the end of this year. China will receive nearly a quarter of global phone  this year.</p>
+                <div class="content-page-discussion-content-postbox-social">
+                  <a href="#">LIKE</a>
+                  <a href="#">REPLY</a>
+                </div>
+              </div>
+            </div>
+            <div class="content-page-discussion-content-reply-post"> <!-- REPLY POST -->
+              <span class="content-page-discussion-content-user-image" style="background: black"></span>
+              <div class="content-page-discussion-content-post-answer clearfix">
+                <div class="content-page-discussion-content-header clearfix">
+                  <h1>{{article.conversation}}Leo 0815</h1>
+                  <div class="content-page-discussion-content-meta">
+                    <i class="fa fa-clock-o"></i>
+                    <p>{{conversation.when}}Apr 22, 2014</p>
+                  </div>
+                </div>
+                <div class="content-page-discussion-content-postbox clearfix">
+                  <p>{{converstaion.content}}In total, China will have 1.08 billion mobile phone users by the end of this year. China will receive nearly a quarter of global phone.</p>
+                  <div class="content-page-discussion-content-postbox-social">
+                    <a href="#">LIKE</a>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- END OF REPLY POST -->
+          </div><!-- END OF OTHER POST -->
+        </div>
+        <div ng-include="'partials/plugins/comments.html'" ng-model="comments"></div>
+          <pre> {{ sexpr(debug) }} </pre>
+          <pre> {{ sexpr(data) }} </pre>
         </div> <!-- END OF DISCUSSION AREA -->
-              
-
-              <div class="content-fullpage-footer">
-              <div class="content-fullpage-stats clearfix">
-                      <div class="content-fullpage-stats-points">
-                            <span>{{article.points}}236</span>
-                            <p>Points</p>
-                      </div>
-                      <div class="content-fullpage-stats-comments">
-                            <span>{{article.comment}}79</span>
-                            <p>Comments</p>
-                  	  </div>
-               </div>
-                  <div class="content-fullpage-footer-tags">
-                        <p>Tags: 
-                        <a href="#">Hong Kong</a>/
-                        <a href="#">Startup</a>/
-                        <a href="#">Investment</a>/
-                        <a href="#">Startup</a></p>
-                  </div>
-                  <div class="content-fullpage-footer-rating">
-                        <p>Rate Article:
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        </p>
-                  </div>
-              </div>
+        <div class="content-fullpage-footer">
+          <div class="content-fullpage-stats clearfix">
+            <div class="content-fullpage-stats-points">
+              <span>{{article.points}}236</span>
+              <p>Points</p>
+            </div>
+            <div class="content-fullpage-stats-comments">
+              <span>{{article.comment}}79</span>
+              <p>Comments</p>
+            </div>
+          </div>
+          <div class="content-fullpage-footer-tags">
+            <p>Tags: 
+            <a href="#">Hong Kong</a>/
+            <a href="#">Startup</a>/
+            <a href="#">Investment</a>/
+            <a href="#">Startup</a></p>
+          </div>
+          <div class="content-fullpage-footer-rating">
+            <p>Rate Article:
+              <a href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+            </p>
+          </div>
         </div>
-              <div class="span3">
+      </div>
+      <div class="span3">
         <div class="content-box-small" style="width:270px;"> <!-- normally, width equal to container DIV -->
-                    <img src="http://placehold.it/270x100">
-                      <div class="content-box-small-content"> 
-                        <span class="content-box-small-category">{{advertisement.title}}Social Media</span>
-                        <h1>{{advertisement.content}}The World's Super Top 10 Most Innovative Companies</h1>
-                      </div>
-                      <div class="content-box-small-meta clearfix">
-                              <i class="fa fa-clock-o"></i>
-                              <p>{{advertisement.posted}}28 min ago</p>
-                              <i class="fa fa-comment-o"></i>
-                              <p>{{advertisement.comment}}79</p>
-                              <span class="content-box-meta-point">{{advertisement.point}}236 POINTS</span>
-                      </div>
-                    </div>   
-                    <div class="content-box-small-advertise">
-                          <img src="http://placehold.it/270x249">
-                    </div>     
-	</div>
+          <img src="http://placehold.it/270x100">
+          <div class="content-box-small-content"> 
+            <span class="content-box-small-category">{{advertisement.title}}Social Media</span>
+            <h1>{{advertisement.content}}The World's Super Top 10 Most Innovative Companies</h1>
+          </div>
+          <div class="content-box-small-meta clearfix">
+            <i class="fa fa-clock-o"></i>
+            <p>{{advertisement.posted}}28 min ago</p>
+            <i class="fa fa-comment-o"></i>
+            <p>{{advertisement.comment}}79</p>
+            <span class="content-box-meta-point">{{advertisement.point}}236 POINTS</span>
+          </div>
+        </div>
+        <div class="content-box-small-advertise">
+          <img src="http://placehold.it/270x249">
+        </div>
+      </div>
     </div>
+
 <pre>{{ sexpr(article) }}</pre>
 <pre>{{ sexpr(test) }}</pre>
-            
-      </div>
+
+</div>
