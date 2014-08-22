@@ -1,9 +1,9 @@
 <div ng-controller="ProfileUserEditCtrl as editCtrl">
-  <form name="profileusereditForm" ng-submit="editCtrl.submitEdit">
-    name : <input ng-model="username" type="name"/><br>
-    email : <input ng-model="userprofile.email" type="email"/><br>
-    {{username}}
-    <pre>{{ sexpr(maintabs) }}</pre>
+  <form name="profileusereditForm" ng-submit="submitEdit()">
+    Name : <input ng-model="userprofile.name" type="name"/><br>
+    Email : <input ng-model="userprofile.email" type="email"/><br>
+    Description : <input ng-model="userprofile.description" type="text"/><br>
+    <h4>Active Tabs</h4>
     <div ng-repeat="tab in maintabs">
       <input
         type="checkbox"
@@ -13,7 +13,7 @@
 <!--check`:
 #http://stackoverflow.com/questions/14514461/how-can-angularjs-bind-to-list-of-checkbox-values
 -->
-    </div>
+    </div><br>
     <input type="submit" value="Submit" />
   </form>
 </div>
