@@ -10,9 +10,26 @@ header comment here
   </div>
   <div class="tg-menu collapse">
     <div class="tg-menu-slidebar">
+    <style>
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: 100%;
+}
+.menuicon {
+    text-align:center;
+    font-size:5em;
+}
+    </style>
 
-      <div data-toggle="collapse" data-target=".tg-menu">
-        <i style="color:#f00; font-size:3em;" class="fa fa-bars"></i>
+      <div data-toggle="collapse" data-target=".tg-menu" style="color:#0;background-color:grey;text-align:center;">
+        <i style="font-size:3em;" class="menuicon fa fa-bars"></i><br clear="all"/>
+        <i class="menuicon fa fa-home"></i><br clear="all"/>
+        <i class="menuicon fa fa-bullhorn"></i><br clear="all"/>
+        <i class="menuicon fa fa-line-chart"></i><br clear="all"/>
+        <i class="menuicon fa fa-calendar"></i><br clear="all"/>
+        <i class="menuicon fa fa-comment-o"></i><br clear="all"/>
+        <i class="menuicon fa fa-cog"></i><br clear="all"/>
+        <i class="menuicon fa fa-plus"></i><br clear="all"/>
       </div>
 
     <!--
@@ -38,7 +55,7 @@ header comment here
       <div menumainnav model="mainMenu" id="test"></div>
     </div>
 
-<!-- Menu Links 
+<!-- Menu Links
     <div ng-controller="MenuCtrl">
       <ul class="tg-navbar-left nav">
         <li ng-repeat="menuItem in mainMenu" ng-click="openMenuItem(menuItem)" ng-class="{'active':menuItem.selected}">
@@ -75,7 +92,7 @@ header comment here
         </ul> -->
     </div>
   </div> <!-- END MENU BAR -->
-  
+
   <!-- START TOOLSBAR -->
   <div class="tg-tools-overlay">
   </div>
